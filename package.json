@@ -1,0 +1,25 @@
+{
+  "name": "zoocal-client",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {},
+  "author": "Drew Schrauf",
+  "license": "MIT",
+  "devDependencies": {
+    "html-webpack-plugin": "^2.28.0",
+    "ts-loader": "^2.0.0",
+    "tslint": "^4.4.2",
+    "typescript": "^2.1.5",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^1.16.2"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --host 0.0.0.0"
+  },
+  "dependencies": {
+    "@types/react": "^15.0.5",
+    "@types/react-dom": "^0.14.22",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  }
+}
