@@ -1,6 +1,14 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
+import { Provider } from "react-redux";
 
-const div = document.createElement("div");
-document.body.appendChild(div);
-ReactDOM.render(<h1>Hello</h1>, div);
+import App from "./App";
+import store from "./store";
+
+const root = document.createElement("div");
+document.body.appendChild(root);
+ReactDOM.render((
+  <Provider store={store}>
+    <App title="Hi there" />
+  </Provider>
+), root);

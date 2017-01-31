@@ -6,6 +6,11 @@
   "author": "Drew Schrauf",
   "license": "MIT",
   "devDependencies": {
+    "@types/lodash": "^4.14.52",
+    "@types/react": "^15.0.5",
+    "@types/react-dom": "^0.14.22",
+    "@types/react-redux": "^4.4.36",
+    "@types/redux": "^3.6.0",
     "html-webpack-plugin": "^2.28.0",
     "ts-loader": "^2.0.0",
     "tslint": "^4.4.2",
@@ -14,12 +19,15 @@
     "webpack-dev-server": "^1.16.2"
   },
   "scripts": {
-    "start": "webpack-dev-server --host 0.0.0.0"
+    "start": "webpack-dev-server --host 0.0.0.0",
+    "build": "rm -rf dist && webpack",
+    "lint": "tslint src/**/*.ts*"
   },
   "dependencies": {
-    "@types/react": "^15.0.5",
-    "@types/react-dom": "^0.14.22",
+    "lodash": "^4.17.4",
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.2",
+    "redux": "^3.6.0"
   }
 }
