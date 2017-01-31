@@ -20,8 +20,8 @@
     "webpack-dev-server": "^1.16.2"
   },
   "scripts": {
-    "start": "webpack-dev-server --host 0.0.0.0",
-    "build": "rm -rf dist && webpack",
+    "start": "webpack-dev-server --host 0.0.0.0 -d",
+    "build": "rm -rf dist && webpack -p",
     "lint": "tslint 'src/**/*.ts?(x)'"
   },
   "dependencies": {
