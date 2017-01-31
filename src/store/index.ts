@@ -1,6 +1,6 @@
 import { combineReducers, createStore } from "redux";
-import { IAction } from "./actions/counter";
 import counter, { ICounterState } from "./reducers/counter";
+import { IAction } from "./util";
 
 const reducer = combineReducers({
   counter,
