@@ -9,6 +9,6 @@ const root = document.createElement("div");
 document.body.appendChild(root);
 ReactDOM.render((
   <Provider store={store}>
-    <Counter />
+    <Counter incrementAmount={3} />
   </Provider>
 ), root);

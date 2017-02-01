@@ -5,8 +5,7 @@
         "noImplicitAny": true,
         "sourceMap": true,
         "strictNullChecks": true,
-        "jsx": "react",
-        "experimentalDecorators": true
+        "jsx": "react"
     },
     "exclude": [
       "node_modules"

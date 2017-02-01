@@ -5,7 +5,9 @@ import { Dispatch } from "redux";
 import { IState } from "./store";
 import { decrementBy, delayedIncrement, incrementBy } from "./store/actions/counter";
 
-interface IAppProps { } // tslint:disable-line:no-empty-interface
+interface IAppProps {
+  incrementAmount: number;
+}
 
 interface IConnectedState {
   count: number;
@@ -32,10 +34,10 @@ const App: React.ComponentClass<IAppProps> = connect(
     count: state.counter.count,
     pending: state.counter.pending,
   }),
-  (dispatch: Dispatch<IState>): IConnectedDispatch => ({
-    decrement: () => dispatch(decrementBy({ amount: 1 })),
-    delayedIncrement: () => dispatch(delayedIncrement({ amount: 1 })),
-    increment: () => dispatch(incrementBy({ amount: 1 })),
+  (dispatch: Dispatch<IState>, ownProps: IAppProps): IConnectedDispatch => ({
+    decrement: () => dispatch(decrementBy({ amount: ownProps.incrementAmount })),
+    delayedIncrement: () => dispatch(delayedIncrement({ amount: ownProps.incrementAmount })),
+    increment: () => dispatch(incrementBy({ amount: ownProps.incrementAmount })),
   }),
 )(AppComponent);
 export default App;
