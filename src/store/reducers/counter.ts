@@ -4,7 +4,7 @@ import {
   beginDelayedIncrement,
   completeDelayedIncrement,
   decrementBy,
-  incrementBy
+  incrementBy,
 } from "../actions/counter";
 
 export interface ICounterState {
@@ -15,7 +15,7 @@ export interface ICounterState {
 const initialState: ICounterState = {
   count: 0,
   pending: false,
-}
+};
 
 export default (state: ICounterState = initialState, action: IAction<any>): ICounterState => {
   if (isType(action, incrementBy)) {

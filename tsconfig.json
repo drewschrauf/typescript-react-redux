@@ -5,7 +5,8 @@
         "noImplicitAny": true,
         "sourceMap": true,
         "strictNullChecks": true,
-        "jsx": "react"
+        "jsx": "react",
+        "outDir": "build"
     },
     "exclude": [
       "node_modules"
