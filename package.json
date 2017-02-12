@@ -25,7 +25,8 @@
     "start": "webpack-dev-server --host 0.0.0.0 -d",
     "build": "rm -rf dist && webpack -p",
     "lint": "tslint 'src/**/*.ts?(x)'",
-    "test": "rm -rf build && tsc && ava"
+    "test": "rm -rf build && tsc && ava",
+    "ci": "npm run lint && npm test -- -v"
   },
   "dependencies": {
     "lodash": "^4.17.4",
