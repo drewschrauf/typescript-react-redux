@@ -7,14 +7,20 @@
   "license": "MIT",
   "devDependencies": {
     "@types/core-js": "^0.9.35",
+    "@types/enzyme": "^2.7.4",
     "@types/lodash": "^4.14.52",
     "@types/react": "^15.0.5",
     "@types/react-dom": "^0.14.22",
     "@types/react-redux": "^4.4.36",
     "@types/redux": "^3.6.0",
     "@types/redux-thunk": "^2.1.0",
+    "@types/sinon": "^1.16.35",
     "ava": "^0.18.1",
+    "enzyme": "^2.7.1",
     "html-webpack-plugin": "^2.28.0",
+    "nyc": "^10.1.2",
+    "react-addons-test-utils": "^15.4.2",
+    "sinon": "^1.17.7",
     "ts-loader": "^2.0.0",
     "tslint": "^4.4.2",
     "typescript": "^2.1.5",
@@ -22,11 +28,13 @@
     "webpack-dev-server": "^1.16.2"
   },
   "scripts": {
-    "start": "webpack-dev-server --host 0.0.0.0 -d",
+    "start": "webpack-dev-server -d",
     "build": "rm -rf dist && webpack -p",
+    "transpile": "rm -rf build && tsc",
     "lint": "tslint 'src/**/*.ts?(x)'",
-    "test": "rm -rf build && tsc && ava",
-    "ci": "yarn run lint && yarn test -- -v"
+    "test": "yarn run transpile && ava",
+    "cover": "yarn run transpile && nyc --reporter=html ava",
+    "ci": "yarn run lint && yarn run transpile && nyc ava -v"
   },
   "dependencies": {
     "lodash": "^4.17.4",
@@ -39,6 +47,11 @@
   "ava": {
     "files": [
       "build/test/**/*.spec.js"
+    ]
+  },
+  "nyc": {
+    "include": [
+      "build/src/**/*"
     ]
   }
 }

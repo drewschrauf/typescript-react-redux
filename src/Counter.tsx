@@ -20,12 +20,27 @@ interface IConnectedDispatch {
   delayedIncrement: () => void;
 }
 
-const AppComponent = (props: IAppProps & IConnectedState & IConnectedDispatch) => (
+export const AppComponent = (props: IAppProps & IConnectedState & IConnectedDispatch) => (
   <div>
     <h1>Count {props.count}</h1>
-    <button onClick={props.increment}>Increment</button>
-    <button onClick={props.decrement}>Decrement</button>
-    <button disabled={props.pending} onClick={props.delayedIncrement}>Delayed increment</button>
+    <button
+      className="increment"
+      onClick={props.increment}
+    >
+      Increment
+    </button>
+    <button
+      onClick={props.decrement}
+    >
+      Decrement
+    </button>
+    <button
+      className="delayed-increment"
+      disabled={props.pending}
+      onClick={props.delayedIncrement}
+    >
+      Delayed increment
+    </button>
   </div>
 );
 
