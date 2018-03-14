@@ -26,7 +26,9 @@ export const AppComponent = (props: IAppProps & IConnectedState & IConnectedDisp
     <button className="increment" onClick={props.increment}>
       Increment
     </button>
-    <button onClick={props.decrement}>Decrement</button>
+    <button className="decrement" onClick={props.decrement}>
+      Decrement
+    </button>
     <button className="delayed-increment" disabled={props.pending} onClick={props.delayedIncrement}>
       Delayed increment
     </button>

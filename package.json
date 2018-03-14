@@ -5,16 +5,24 @@
   "repository": {},
   "author": "Drew Schrauf",
   "license": "MIT",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "rm -rf dist && webpack -p",
+    "lint": "eslint --ext ts,tsx \"src/**/*.ts?(x)\"",
+    "test": "jest",
+    "cover": "jest --coverage --coverageReporters html",
+    "ci": "yarn lint && yarn cover && yarn build"
+  },
   "devDependencies": {
-    "@types/core-js": "^0.9.46",
     "@types/enzyme": "^3.1.9",
+    "@types/enzyme-adapter-react-16": "^1.0.2",
+    "@types/jest": "^22.2.0",
     "@types/lodash": "^4.14.104",
     "@types/react": "^16.0.40",
-    "@types/react-dom": "^15.5.7",
+    "@types/react-dom": "15.5.4",
     "@types/react-redux": "^5.0.15",
-    "@types/sinon": "^4.3.0",
-    "ava": "^0.25.0",
     "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^4.18.2",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-config-prettier": "^2.9.0",
@@ -23,10 +31,10 @@
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.7.0",
     "html-webpack-plugin": "^3.0.6",
-    "nyc": "^11.6.0",
+    "jest": "^22.4.2",
     "prettier": "^1.11.1",
     "react-addons-test-utils": "^15.6.2",
-    "sinon": "^4.4.5",
+    "ts-jest": "^22.4.1",
     "ts-loader": "^4.0.1",
     "typescript": "^2.7.2",
     "typescript-eslint-parser": "^14.0.0",
@@ -34,33 +42,19 @@
     "webpack-cli": "^2.0.12",
     "webpack-dev-server": "^3.1.1"
   },
-  "scripts": {
-    "start": "webpack-dev-server -d",
-    "build": "rm -rf dist && webpack -p",
-    "transpile": "rm -rf build && tsc",
-    "lint": "eslint --ext ts,tsx 'src/**/*.ts?(x)'",
-    "test": "yarn run transpile && ava",
-    "cover": "yarn run transpile && nyc --reporter=html ava",
-    "ci": "yarn run lint && yarn run transpile && nyc ava -v"
-  },
   "dependencies": {
-    "global": "^4.3.2",
     "lodash": "^4.17.5",
-    "npx": "^10.0.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0"
   },
-  "ava": {
-    "files": [
-      "build/test/**/*.spec.js"
-    ]
-  },
-  "nyc": {
-    "include": [
-      "build/src/**/*"
-    ]
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"]
   }
 }

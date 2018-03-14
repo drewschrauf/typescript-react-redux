@@ -1,4 +1,3 @@
-import * as _ from 'lodash';
 import { Dispatch } from 'redux';
 import { IState } from '../index';
 import { createAction } from '../util';

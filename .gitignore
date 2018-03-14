@@ -2,5 +2,5 @@
 /dist
 /build
 /coverage
-/.nyc_output
 /.vscode
+/yarn-error.log

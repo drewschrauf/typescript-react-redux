@@ -1,9 +1,9 @@
 module.exports = {
-  files: ['src/**/*.ts?(x)'],
-  tests: ['test/**/*.spec.ts?(x)'],
+  files: ['src/**/*.ts?(x)', '!src/**/__tests__/**/*.test.ts?(x)'],
+  tests: ['src/**/__tests__/**/*.test.ts?(x)'],
   env: {
     type: 'node',
-    runner: 'node'
+    runner: 'node',
   },
-  testFramework: 'ava'
-}
+  testFramework: 'jest',
+};

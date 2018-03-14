@@ -11,7 +11,9 @@ interface IActionCreator<T> {
 }
 
 export const createAction = <T extends {}>(type: string): IActionCreator<T> =>
-  _.assign<IActionCreator<T>>((payload: T): any => ({ type, payload }), { type });
+  _.assign((payload: T): any => ({ type, payload }), {
+    type,
+  });
 
 export const isType = <T extends {}>(
   action: IAction<any>,

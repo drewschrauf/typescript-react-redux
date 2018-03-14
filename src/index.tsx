@@ -9,7 +9,7 @@ const root = document.createElement('div');
 document.body.appendChild(root);
 ReactDOM.render(
   <Provider store={store}>
-    <Counter incrementAmount={3} />
+    <Counter incrementAmount={1} />
   </Provider>,
   root,
 );
