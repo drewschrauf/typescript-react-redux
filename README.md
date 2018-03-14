@@ -2,13 +2,12 @@
 
 This is a basic example project using the following technologies to build a web app:
 
-- Typescript
-- React
-- Redux
-- Webpack
+* Typescript
+* React
+* Redux
+* Webpack
 
 And for testing:
 
-- Ava
-- Enzyme
-- Sinon
+* Jest
+* Enzyme
