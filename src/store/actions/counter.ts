@@ -1,8 +1,13 @@
-import * as _ from "lodash";
-import { Dispatch } from "redux";
-import { IState } from "../index";
-import { createAction } from "../util";
-import { BEGIN_DELAYED_INCREMENT, COMPLETE_DELAYED_INCREMENT, DECREMENT, INCREMENT } from "./constants";
+import * as _ from 'lodash';
+import { Dispatch } from 'redux';
+import { IState } from '../index';
+import { createAction } from '../util';
+import {
+  BEGIN_DELAYED_INCREMENT,
+  COMPLETE_DELAYED_INCREMENT,
+  DECREMENT,
+  INCREMENT,
+} from './constants';
 
 export interface IIncrementAmount {
   readonly amount: number;

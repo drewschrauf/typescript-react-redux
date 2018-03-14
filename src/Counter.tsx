@@ -1,9 +1,9 @@
-import * as React from "react";
-import { connect } from "react-redux";
-import { Dispatch } from "redux";
+import * as React from 'react';
+import { connect } from 'react-redux';
+import { Dispatch } from 'redux';
 
-import { IState } from "./store";
-import { decrementBy, delayedIncrement, incrementBy } from "./store/actions/counter";
+import { IState } from './store';
+import { decrementBy, delayedIncrement, incrementBy } from './store/actions/counter';
 
 interface IAppProps {
   incrementAmount: number;
@@ -23,29 +23,18 @@ interface IConnectedDispatch {
 export const AppComponent = (props: IAppProps & IConnectedState & IConnectedDispatch) => (
   <div>
     <h1>Count {props.count}</h1>
-    <button
-      className="increment"
-      onClick={props.increment}
-    >
+    <button className="increment" onClick={props.increment}>
       Increment
     </button>
-    <button
-      onClick={props.decrement}
-    >
-      Decrement
-    </button>
-    <button
-      className="delayed-increment"
-      disabled={props.pending}
-      onClick={props.delayedIncrement}
-    >
+    <button onClick={props.decrement}>Decrement</button>
+    <button className="delayed-increment" disabled={props.pending} onClick={props.delayedIncrement}>
       Delayed increment
     </button>
   </div>
 );
 
 const App: React.ComponentClass<IAppProps> = connect(
-  (state: IState, ownProps: IAppProps): IConnectedState => ({
+  (state: IState, _ownProps: IAppProps): IConnectedState => ({
     count: state.counter.count,
     pending: state.counter.pending,
   }),

@@ -1,7 +1,6 @@
-import { applyMiddleware, combineReducers, compose, createStore } from "redux";
-import thunk from "redux-thunk";
-import counter, { ICounterState } from "./reducers/counter";
-import { IAction } from "./util";
+import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
+import thunk from 'redux-thunk';
+import counter, { ICounterState } from './reducers/counter';
 
 const reducer = combineReducers({
   counter,
@@ -9,7 +8,7 @@ const reducer = combineReducers({
 
 export interface IState {
   counter: ICounterState;
-};
+}
 
 const store = createStore(
   reducer,

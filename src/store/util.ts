@@ -1,4 +1,4 @@
-import * as _ from "lodash";
+import * as _ from 'lodash';
 
 export interface IAction<T> {
   readonly type: string;
@@ -10,11 +10,10 @@ interface IActionCreator<T> {
   (payload: T): IAction<T>;
 }
 
-export const createAction = <T>(type: string): IActionCreator<T> =>
-  _.assign<IActionCreator<T>>(
-    (payload: T): any => ({ type, payload }),
-    { type },
-  );
+export const createAction = <T extends {}>(type: string): IActionCreator<T> =>
+  _.assign<IActionCreator<T>>((payload: T): any => ({ type, payload }), { type });
 
-export const isType = <T>(action: IAction<any>, actionCreator: IActionCreator<T>):
-  action is IAction<T> => action.type === actionCreator.type;
+export const isType = <T extends {}>(
+  action: IAction<any>,
+  actionCreator: IActionCreator<T>,
+): action is IAction<T> => action.type === actionCreator.type;

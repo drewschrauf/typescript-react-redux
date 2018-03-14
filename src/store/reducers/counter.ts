@@ -1,11 +1,11 @@
-import { IAction, isType } from "../util";
+import { IAction, isType } from '../util';
 
 import {
   beginDelayedIncrement,
   completeDelayedIncrement,
   decrementBy,
   incrementBy,
-} from "../actions/counter";
+} from '../actions/counter';
 
 export interface ICounterState {
   readonly count: number;

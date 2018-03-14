@@ -1,14 +1,15 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom";
-import { Provider } from "react-redux";
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 
-import Counter from "./Counter";
-import store from "./store";
+import Counter from './Counter';
+import store from './store';
 
-const root = document.createElement("div");
+const root = document.createElement('div');
 document.body.appendChild(root);
-ReactDOM.render((
+ReactDOM.render(
   <Provider store={store}>
     <Counter incrementAmount={3} />
-  </Provider>
-), root);
+  </Provider>,
+  root,
+);
