@@ -9,6 +9,14 @@ import counter from '../reducers/counter';
 const exampleState = { count: 0, pending: false };
 
 describe('counter', () => {
+  it('should set a default state', () => {
+    const result = counter(undefined, { type: '@@INIT', payload: {} });
+    expect(result).toEqual({
+      count: 0,
+      pending: false,
+    });
+  });
+
   it('should increase count by amount with incrementBy', () => {
     const result = counter(exampleState, incrementBy({ amount: 1 }));
     expect(result.count).toBe(1);
