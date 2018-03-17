@@ -5,11 +5,9 @@ import { Provider } from 'react-redux';
 import Counter from './Counter';
 import store from './store';
 
-const root = document.createElement('div');
-document.body.appendChild(root);
 ReactDOM.render(
   <Provider store={store}>
     <Counter incrementAmount={1} />
   </Provider>,
-  root,
+  document.getElementById('app-root'),
 );

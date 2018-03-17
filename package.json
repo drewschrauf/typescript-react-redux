@@ -6,8 +6,8 @@
   "author": "Drew Schrauf",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --host 0.0.0.0",
-    "build": "rm -rf dist && webpack -p",
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html --public-url ./",
     "lint": "eslint --ext ts,tsx \"src/**/*.ts?(x)\"",
     "test": "jest",
     "cover": "jest --coverage --coverageReporters html",
@@ -30,17 +30,13 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.7.0",
-    "html-webpack-plugin": "^3.0.6",
     "jest": "^22.4.2",
+    "parcel-bundler": "^1.6.2",
     "prettier": "^1.11.1",
     "react-addons-test-utils": "^15.6.2",
     "ts-jest": "^22.4.1",
-    "ts-loader": "^4.0.1",
     "typescript": "^2.7.2",
-    "typescript-eslint-parser": "^14.0.0",
-    "webpack": "^4.1.1",
-    "webpack-cli": "^2.0.12",
-    "webpack-dev-server": "^3.1.1"
+    "typescript-eslint-parser": "^14.0.0"
   },
   "dependencies": {
     "lodash": "^4.17.5",
