@@ -2,7 +2,7 @@ import * as enzyme from 'enzyme';
 import * as React from 'react';
 import * as Adapter from 'enzyme-adapter-react-16';
 
-import { AppComponent } from '../Counter';
+import { AppComponent } from '../components/Counter';
 
 enzyme.configure({ adapter: new Adapter() });
 
