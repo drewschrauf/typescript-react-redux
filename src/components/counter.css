@@ -1,0 +1,8 @@
+.counter {
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.counter button {
+  margin-right: 10px;
+}

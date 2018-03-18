@@ -2,8 +2,10 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 
-import { IState } from './store';
-import { decrementBy, delayedIncrement, incrementBy } from './store/actions/counter';
+import { IState } from '../store';
+import { decrementBy, delayedIncrement, incrementBy } from '../store/actions/counter';
+
+import './counter.css';
 
 interface IAppProps {
   incrementAmount: number;
@@ -21,7 +23,7 @@ interface IConnectedDispatch {
 }
 
 export const AppComponent = (props: IAppProps & IConnectedState & IConnectedDispatch) => (
-  <div>
+  <div className="counter">
     <h1>Count {props.count}</h1>
     <button className="increment" onClick={props.increment}>
       Increment
