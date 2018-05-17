@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { Dispatch } from 'redux';
 
-import { IState } from '../store';
+import { IState, Dispatch } from '../store';
 import { decrementBy, delayedIncrement, incrementBy } from '../store/actions/counter';
 
 import './counter.css';
@@ -42,7 +41,7 @@ const App: React.ComponentClass<IAppProps> = connect(
     count: state.counter.count,
     pending: state.counter.pending,
   }),
-  (dispatch: Dispatch<IState>, ownProps: IAppProps): IConnectedDispatch => ({
+  (dispatch: Dispatch, ownProps: IAppProps): IConnectedDispatch => ({
     decrement: () => dispatch(decrementBy({ amount: ownProps.incrementAmount })),
     delayedIncrement: () => dispatch(delayedIncrement({ amount: ownProps.incrementAmount })),
     increment: () => dispatch(incrementBy({ amount: ownProps.incrementAmount })),

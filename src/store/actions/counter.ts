@@ -1,5 +1,4 @@
-import { Dispatch } from 'redux';
-import { IState } from '../index';
+import { Dispatch } from '../index';
 import { createAction } from '../util';
 import {
   BEGIN_DELAYED_INCREMENT,
@@ -17,7 +16,7 @@ export const decrementBy = createAction<IIncrementAmount>(DECREMENT);
 
 export const beginDelayedIncrement = createAction<{}>(BEGIN_DELAYED_INCREMENT);
 export const completeDelayedIncrement = createAction<IIncrementAmount>(COMPLETE_DELAYED_INCREMENT);
-export const delayedIncrement = (payload: IIncrementAmount) => (dispatch: Dispatch<IState>) => {
+export const delayedIncrement = (payload: IIncrementAmount) => (dispatch: Dispatch) => {
   dispatch(beginDelayedIncrement({}));
   setTimeout(() => {
     dispatch(completeDelayedIncrement(payload));
