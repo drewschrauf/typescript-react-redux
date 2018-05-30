@@ -1,10 +1,19 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
+import styledComponents from 'styled-components';
 
 import { IState, Dispatch } from '../store';
 import { decrementBy, delayedIncrement, incrementBy } from '../store/actions/counter';
 
-import './counter.css';
+const Counter = styledComponents.div`
+  padding: 10px;
+  border: 1px dashed black;
+`;
+
+const Button = styledComponents.button`
+  margin-right: 10px;
+  font-family: inherit;
+`;
 
 interface IAppProps {
   incrementAmount: number;
@@ -22,18 +31,18 @@ interface IConnectedDispatch {
 }
 
 export const AppComponent = (props: IAppProps & IConnectedState & IConnectedDispatch) => (
-  <div className="counter">
+  <Counter>
     <h1>Count {props.count}</h1>
-    <button className="increment" onClick={props.increment}>
+    <Button className="increment" onClick={props.increment}>
       Increment
-    </button>
-    <button className="decrement" onClick={props.decrement}>
+    </Button>
+    <Button className="decrement" onClick={props.decrement}>
       Decrement
-    </button>
-    <button className="delayed-increment" disabled={props.pending} onClick={props.delayedIncrement}>
+    </Button>
+    <Button className="delayed-increment" disabled={props.pending} onClick={props.delayedIncrement}>
       Delayed increment
-    </button>
-  </div>
+    </Button>
+  </Counter>
 );
 
 const App: React.ComponentClass<IAppProps> = connect(
