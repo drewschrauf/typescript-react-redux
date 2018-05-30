@@ -6,8 +6,8 @@
   "author": "Drew Schrauf",
   "license": "MIT",
   "scripts": {
-    "start": "parcel src/index.html",
-    "build": "parcel build src/index.html --public-url ./",
+    "start": "webpack-dev-server --host 0.0.0.0",
+    "build": "webpack -p",
     "lint": "eslint --ext ts,tsx \"src/**/*.ts?(x)\"",
     "test": "jest",
     "cover": "jest --coverage --coverageReporters html",
@@ -17,10 +17,11 @@
     "@types/enzyme": "^3.1.10",
     "@types/enzyme-adapter-react-16": "^1.0.2",
     "@types/jest": "^22.2.3",
-    "@types/lodash": "^4.14.108",
+    "@types/lodash": "^4.14.109",
     "@types/react": "^16.3.14",
     "@types/react-dom": "16.0.5",
     "@types/react-redux": "^6.0.0",
+    "css-loader": "^0.28.11",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^4.19.1",
@@ -30,14 +31,19 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.8.2",
+    "html-webpack-plugin": "^3.2.0",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^22.4.3",
-    "parcel-bundler": "^1.8.1",
+    "jest": "^22.4.4",
     "prettier": "^1.12.1",
     "react-addons-test-utils": "^15.6.2",
+    "style-loader": "^0.21.0",
     "ts-jest": "^22.4.6",
+    "ts-loader": "^4.3.0",
     "typescript": "^2.8.3",
-    "typescript-eslint-parser": "^15.0.0"
+    "typescript-eslint-parser": "^15.0.0",
+    "webpack": "^4.10.2",
+    "webpack-cli": "^2.1.4",
+    "webpack-dev-server": "^3.1.4"
   },
   "dependencies": {
     "lodash": "^4.17.10",
@@ -52,14 +58,7 @@
       "^.+\\.tsx?$": "ts-jest"
     },
     "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json",
-      "node"
-    ],
+    "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"],
     "moduleNameMapper": {
       "\\.css$": "identity-obj-proxy"
     }

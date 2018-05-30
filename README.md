@@ -5,7 +5,7 @@ This is a basic example project using the following technologies to build a web 
 * Typescript
 * React
 * Redux
-* Parcel
+* Webpack
 
 And for testing:
 
