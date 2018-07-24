@@ -9,6 +9,7 @@
     "no-underscore-dangle": "off",
     "import/no-unresolved": "off",
     "import/extensions": "off",
-    "react/jsx-filename-extension": "off"
+    "react/jsx-filename-extension": "off",
+    "react/jsx-one-expression-per-line": "off"
   }
 }

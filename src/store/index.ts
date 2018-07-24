@@ -1,11 +1,5 @@
-import {
-  applyMiddleware,
-  combineReducers,
-  compose,
-  createStore,
-  Dispatch as ReduxDispatch,
-} from 'redux';
-import thunk from 'redux-thunk';
+import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
+import thunk, { ThunkDispatch } from 'redux-thunk';
 import counter, { ICounterState } from './reducers/counter';
 import { IAction } from './util';
 
@@ -17,7 +11,7 @@ export interface IState {
   counter: ICounterState;
 }
 
-export type Dispatch = ReduxDispatch<IAction<any>, IState>;
+export type Dispatch = ThunkDispatch<IState, any, IAction<any>>;
 
 const store = createStore(
   reducer,
