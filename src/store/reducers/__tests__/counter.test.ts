@@ -3,8 +3,8 @@ import {
   completeDelayedIncrement,
   decrementBy,
   incrementBy,
-} from '../actions/counter';
-import counter from '../reducers/counter';
+} from '../../actions/counter';
+import counter from '../counter';
 
 const exampleState = { count: 0, pending: false };
 
