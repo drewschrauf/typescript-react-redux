@@ -30,7 +30,7 @@ interface IConnectedDispatch {
   delayedIncrement: () => void;
 }
 
-export const AppComponent = ({
+const AppComponent = ({
   count,
   increment,
   decrement,
