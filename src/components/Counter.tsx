@@ -51,7 +51,7 @@ const AppComponent = ({
   </Counter>
 );
 
-const App: React.ComponentClass<IAppProps> = connect(
+const App = connect(
   (state: IState, _ownProps: IAppProps): IConnectedState => ({
     count: state.counter.count,
     pending: state.counter.pending,
@@ -61,5 +61,5 @@ const App: React.ComponentClass<IAppProps> = connect(
     delayedIncrement: () => dispatch(delayedIncrement({ amount: ownProps.incrementAmount })),
     increment: () => dispatch(incrementBy({ amount: ownProps.incrementAmount })),
   }),
-)(AppComponent);
+)(AppComponent) as React.ComponentClass<IAppProps>;
 export default App;
