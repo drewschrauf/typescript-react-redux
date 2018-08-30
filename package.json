@@ -43,7 +43,7 @@
     "style-loader": "0.23.0",
     "ts-jest": "23.1.4",
     "ts-loader": "4.5.0",
-    "typescript": "3.0.1",
+    "typescript": "3.0.3",
     "typescript-eslint-parser": "18.0.0",
     "webpack": "4.17.1",
     "webpack-cli": "3.1.0",
