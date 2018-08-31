@@ -1,16 +1,15 @@
 {
-    "compilerOptions": {
-        "module": "commonjs",
-        "target": "es5",
-        "noImplicitAny": true,
-        "noUnusedLocals": true,
-        "noUnusedParameters": true,
-        "sourceMap": true,
-        "strictNullChecks": true,
-        "jsx": "react",
-        "outDir": "build"
-    },
-    "exclude": [
-      "node_modules"
-    ]
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "sourceMap": true,
+    "strictNullChecks": true,
+    "jsx": "react",
+    "outDir": "build",
+    "lib": ["es2015", "dom"]
+  },
+  "exclude": ["node_modules"]
 }
