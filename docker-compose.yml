@@ -1,0 +1,14 @@
+version: '3'
+services:
+  app:
+    image: 'nginx:alpine'
+    expose:
+      - '80'
+    volumes:
+      - './dist:/usr/share/nginx/html'
+  tests:
+    image: testcafe/testcafe
+    volumes:
+      - './integration:/tests'
+    depends_on:
+      - app

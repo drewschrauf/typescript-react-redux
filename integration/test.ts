@@ -1,9 +1,13 @@
 /* eslint-disable import/no-extraneous-dependencies, no-unused-expressions */
 import { Selector } from 'testcafe';
 
-fixture`Increment`.page`http://localhost:8080`;
+fixture`Increment`.page`http://app`;
 
 const countText = () => Selector('h1').innerText;
+
+test('stylesheet is loaded', async t => {
+  await t.expect(Selector('body').getStyleProperty('background-color')).eql('rgb(255, 239, 213)');
+});
 
 test('should start at 0', async t => {
   await t.expect(countText()).eql('Count 0');
