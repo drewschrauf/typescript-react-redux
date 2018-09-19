@@ -64,7 +64,7 @@ describe('Counter', () => {
     expect(root.find('.delayed-increment').prop('disabled')).toBe(false);
   });
 
-  test('delayed increment is disabled if pending', () => {
+  it('should disable delayed increment if pending', () => {
     const store = mockStore(set('counter.pending', true, defaultState));
     const root = enzyme.shallow(<Counter {...defaultProps} />, { context: { store } }).dive();
     expect(root.find('.delayed-increment').prop('disabled')).toBe(true);

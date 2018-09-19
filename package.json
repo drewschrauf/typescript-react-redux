@@ -62,7 +62,9 @@
     "transform": {
       "^.+\\.tsx?$": "ts-jest"
     },
-    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "testMatch": [
+      "<rootDir>/src/**/*.test.(ts|tsx)"
+    ],
     "moduleFileExtensions": [
       "ts",
       "tsx",
