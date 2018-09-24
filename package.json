@@ -47,7 +47,7 @@
     "typescript-eslint-parser": "18.0.0",
     "webpack": "4.19.1",
     "webpack-cli": "3.1.1",
-    "webpack-dev-server": "3.1.8"
+    "webpack-dev-server": "3.1.9"
   },
   "dependencies": {
     "lodash": "^4.17.10",
