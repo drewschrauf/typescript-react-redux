@@ -7579,10 +7579,10 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typescript-eslint-parser@19.0.1:
-  version "19.0.1"
-  resolved "https://registry.yarnpkg.com/typescript-eslint-parser/-/typescript-eslint-parser-19.0.1.tgz#f8483c3f5992367a95bee856eafd5aaaf24a7828"
-  integrity sha512-gVIyCku4jEsvSObuRZEiU3pLpAEqwaQR9kXBdLB7zAkyMiieaDWnJe2KCedFBHFxq3tFPUGbqw+Fv8O/tn06TQ==
+typescript-eslint-parser@19.0.2:
+  version "19.0.2"
+  resolved "https://registry.yarnpkg.com/typescript-eslint-parser/-/typescript-eslint-parser-19.0.2.tgz#3df184b5290469598375e93842cd0a42d8b7745d"
+  integrity sha512-ZwbgliYgAjbeV+l7Ul8awcJlkzNeOLM2NiYgj1djOYl2WU0lRLIpr1HPmvBzqj9pK/Sf5Kn50ap9MAXCCDW5qA==
   dependencies:
     eslint "4.19.1"
     typescript-estree "1.0.0"
