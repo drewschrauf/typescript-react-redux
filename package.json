@@ -15,7 +15,7 @@
     "ci": "yarn lint && yarn test:coveralls && yarn build"
   },
   "devDependencies": {
-    "@types/enzyme": "3.1.14",
+    "@types/enzyme": "3.1.15",
     "@types/enzyme-adapter-react-16": "1.0.3",
     "@types/jest": "23.3.9",
     "@types/lodash": "4.14.117",
