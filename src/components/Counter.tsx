@@ -1,16 +1,16 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import styledComponents from 'styled-components';
+import styled from 'styled-components';
 
 import { IState, Dispatch } from '../store';
 import { decrementBy, delayedIncrement, incrementBy } from '../store/actions/counter';
 
-const Counter = styledComponents.div`
+const Counter = styled.div`
   padding: 10px;
   border: 1px dashed black;
 `;
 
-const Button = styledComponents.button`
+const Button = styled.button`
   margin-right: 10px;
   font-family: inherit;
 `;
