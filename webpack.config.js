@@ -1,10 +1,14 @@
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
+  devtool: 'inline-source-map',
   entry: './src/index.tsx',
   output: {
-    filename: 'bundle.js',
+    path: path.join(__dirname, 'dist'),
+    filename: '[name].[hash].js',
+    chunkFilename: '[name].[hash].js',
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],
@@ -15,7 +19,7 @@ module.exports = {
       { test: /\.css/, loaders: ['style-loader', 'css-loader'] },
     ],
   },
-  plugins: [new HtmlWebpackPlugin()],
+  plugins: [new HtmlWebpackPlugin({ title: 'typescript-react-redux' })],
   devServer: {
     disableHostCheck: true,
   },

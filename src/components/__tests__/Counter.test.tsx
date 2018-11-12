@@ -1,6 +1,6 @@
-import * as enzyme from 'enzyme';
-import * as React from 'react';
-import * as Adapter from 'enzyme-adapter-react-16';
+import enzyme from 'enzyme';
+import React from 'react';
+import Adapter from 'enzyme-adapter-react-16';
 import configureStore, { MockStoreCreator } from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import { set } from 'lodash/fp';

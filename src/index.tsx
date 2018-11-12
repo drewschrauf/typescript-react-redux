@@ -1,18 +1,13 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-
-import './index.css';
-
-import Counter from './components/Counter';
-import store from './store';
+import React, { lazy, Suspense } from 'react';
+import ReactDOM from 'react-dom';
 
 const root = document.createElement('div');
 document.body.appendChild(root);
 
+const App = lazy(() => import('./App'));
 ReactDOM.render(
-  <Provider store={store}>
-    <Counter incrementAmount={1} />
-  </Provider>,
+  <Suspense fallback={<div>Loading...</div>}>
+    <App />
+  </Suspense>,
   root,
 );

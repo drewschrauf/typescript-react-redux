@@ -1,16 +1,17 @@
 {
-    "compilerOptions": {
-        "module": "commonjs",
-        "target": "es5",
-        "noImplicitAny": true,
-        "noUnusedLocals": true,
-        "noUnusedParameters": true,
-        "sourceMap": true,
-        "strictNullChecks": true,
-        "jsx": "react",
-        "outDir": "build"
-    },
-    "exclude": [
-      "node_modules"
-    ]
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "es5",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strictNullChecks": true,
+    "importHelpers": true,
+    "sourceMap": true,
+    "jsx": "react",
+    "outDir": "build",
+    "lib": ["dom", "es2015"]
+  }
 }

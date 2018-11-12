@@ -13,12 +13,7 @@ export interface IState {
 
 export type Dispatch = ThunkDispatch<IState, any, IAction<any>>;
 
-const store = createStore(
-  reducer,
-  compose(
-    applyMiddleware(thunk),
-    (window as any).__REDUX_DEVTOOLS_EXTENSION__ && (window as any).__REDUX_DEVTOOLS_EXTENSION__(),
-  ),
-);
+const composeEnhancers = (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)));
 
 export default store;
