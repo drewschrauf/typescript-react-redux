@@ -3,7 +3,7 @@ import React from 'react';
 import Adapter from 'enzyme-adapter-react-16';
 import configureStore, { MockStoreCreator } from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import { set } from 'lodash/fp';
+import set from 'lodash/fp/set';
 
 import Counter from '../Counter';
 import { IState } from '../../store';

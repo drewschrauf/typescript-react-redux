@@ -1,5 +1,3 @@
-import _ from 'lodash';
-
 export interface IAction<T> {
   readonly type: string;
   readonly payload: T;
@@ -11,7 +9,7 @@ interface IActionCreator<T> {
 }
 
 export const createAction = <T extends {}>(type: string): IActionCreator<T> =>
-  _.assign((payload: T): any => ({ type, payload }), {
+  Object.assign((payload: T): any => ({ type, payload }), {
     type,
   });
 

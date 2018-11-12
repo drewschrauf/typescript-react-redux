@@ -12,6 +12,9 @@
     "test": "jest",
     "test:cover": "jest --coverage --coverageReporters html",
     "test:coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
+    "stats": "yarn build && yarn stats:analyze && yarn stats:start",
+    "stats:analyze": "webpack --config webpack-prod.config.js --profile --json > dist/stats.json",
+    "stats:start": "webpack-bundle-analyzer dist/stats.json --host 0.0.0.0",
     "ci": "yarn lint && yarn test:coveralls && yarn build"
   },
   "devDependencies": {
@@ -47,6 +50,7 @@
     "typescript": "3.1.6",
     "typescript-eslint-parser": "20.1.1",
     "webpack": "4.25.1",
+    "webpack-bundle-analyzer": "3.0.3",
     "webpack-cli": "3.1.2",
     "webpack-dev-server": "3.1.10"
   },
