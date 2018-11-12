@@ -22,11 +22,11 @@
     "@types/enzyme-adapter-react-16": "1.0.3",
     "@types/jest": "23.3.9",
     "@types/lodash": "4.14.118",
-    "@types/react": "16.7.3",
+    "@types/react": "16.7.6",
     "@types/react-dom": "16.0.9",
     "@types/react-redux": "6.0.9",
     "@types/redux-mock-store": "1.0.0",
-    "@types/styled-components": "4.0.3",
+    "@types/styled-components": "4.1.0",
     "coveralls": "3.0.2",
     "css-loader": "1.0.1",
     "enzyme": "3.7.0",
@@ -56,14 +56,14 @@
     "webpack-dev-server": "3.1.10"
   },
   "dependencies": {
-    "lodash": "^4.17.10",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
-    "react-redux": "^5.0.7",
-    "redux": "^4.0.0",
-    "redux-thunk": "^2.3.0",
-    "styled-components": "^4.0.0",
-    "tslib": "^1.9.3"
+    "lodash": "4.17.11",
+    "react": "16.6.3",
+    "react-dom": "16.6.3",
+    "react-redux": "5.1.1",
+    "redux": "4.0.1",
+    "redux-thunk": "2.3.0",
+    "styled-components": "4.1.1",
+    "tslib": "1.9.3"
   },
   "jest": {
     "transform": {
