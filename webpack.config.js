@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const DashboardPlugin = require('webpack-dashboard/plugin');
 
 module.exports = {
   mode: 'development',
@@ -31,6 +32,7 @@ module.exports = {
       filename: '[name].[hash].css',
       chunkFilename: '[id].[hash].css',
     }),
+    new DashboardPlugin(),
   ],
   devServer: {
     disableHostCheck: true,

@@ -6,7 +6,7 @@
   "author": "Drew Schrauf",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --host 0.0.0.0",
+    "start": "webpack-dashboard -m -- webpack-dev-server --host 0.0.0.0",
     "build": "rm -rf dist && webpack --config webpack-prod.config.js",
     "lint": "eslint --ext ts,tsx \"src/**/*.ts?(x)\"",
     "test": "jest",
@@ -52,6 +52,7 @@
     "webpack": "4.25.1",
     "webpack-bundle-analyzer": "3.0.3",
     "webpack-cli": "3.1.2",
+    "webpack-dashboard": "2.0.0",
     "webpack-dev-server": "3.1.10"
   },
   "dependencies": {
