@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   mode: 'development',
@@ -16,10 +17,21 @@ module.exports = {
   module: {
     rules: [
       { test: /\.tsx?/, loader: 'ts-loader' },
-      { test: /\.css/, loaders: ['style-loader', 'css-loader'] },
+      { test: /\.css/, loaders: [MiniCssExtractPlugin.loader, 'css-loader'] },
     ],
   },
-  plugins: [new HtmlWebpackPlugin({ title: 'typescript-react-redux' })],
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'typescript-react-redux',
+      meta: {
+        viewport: 'width=device-width, initial-scale=1.0',
+      },
+    }),
+    new MiniCssExtractPlugin({
+      filename: '[name].[hash].css',
+      chunkFilename: '[id].[hash].css',
+    }),
+  ],
   devServer: {
     disableHostCheck: true,
   },
