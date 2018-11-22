@@ -8,7 +8,7 @@
   "scripts": {
     "start": "webpack-dashboard -m -- webpack-dev-server --host 0.0.0.0",
     "build": "rm -rf dist && webpack --config webpack-prod.config.js",
-    "lint": "eslint --ext ts,tsx \"src/**/*.ts?(x)\"",
+    "lint": "eslint --ext ts,tsx src",
     "test": "jest",
     "test:cover": "jest --coverage --coverageReporters html",
     "test:coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
