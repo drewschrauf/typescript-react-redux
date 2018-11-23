@@ -1,21 +1,18 @@
 import { Dispatch } from '../index';
 import { createAction } from '../util';
-import {
-  BEGIN_DELAYED_INCREMENT,
-  COMPLETE_DELAYED_INCREMENT,
-  DECREMENT,
-  INCREMENT,
-} from './constants';
+import ActionType from './ActionType';
 
 export interface IIncrementAmount {
   readonly amount: number;
 }
 
-export const incrementBy = createAction<IIncrementAmount>(INCREMENT);
-export const decrementBy = createAction<IIncrementAmount>(DECREMENT);
+export const incrementBy = createAction<IIncrementAmount>(ActionType.INCREMENT);
+export const decrementBy = createAction<IIncrementAmount>(ActionType.DECREMENT);
 
-export const beginDelayedIncrement = createAction<{}>(BEGIN_DELAYED_INCREMENT);
-export const completeDelayedIncrement = createAction<IIncrementAmount>(COMPLETE_DELAYED_INCREMENT);
+export const beginDelayedIncrement = createAction<{}>(ActionType.BEGIN_DELAYED_INCREMENT);
+export const completeDelayedIncrement = createAction<IIncrementAmount>(
+  ActionType.COMPLETE_DELAYED_INCREMENT,
+);
 export const delayedIncrement = (payload: IIncrementAmount) => (dispatch: Dispatch) => {
   dispatch(beginDelayedIncrement({}));
   setTimeout(() => {
