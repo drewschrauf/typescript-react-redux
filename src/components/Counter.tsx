@@ -36,8 +36,10 @@ const Button = styled.button`
   font-family: inherit;
 
   width: 100%;
+  margin-bottom: 5px;
   @media screen and (min-width: 450px) {
     width: initial;
+    margin-bottom: 0;
   }
 `;
 
