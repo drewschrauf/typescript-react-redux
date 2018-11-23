@@ -1,4 +1,5 @@
 import { delayedIncrement } from '../counter';
+import ActionType from '../ActionType';
 
 jest.useFakeTimers();
 
@@ -8,12 +9,15 @@ describe('counter', () => {
       const dispatch = jest.fn();
       delayedIncrement({ amount: 1 })(dispatch);
 
-      expect(dispatch).toHaveBeenCalledWith({ type: 'BEGIN_DELAYED_INCREMENT', payload: {} });
+      expect(dispatch).toHaveBeenCalledWith({
+        type: ActionType.BEGIN_DELAYED_INCREMENT,
+        payload: {},
+      });
 
       jest.runAllTimers();
 
       expect(dispatch).toHaveBeenCalledWith({
-        type: 'COMPLETE_DELAYED_INCREMENT',
+        type: ActionType.COMPLETE_DELAYED_INCREMENT,
         payload: { amount: 1 },
       });
     });
