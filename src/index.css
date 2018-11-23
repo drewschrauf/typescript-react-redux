@@ -1,9 +1,21 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
 body {
+  width: 100%;
+  background-color: papayawhip;
+  font-family: monospace;
+  margin: 0px;
+  padding: 10px;
+}
+
+.root {
   width: 100%;
   display: flex;
   justify-content: center;
-  background-color: papayawhip;
-  font-family: monospace;
 }
 
 .spinner {

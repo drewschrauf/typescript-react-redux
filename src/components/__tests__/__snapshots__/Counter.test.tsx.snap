@@ -1,3 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Counter should match the snapshot: default render 1`] = `"<div class=\\"sc-bdVaJa cJwtzi\\"><h1>Count 1</h1><button class=\\"increment sc-bwzfXH kfeCxp\\">Increment by 1</button><button class=\\"decrement sc-bwzfXH kfeCxp\\">Decrement by 1</button><button class=\\"delayed-increment sc-bwzfXH kfeCxp\\">Delayed increment by 1</button></div>"`;
+exports[`Counter should match the snapshot: default render 1`] = `"<div class=\\"sc-bdVaJa cJwtzi\\"><h1>Count 1</h1><button class=\\"increment sc-bwzfXH HhmbQ\\">Increment by 1</button><button class=\\"decrement sc-bwzfXH HhmbQ\\">Decrement by 1</button><button class=\\"delayed-increment sc-bwzfXH HhmbQ\\">Delayed increment by 1</button></div>"`;
