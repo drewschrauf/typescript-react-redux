@@ -31,6 +31,12 @@ describe('Counter', () => {
     mockStore = configureStore<IState>([thunk]);
   });
 
+  it('should match the snapshot', () => {
+    const store = mockStore(defaultState);
+    const root = enzyme.shallow(<Counter {...defaultProps} />, { context: { store } }).dive();
+    expect(root.html()).toMatchSnapshot('default render');
+  });
+
   it('should render the current count', () => {
     const store = mockStore(defaultState);
     const root = enzyme.shallow(<Counter {...defaultProps} />, { context: { store } }).dive();
