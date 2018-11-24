@@ -16,6 +16,7 @@ const PageWrapper = styled.div`
 
 const CounterPage = lazy(() => import('./pages/Counter'));
 const AboutPage = lazy(() => import('./pages/About'));
+const MissingPage = lazy(() => import('./pages/Missing'));
 
 const App = () => (
   <Router>
@@ -27,6 +28,7 @@ const App = () => (
             <Route path="/" exact component={CounterPage} />
             <Route path="/by/:by/" component={CounterPage} />
             <Route path="/about/" component={AboutPage} />
+            <Route component={MissingPage} />
           </Switch>
         </Suspense>
       </PageWrapper>
