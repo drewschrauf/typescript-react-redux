@@ -1,6 +1,6 @@
 import React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
-import { isNaN } from 'lodash';
+import isNaN from 'lodash/isNaN';
 
 import Counter from '../components/Counter';
 
