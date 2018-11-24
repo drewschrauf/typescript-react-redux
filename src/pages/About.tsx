@@ -4,11 +4,24 @@ import styled from 'styled-components';
 
 const readme = require('../../README.md');
 
-const Wrapper = styled.div`
+const ReadmeContent = styled.div`
   a {
     display: none;
   }
 `;
 
-const AboutPage = () => <Wrapper dangerouslySetInnerHTML={{ __html: readme }} />;
+const AboutPage = () => (
+  <div>
+    <ReadmeContent dangerouslySetInnerHTML={{ __html: readme }} />
+    <p>
+      <a
+        href="https://github.com/drewschrauf/typescript-react-redux"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        View on GitHub
+      </a>
+    </p>
+  </div>
+);
 export default AboutPage;
