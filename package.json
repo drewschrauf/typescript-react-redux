@@ -8,7 +8,7 @@
   "scripts": {
     "start": "webpack-dev-server --host 0.0.0.0",
     "start:dashboard": "webpack-dashboard -m -- webpack-dev-server --host 0.0.0.0 --quiet",
-    "build": "rm -rf dist && webpack --config webpack-prod.config.js",
+    "build": "rm -rf dist && webpack --config webpack-prod.config.js && cp _redirects dist",
     "lint": "eslint --ext ts,tsx src",
     "test": "jest",
     "test:cover": "jest --coverage --coverageReporters html",
