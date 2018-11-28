@@ -8,10 +8,16 @@ import set from 'lodash/fp/set';
 import Counter from '../Counter';
 import { IState } from '../../store';
 
+enum TestActionTypes {
+  incrementBy,
+  decrementBy,
+  delayedIncrement,
+}
+
 jest.mock('../../store/actions/counter', () => ({
-  incrementBy: (...args: any[]) => ({ type: 'incrementBy', args }),
-  decrementBy: (...args: any[]) => ({ type: 'decrementBy', args }),
-  delayedIncrement: (...args: any[]) => ({ type: 'delayedIncrement', args }),
+  incrementBy: (...args: any[]) => ({ type: TestActionTypes.incrementBy, args }),
+  decrementBy: (...args: any[]) => ({ type: TestActionTypes.decrementBy, args }),
+  delayedIncrement: (...args: any[]) => ({ type: TestActionTypes.delayedIncrement, args }),
 }));
 
 enzyme.configure({ adapter: new Adapter() });
@@ -37,7 +43,9 @@ describe('Counter', () => {
     const handler = root.find('.increment').prop('onClick');
 
     (handler as any)();
-    expect(store.getActions()).toEqual([{ type: 'incrementBy', args: [{ amount: 1 }] }]);
+    expect(store.getActions()).toEqual([
+      { type: TestActionTypes.incrementBy, args: [{ amount: 1 }] },
+    ]);
   });
 
   it('should decrement when decrement button clicked', () => {
@@ -46,7 +54,9 @@ describe('Counter', () => {
     const handler = root.find('.decrement').prop('onClick');
 
     (handler as any)();
-    expect(store.getActions()).toEqual([{ type: 'decrementBy', args: [{ amount: 1 }] }]);
+    expect(store.getActions()).toEqual([
+      { type: TestActionTypes.decrementBy, args: [{ amount: 1 }] },
+    ]);
   });
 
   it('should delay increment when delay increment button clicked', () => {
@@ -55,7 +65,9 @@ describe('Counter', () => {
     const handler = root.find('.delayed-increment').prop('onClick');
 
     (handler as any)();
-    expect(store.getActions()).toEqual([{ type: 'delayedIncrement', args: [{ amount: 1 }] }]);
+    expect(store.getActions()).toEqual([
+      { type: TestActionTypes.delayedIncrement, args: [{ amount: 1 }] },
+    ]);
   });
 
   it('should enable delayed increment by default', () => {
