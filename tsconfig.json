@@ -13,5 +13,6 @@
     "jsx": "react",
     "outDir": "build",
     "lib": ["dom", "es2015"]
-  }
+  },
+  "exclude": ["cypress"]
 }
