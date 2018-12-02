@@ -1,0 +1,7 @@
+{
+  "extends": "../tsconfig",
+  "compilerOptions": {
+    "baseUrl": "../node_modules" // needed if your tests import npm modules
+  },
+  "include": ["../node_modules/cypress/types", "**/*.ts"]
+}
