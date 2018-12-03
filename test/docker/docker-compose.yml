@@ -9,8 +9,8 @@ services:
       - selenium
   web:
     build:
-      context: ../../dist
-      dockerfile: ../test/docker/web.Dockerfile
+      context: ../..
+      dockerfile: test/docker/web.Dockerfile
     expose:
       - 80
   selenium:
