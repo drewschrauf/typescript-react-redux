@@ -18,7 +18,7 @@
     "stats": "yarn build && yarn stats:analyze && yarn stats:start",
     "stats:analyze": "webpack --config webpack-prod.config.js --profile --json > dist/stats.json",
     "stats:start": "webpack-bundle-analyzer dist/stats.json --host 0.0.0.0",
-    "ci": "yarn lint && yarn test:coveralls && yarn build"
+    "ci": "yarn lint && yarn test:coveralls && yarn build && cd test/docker && ./test.sh"
   },
   "devDependencies": {
     "@types/chai": "^4.1.7",
