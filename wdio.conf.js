@@ -1,10 +1,9 @@
 exports.config = {
   specs: ['./test/specs/**/*.ts'],
   exclude: [],
-  maxInstances: 10,
+  maxInstances: 1,
   capabilities: [
     {
-      maxInstances: 1,
       browserName: 'chrome',
     },
   ],
