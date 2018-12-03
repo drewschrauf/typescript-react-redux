@@ -1,5 +1,5 @@
-import assert from 'assert';
-
+/* eslint-disable no-unused-expressions */
+import { expect } from 'chai';
 import CounterPage from '../pages/CounterPage';
 
 describe('counter', () => {
@@ -8,26 +8,26 @@ describe('counter', () => {
   });
 
   it('should default to count 1', () => {
-    assert.equal(CounterPage.count, 0);
+    expect(CounterPage.count).to.equal(0);
   });
 
   it('should increment count when increment is clicked', () => {
     CounterPage.incrementCount();
-    assert.equal(CounterPage.count, 1);
+    expect(CounterPage.count).to.equal(1);
   });
 
   it('should decrement count when decrement is clicked', () => {
     CounterPage.decrementCount();
-    assert.equal(CounterPage.count, -1);
+    expect(CounterPage.count).to.equal(-1);
   });
 
   it('should delay increment when delayed increment is clicked', () => {
     CounterPage.delayIncrementCount();
 
-    assert.equal(CounterPage.count, 0);
-    assert.ok(CounterPage.delayedIncrementPending);
+    expect(CounterPage.count).to.equal(0);
+    expect(CounterPage.delayedIncrementPending).to.be.true;
 
     CounterPage.waitUntilDelayedIncrementComplete();
-    assert.equal(CounterPage.count, 1);
+    expect(CounterPage.count).to.equal(1);
   });
 });

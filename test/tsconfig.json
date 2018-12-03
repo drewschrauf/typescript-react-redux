@@ -2,7 +2,7 @@
   "extends": "../tsconfig",
   "compilerOptions": {
     "module": "commonjs",
-    "types": ["webdriverio", "mocha"]
+    "types": ["webdriverio", "mocha", "chai"]
   },
   "include": ["**/*.ts"]
 }
