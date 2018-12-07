@@ -117,10 +117,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-redux@6.0.10":
-  version "6.0.10"
-  resolved "https://registry.yarnpkg.com/@types/react-redux/-/react-redux-6.0.10.tgz#80a3003a7d50112c65692a8b41752f623217a17c"
-  integrity sha512-+0Qfks+ODOtOpRB99E7W/w+IO2Nz4II19+sYErtlix/b3ok85SCgDcQzXUeH0z0VDvkKdKPPB2DCSls4jpQ/OA==
+"@types/react-redux@6.0.11":
+  version "6.0.11"
+  resolved "https://registry.yarnpkg.com/@types/react-redux/-/react-redux-6.0.11.tgz#d872254bbcba42465195a5475f40b22502b0407d"
+  integrity sha512-I3POoeGGwNqZjbK7TfnPJS2C51TFvT0atQPz4M+xpVTrLMjsX37AAfcTF3XUOTnmxHsryEjwJN9r/ScGwSXdtg==
   dependencies:
     "@types/react" "*"
     redux "^4.0.0"
