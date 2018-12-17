@@ -6,7 +6,6 @@
     "prettier/prettier": "error",
     "no-undef": "off",
     "no-unused-vars": "off",
-    "no-underscore-dangle": "off",
     "import/no-unresolved": "off",
     "import/extensions": "off",
     "react/jsx-filename-extension": "off",

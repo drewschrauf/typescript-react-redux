@@ -13,6 +13,7 @@ export interface IState {
 
 export type Dispatch = ThunkDispatch<IState, any, IAction<any>>;
 
+// eslint-disable-next-line no-underscore-dangle
 const composeEnhancers = (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)));
 
