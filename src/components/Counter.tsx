@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { IState, Dispatch } from '../store';
 import { decrementBy, delayedIncrement, incrementBy } from '../store/actions/counter';
 
-const Counter = styled.div`
+const Wrapper = styled.div`
   padding: 10px;
   border: 1px dashed black;
 `;
@@ -30,14 +30,14 @@ interface IConnectedDispatch {
   delayedIncrement: () => void;
 }
 
-const AppComponent = ({
+const CounterComponent = ({
   count,
   increment,
   decrement,
   pending,
   delayedIncrement: incrementWithDelay,
 }: IAppProps & IConnectedState & IConnectedDispatch) => (
-  <Counter>
+  <Wrapper>
     <h1>Count {count}</h1>
     <Button className="increment" onClick={increment}>
       Increment
@@ -48,10 +48,10 @@ const AppComponent = ({
     <Button className="delayed-increment" disabled={pending} onClick={incrementWithDelay}>
       Delayed increment
     </Button>
-  </Counter>
+  </Wrapper>
 );
 
-const App = connect(
+const Counter = connect(
   (state: IState, _ownProps: IAppProps): IConnectedState => ({
     count: state.counter.count,
     pending: state.counter.pending,
@@ -61,5 +61,5 @@ const App = connect(
     delayedIncrement: () => dispatch(delayedIncrement({ amount: ownProps.incrementAmount })),
     increment: () => dispatch(incrementBy({ amount: ownProps.incrementAmount })),
   }),
-)(AppComponent) as React.ComponentClass<IAppProps>;
-export default App;
+)(CounterComponent) as React.ComponentClass<IAppProps>;
+export default Counter;
