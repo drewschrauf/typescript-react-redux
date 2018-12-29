@@ -1,5 +1,5 @@
-import { configure, mount } from 'enzyme';
 import React from 'react';
+import { configure, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import { Provider } from 'react-redux';
 import configureStore, { MockStoreCreator } from 'redux-mock-store';
@@ -8,6 +8,8 @@ import set from 'lodash/fp/set';
 
 import Counter from '../Counter';
 import { IState } from '../../store';
+
+configure({ adapter: new Adapter() });
 
 enum TestActionTypes {
   incrementBy,
@@ -20,8 +22,6 @@ jest.mock('../../store/actions/counter', () => ({
   decrementBy: (...args: any[]) => ({ type: TestActionTypes.decrementBy, args }),
   delayedIncrement: (...args: any[]) => ({ type: TestActionTypes.delayedIncrement, args }),
 }));
-
-configure({ adapter: new Adapter() });
 
 const defaultState: IState = { counter: { count: 1, pending: false } };
 const defaultProps = { incrementAmount: 1 };

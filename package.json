@@ -6,16 +6,17 @@
   "author": "Drew Schrauf",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dashboard -m -- webpack-dev-server --host 0.0.0.0 --quiet",
+    "start": "webpack-dev-server --host 0.0.0.0",
+    "start:dashboard": "webpack-dashboard -m -- webpack-dev-server --host 0.0.0.0 --quiet",
     "build": "rm -rf dist && webpack --config webpack-prod.config.js",
     "lint": "eslint --ext ts,tsx src",
     "test": "jest",
     "test:cover": "jest --coverage --coverageReporters html",
     "test:coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
-    "stats": "npm run build && npm run stats:analyze && npm run stats:start",
+    "stats": "yarn build && yarn stats:analyze && yarn stats:start",
     "stats:analyze": "webpack --config webpack-prod.config.js --profile --json > dist/stats.json",
     "stats:start": "webpack-bundle-analyzer dist/stats.json --host 0.0.0.0",
-    "ci": "npm run lint && npm run test:coveralls && npm run build"
+    "ci": "yarn lint && yarn test:coveralls && yarn build"
   },
   "devDependencies": {
     "@types/enzyme": "3.1.15",

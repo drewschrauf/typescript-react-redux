@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Spinner should render spinner: default render 1`] = `"<div class=\\"spinner\\"></div>"`;

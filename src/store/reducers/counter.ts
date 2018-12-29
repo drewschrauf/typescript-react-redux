@@ -1,5 +1,4 @@
 import { IAction, isType } from '../util';
-
 import {
   beginDelayedIncrement,
   completeDelayedIncrement,
@@ -8,7 +7,9 @@ import {
 } from '../actions/counter';
 
 export interface ICounterState {
+  /** The current count */
   readonly count: number;
+  /** Is a delayed increment currently pending? */
   readonly pending: boolean;
 }
 

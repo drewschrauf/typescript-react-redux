@@ -5,6 +5,27 @@ import styled from 'styled-components';
 import { IState, Dispatch } from '../store';
 import { decrementBy, delayedIncrement, incrementBy } from '../store/actions/counter';
 
+interface IAppProps {
+  /** The amount to increment the counter by on each click */
+  readonly incrementAmount: number;
+}
+
+interface IConnectedState {
+  /** The current count */
+  readonly count: number;
+  /** Is a delayed increment currently being performed? */
+  readonly pending: boolean;
+}
+
+interface IConnectedDispatch {
+  /** Action to perform when clicking increment button */
+  readonly increment: () => void;
+  /** Action to perform when clicking decrement button */
+  readonly decrement: () => void;
+  /** Action to perform when clicking delayed increment button */
+  readonly delayedIncrement: () => void;
+}
+
 const Wrapper = styled.div`
   padding: 10px;
   border: 1px dashed black;
@@ -15,22 +36,8 @@ const Button = styled.button`
   font-family: inherit;
 `;
 
-interface IAppProps {
-  incrementAmount: number;
-}
-
-interface IConnectedState {
-  count: number;
-  pending: boolean;
-}
-
-interface IConnectedDispatch {
-  increment: () => void;
-  decrement: () => void;
-  delayedIncrement: () => void;
-}
-
 const CounterComponent = ({
+  incrementAmount,
   count,
   increment,
   decrement,
@@ -40,17 +47,21 @@ const CounterComponent = ({
   <Wrapper>
     <h1>Count {count}</h1>
     <Button className="increment" onClick={increment}>
-      Increment
+      Increment by {incrementAmount}
     </Button>
     <Button className="decrement" onClick={decrement}>
-      Decrement
+      Decrement by {incrementAmount}
     </Button>
     <Button className="delayed-increment" disabled={pending} onClick={incrementWithDelay}>
-      Delayed increment
+      Delayed increment by {incrementAmount}
     </Button>
   </Wrapper>
 );
 
+/**
+ * React component that renders the main UI. It displays the current count and provides buttons
+ * for modifying it.
+ */
 const Counter = connect(
   (state: IState, _ownProps: IAppProps): IConnectedState => ({
     count: state.counter.count,
