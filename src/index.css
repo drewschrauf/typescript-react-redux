@@ -1,15 +1,33 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
 body {
+  width: 100%;
+  background-color: papayawhip;
+  font-family: monospace;
+  margin: 0px;
+  padding: 10px;
+}
+
+a,
+a:visited {
+  color: #0000ee;
+}
+
+.root {
   width: 100%;
   display: flex;
   justify-content: center;
-  background-color: papayawhip;
-  font-family: monospace;
 }
 
 .spinner {
-  display: inline-block;
+  display: block;
   width: 64px;
   height: 64px;
+  margin: 0 auto;
 }
 .spinner:after {
   content: ' ';

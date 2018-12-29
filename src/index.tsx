@@ -5,6 +5,7 @@ import './index.css';
 import Spinner from './components/Spinner';
 
 const root = document.createElement('div');
+root.classList.add('root');
 document.body.appendChild(root);
 
 const App = lazy(() => import('./App'));

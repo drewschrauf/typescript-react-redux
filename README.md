@@ -5,6 +5,7 @@ This is a basic example project using the following technologies to build a web 
 - Typescript
 - React
 - Redux
+- React Router
 - Webpack
 
 And for testing:

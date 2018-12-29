@@ -34,6 +34,13 @@ const Wrapper = styled.div`
 const Button = styled.button`
   margin-right: 10px;
   font-family: inherit;
+
+  width: 100%;
+  margin-bottom: 5px;
+  @media screen and (min-width: 450px) {
+    width: initial;
+    margin-bottom: 0;
+  }
 `;
 
 const CounterComponent = ({

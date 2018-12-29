@@ -14,6 +14,7 @@ module.exports = {
     path: path.join(__dirname, 'dist'),
     filename: '[name].[hash].js',
     chunkFilename: '[name].[hash].js',
+    publicPath: '/',
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],
@@ -28,6 +29,7 @@ module.exports = {
         },
       },
       { test: /\.css/, loaders: [MiniCssExtractPlugin.loader, 'css-loader'] },
+      { test: /\.md/, loaders: ['html-loader', 'markdown-loader'] },
     ],
   },
   plugins: [
@@ -45,5 +47,6 @@ module.exports = {
   ],
   devServer: {
     disableHostCheck: true,
+    historyApiFallback: true,
   },
 };
