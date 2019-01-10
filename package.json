@@ -54,7 +54,7 @@
     "typescript": "next",
     "typescript-eslint-parser": "21.0.2",
     "typescript-plugin-styled-components": "1.0.0",
-    "webpack": "4.28.3",
+    "webpack": "4.28.4",
     "webpack-bundle-analyzer": "3.0.3",
     "webpack-cli": "3.2.1",
     "webpack-dashboard": "2.0.0",
