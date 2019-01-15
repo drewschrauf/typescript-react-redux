@@ -186,6 +186,23 @@
     "@types/react" "*"
     csstype "^2.2.0"
 
+"@typescript-eslint/parser@^0.2.1":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-0.2.1.tgz#1fef98c0d5058b9e73ec2ee55d2eae7a8b4f0d13"
+  integrity sha512-RTrqxoSNU5QYAxa4K7FjdO5mbdSRizHhUrWxkPg2anKzM9bRYZEsA5OhwNFNhTX00nvwA+wCuXD2Lr6qq+UkYA==
+  dependencies:
+    "@typescript-eslint/typescript-estree" "0.2.1"
+    eslint-scope "^4.0.0"
+    eslint-visitor-keys "^1.0.0"
+
+"@typescript-eslint/typescript-estree@0.2.1":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/typescript-estree/-/typescript-estree-0.2.1.tgz#980e81467adedbdba8873c9d8e567b1008480c6c"
+  integrity sha512-+9O1L+ApcOxmGSALa7jyDVVRx8vlbIDTMmRCND7sC4XqFUvpfVspSh+0XJrQuljLVBwrPCjWN4cKDNrGqT6xOw==
+  dependencies:
+    lodash.unescape "4.0.1"
+    semver "5.5.0"
+
 "@webassemblyjs/ast@1.7.11":
   version "1.7.11"
   resolved "https://registry.yarnpkg.com/@webassemblyjs/ast/-/ast-1.7.11.tgz#b988582cafbb2b095e8b556526f30c90d057cace"
@@ -7489,23 +7506,6 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
-
-typescript-eslint-parser@21.0.2:
-  version "21.0.2"
-  resolved "https://registry.yarnpkg.com/typescript-eslint-parser/-/typescript-eslint-parser-21.0.2.tgz#270af10e4724528677fbcf34ea495284bec3a894"
-  integrity sha512-u+pj4RVJBr4eTzj0n5npoXD/oRthvfUCjSKndhNI714MG0mQq2DJw5WP7qmonRNIFgmZuvdDOH3BHm9iOjIAfg==
-  dependencies:
-    eslint-scope "^4.0.0"
-    eslint-visitor-keys "^1.0.0"
-    typescript-estree "5.3.0"
-
-typescript-estree@5.3.0:
-  version "5.3.0"
-  resolved "https://registry.yarnpkg.com/typescript-estree/-/typescript-estree-5.3.0.tgz#fb6c977b5e21073eb16cbdc0338a7f752da99ff5"
-  integrity sha512-Vu0KmYdSCkpae+J48wsFC1ti19Hq3Wi/lODUaE+uesc3gzqhWbZ5itWbsjylLVbjNW4K41RqDzSfnaYNbmEiMQ==
-  dependencies:
-    lodash.unescape "4.0.1"
-    semver "5.5.0"
 
 typescript-plugin-styled-components@1.0.0:
   version "1.0.0"
