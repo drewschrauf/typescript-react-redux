@@ -52,7 +52,7 @@
     "ts-jest": "23.10.5",
     "ts-loader": "5.3.3",
     "typescript": "next",
-    "typescript-eslint-parser": "21.0.2",
+    "typescript-eslint-parser": "22.0.0",
     "typescript-plugin-styled-components": "1.0.0",
     "webpack": "4.28.4",
     "webpack-bundle-analyzer": "3.0.3",
