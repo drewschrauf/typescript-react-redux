@@ -29,7 +29,7 @@
     "@types/react-router-dom": "4.3.1",
     "@types/redux-mock-store": "1.0.0",
     "@types/styled-components": "4.1.6",
-    "@typescript-eslint/parser": "0.2.1",
+    "@typescript-eslint/parser": "1.0.0",
     "coveralls": "3.0.2",
     "css-loader": "2.1.0",
     "enzyme": "3.8.0",
