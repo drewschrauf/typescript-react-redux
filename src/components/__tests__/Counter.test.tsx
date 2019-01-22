@@ -8,8 +8,13 @@ import set from 'lodash/fp/set';
 
 import Counter from '../Counter';
 import { State } from '../../store';
+import { selectorForTestHook } from '../../testHook';
 
 configure({ adapter: new Adapter() });
+
+const INCREMENT_BUTTON_SELECTOR = selectorForTestHook('increment', 'button');
+const DECREMENT_BUTTON_SELECTOR = selectorForTestHook('decrement', 'button');
+const DELAYED_INCREMENT_BUTTON_SELECTOR = selectorForTestHook('delayed-increment', 'button');
 
 enum TestActionTypes {
   incrementBy,
@@ -59,7 +64,7 @@ describe('Counter', () => {
         <Counter {...defaultProps} />
       </Provider>,
     );
-    const handler = root.find('button.increment').prop('onClick');
+    const handler = root.find(INCREMENT_BUTTON_SELECTOR).prop('onClick');
 
     (handler as any)();
     expect(store.getActions()).toEqual([
@@ -74,7 +79,7 @@ describe('Counter', () => {
         <Counter {...defaultProps} />
       </Provider>,
     );
-    const handler = root.find('button.decrement').prop('onClick');
+    const handler = root.find(DECREMENT_BUTTON_SELECTOR).prop('onClick');
 
     (handler as any)();
     expect(store.getActions()).toEqual([
@@ -89,7 +94,7 @@ describe('Counter', () => {
         <Counter {...defaultProps} />
       </Provider>,
     );
-    const handler = root.find('button.delayed-increment').prop('onClick');
+    const handler = root.find(DELAYED_INCREMENT_BUTTON_SELECTOR).prop('onClick');
 
     (handler as any)();
     expect(store.getActions()).toEqual([
@@ -104,7 +109,7 @@ describe('Counter', () => {
         <Counter {...defaultProps} />
       </Provider>,
     );
-    expect(root.find('button.delayed-increment').prop('disabled')).toBe(false);
+    expect(root.find(DELAYED_INCREMENT_BUTTON_SELECTOR).prop('disabled')).toBe(false);
   });
 
   it('should disable delayed increment if pending', () => {
@@ -114,6 +119,6 @@ describe('Counter', () => {
         <Counter {...defaultProps} />
       </Provider>,
     );
-    expect(root.find('button.delayed-increment').prop('disabled')).toBe(true);
+    expect(root.find(DELAYED_INCREMENT_BUTTON_SELECTOR).prop('disabled')).toBe(true);
   });
 });
