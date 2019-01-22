@@ -1,23 +1,23 @@
-export interface IAction<T> {
+export interface Action<T> {
   /** Action type */
   readonly type: string;
   /** Action payload */
   readonly payload: T;
 }
 
-interface IActionCreator<T> {
+interface ActionCreator<T> {
   /** Type of created action */
   readonly type: string;
   /** Payload of created action */
-  (payload: T): IAction<T>;
+  (payload: T): Action<T>;
 }
 
-export const createAction = <T extends {}>(type: string): IActionCreator<T> =>
+export const createAction = <T extends {}>(type: string): ActionCreator<T> =>
   Object.assign((payload: T): any => ({ type, payload }), {
     type,
   });
 
 export const isType = <T extends {}>(
-  action: IAction<any>,
-  actionCreator: IActionCreator<T>,
-): action is IAction<T> => action.type === actionCreator.type;
+  action: Action<any>,
+  actionCreator: ActionCreator<T>,
+): action is Action<T> => action.type === actionCreator.type;

@@ -7,7 +7,7 @@ import thunk from 'redux-thunk';
 import set from 'lodash/fp/set';
 
 import Counter from '../Counter';
-import { IState } from '../../store';
+import { State } from '../../store';
 
 configure({ adapter: new Adapter() });
 
@@ -23,13 +23,13 @@ jest.mock('../../store/actions/counter', () => ({
   delayedIncrement: (...args: any[]) => ({ type: TestActionTypes.delayedIncrement, args }),
 }));
 
-const defaultState: IState = { counter: { count: 1, pending: false } };
+const defaultState: State = { counter: { count: 1, pending: false } };
 const defaultProps = { incrementAmount: 1 };
 
 describe('Counter', () => {
-  let mockStore: MockStoreCreator<IState>;
+  let mockStore: MockStoreCreator<State>;
   beforeEach(() => {
-    mockStore = configureStore<IState>([thunk]);
+    mockStore = configureStore<State>([thunk]);
   });
 
   it('should match the snapshot', () => {

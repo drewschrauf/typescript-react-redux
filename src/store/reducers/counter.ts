@@ -1,4 +1,4 @@
-import { IAction, isType } from '../util';
+import { Action, isType } from '../util';
 import {
   beginDelayedIncrement,
   completeDelayedIncrement,
@@ -6,19 +6,19 @@ import {
   incrementBy,
 } from '../actions/counter';
 
-export interface ICounterState {
+export interface CounterState {
   /** The current count */
   readonly count: number;
   /** Is a delayed increment currently pending? */
   readonly pending: boolean;
 }
 
-const initialState: ICounterState = {
+const initialState: CounterState = {
   count: 0,
   pending: false,
 };
 
-export default (state: ICounterState = initialState, action: IAction<any>): ICounterState => {
+export default (state: CounterState = initialState, action: Action<any>): CounterState => {
   if (isType(action, incrementBy)) {
     return {
       ...state,
