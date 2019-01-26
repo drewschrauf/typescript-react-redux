@@ -12,6 +12,7 @@ import { selectorForTestHook } from '../../testHook';
 
 configure({ adapter: new Adapter() });
 
+const COUNT_SELECTOR = selectorForTestHook('count');
 const INCREMENT_BUTTON_SELECTOR = selectorForTestHook('increment', 'button');
 const DECREMENT_BUTTON_SELECTOR = selectorForTestHook('decrement', 'button');
 const DELAYED_INCREMENT_BUTTON_SELECTOR = selectorForTestHook('delayed-increment', 'button');
@@ -54,7 +55,7 @@ describe('Counter', () => {
         <Counter {...defaultProps} />
       </Provider>,
     );
-    expect(root.find('h1').text()).toBe('Count 1');
+    expect(root.find(COUNT_SELECTOR).text()).toBe('Count 1');
   });
 
   it('should increment when increment button clicked', () => {

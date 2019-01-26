@@ -53,7 +53,7 @@ const CounterComponent = ({
   delayedIncrement: incrementWithDelay,
 }: CounterProps & ConnectedState & ConnectedDispatch) => (
   <Wrapper>
-    <h1>Count {count}</h1>
+    <h1 {...testHook('count')}>Count {count}</h1>
     <Button {...testHook('increment')} onClick={increment}>
       Increment by {incrementAmount}
     </Button>
