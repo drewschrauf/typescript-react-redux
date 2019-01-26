@@ -1,16 +1,13 @@
 import React from 'react';
-import { configure, mount } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { mount } from 'enzyme';
 import { Provider } from 'react-redux';
 import configureStore, { MockStoreCreator } from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import set from 'lodash/fp/set';
+import { selectorForTestHook } from '../../testHook';
 
 import Counter from '../Counter';
 import { State } from '../../store';
-import { selectorForTestHook } from '../../testHook';
-
-configure({ adapter: new Adapter() });
 
 const COUNT_SELECTOR = selectorForTestHook('count');
 const INCREMENT_BUTTON_SELECTOR = selectorForTestHook('increment', 'button');
