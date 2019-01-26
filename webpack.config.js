@@ -8,7 +8,7 @@ const styledComponentsTransformer = createStyledComponentsTransformer();
 
 module.exports = {
   mode: 'development',
-  devtool: 'inline-source-map',
+  devtool: 'eval-source-map',
   entry: './src/index.tsx',
   output: {
     path: path.join(__dirname, 'dist'),
