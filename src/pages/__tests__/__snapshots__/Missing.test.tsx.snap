@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Missing should match snapshot 1`] = `"<h1>There's nothing here</h1>"`;

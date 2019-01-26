@@ -1,10 +1,7 @@
 import React from 'react';
-import { configure, mount } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { mount } from 'enzyme';
 
 import Spinner from '../Spinner';
-
-configure({ adapter: new Adapter() });
 
 describe('Spinner', () => {
   it('should render spinner', () => {

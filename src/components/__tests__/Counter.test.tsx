@@ -1,15 +1,18 @@
 import React from 'react';
-import { configure, mount } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { mount } from 'enzyme';
 import { Provider } from 'react-redux';
 import configureStore, { MockStoreCreator } from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import set from 'lodash/fp/set';
+import { selectorForTestHook } from '../../testHook';
 
 import Counter from '../Counter';
 import { State } from '../../store';
 
-configure({ adapter: new Adapter() });
+const COUNT_SELECTOR = selectorForTestHook('count');
+const INCREMENT_BUTTON_SELECTOR = selectorForTestHook('increment', 'button');
+const DECREMENT_BUTTON_SELECTOR = selectorForTestHook('decrement', 'button');
+const DELAYED_INCREMENT_BUTTON_SELECTOR = selectorForTestHook('delayed-increment', 'button');
 
 enum TestActionTypes {
   incrementBy,
@@ -49,7 +52,7 @@ describe('Counter', () => {
         <Counter {...defaultProps} />
       </Provider>,
     );
-    expect(root.find('h1').text()).toBe('Count 1');
+    expect(root.find(COUNT_SELECTOR).text()).toBe('Count 1');
   });
 
   it('should increment when increment button clicked', () => {
@@ -59,7 +62,7 @@ describe('Counter', () => {
         <Counter {...defaultProps} />
       </Provider>,
     );
-    const handler = root.find('button.increment').prop('onClick');
+    const handler = root.find(INCREMENT_BUTTON_SELECTOR).prop('onClick');
 
     (handler as any)();
     expect(store.getActions()).toEqual([
@@ -74,7 +77,7 @@ describe('Counter', () => {
         <Counter {...defaultProps} />
       </Provider>,
     );
-    const handler = root.find('button.decrement').prop('onClick');
+    const handler = root.find(DECREMENT_BUTTON_SELECTOR).prop('onClick');
 
     (handler as any)();
     expect(store.getActions()).toEqual([
@@ -89,7 +92,7 @@ describe('Counter', () => {
         <Counter {...defaultProps} />
       </Provider>,
     );
-    const handler = root.find('button.delayed-increment').prop('onClick');
+    const handler = root.find(DELAYED_INCREMENT_BUTTON_SELECTOR).prop('onClick');
 
     (handler as any)();
     expect(store.getActions()).toEqual([
@@ -104,7 +107,7 @@ describe('Counter', () => {
         <Counter {...defaultProps} />
       </Provider>,
     );
-    expect(root.find('button.delayed-increment').prop('disabled')).toBe(false);
+    expect(root.find(DELAYED_INCREMENT_BUTTON_SELECTOR).prop('disabled')).toBe(false);
   });
 
   it('should disable delayed increment if pending', () => {
@@ -114,6 +117,6 @@ describe('Counter', () => {
         <Counter {...defaultProps} />
       </Provider>,
     );
-    expect(root.find('button.delayed-increment').prop('disabled')).toBe(true);
+    expect(root.find(DELAYED_INCREMENT_BUTTON_SELECTOR).prop('disabled')).toBe(true);
   });
 });
