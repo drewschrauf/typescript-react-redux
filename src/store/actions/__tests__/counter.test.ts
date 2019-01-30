@@ -5,9 +5,9 @@ jest.useFakeTimers();
 
 describe('counter', () => {
   describe('delayedIncrement', () => {
-    it('should emit a begin and complete event', () => {
+    it('should emit a begin and complete event', async () => {
       const dispatch = jest.fn();
-      delayedIncrement({ amount: 1 })(dispatch);
+      const promise = delayedIncrement({ amount: 1 })(dispatch);
 
       expect(dispatch).toHaveBeenCalledWith({
         type: ActionType.BEGIN_DELAYED_INCREMENT,
@@ -15,6 +15,7 @@ describe('counter', () => {
       });
 
       jest.runAllTimers();
+      await promise;
 
       expect(dispatch).toHaveBeenCalledWith({
         type: ActionType.COMPLETE_DELAYED_INCREMENT,

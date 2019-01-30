@@ -1,15 +1,12 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const createStyledComponentsTransformer = require('typescript-plugin-styled-components').default;
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const DashboardPlugin = require('webpack-dashboard/plugin');
-
-const styledComponentsTransformer = createStyledComponentsTransformer();
 
 module.exports = {
   mode: 'development',
   devtool: 'eval-source-map',
-  entry: './src/index.tsx',
+  entry: ['@babel/polyfill', './src/index.tsx'],
   output: {
     path: path.join(__dirname, 'dist'),
     filename: '[name].[hash].js',
@@ -23,10 +20,7 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?/,
-        loader: 'ts-loader',
-        options: {
-          getCustomTransformers: () => ({ before: [styledComponentsTransformer] }),
-        },
+        loader: 'babel-loader',
       },
       { test: /\.css/, loaders: [MiniCssExtractPlugin.loader, 'css-loader'] },
       { test: /\.md/, loaders: ['html-loader', 'markdown-loader'] },

@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "noEmit": true,
     "module": "esnext",
     "target": "es5",
     "moduleResolution": "node",
@@ -10,8 +11,6 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "strictNullChecks": true,
-    "importHelpers": true,
-    "sourceMap": true,
     "jsx": "react",
     "lib": ["dom", "es2015"]
   }
