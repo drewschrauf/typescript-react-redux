@@ -1,3 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`About should match snapshot 1`] = `"<div><div data-test=\\"content\\" class=\\"sc-bdVaJa fsIviB\\"><h1>Content</h1></div><p><a href=\\"https://github.com/drewschrauf/typescript-react-redux\\" target=\\"_blank\\" rel=\\"noopener noreferrer\\">View on GitHub</a></p></div>"`;
+exports[`About should match snapshot 1`] = `"<div><div data-test=\\"content\\" class=\\"About__ReadmeContent-f14qts-0 dQHHPv\\"><h1>Content</h1></div><p><a href=\\"https://github.com/drewschrauf/typescript-react-redux\\" target=\\"_blank\\" rel=\\"noopener noreferrer\\">View on GitHub</a></p></div>"`;
