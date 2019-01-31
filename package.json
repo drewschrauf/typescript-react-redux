@@ -6,9 +6,10 @@
   "author": "Drew Schrauf",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --host 0.0.0.0",
-    "build": "rm -rf dist && webpack --config webpack-prod.config.js && cp _redirects dist",
-    "lint": "eslint --ext ts,tsx src && tsc",
+    "start": "NODE_ENV=development webpack-dev-server --host 0.0.0.0",
+    "build": "rm -rf dist && NODE_ENV=production webpack --config webpack-prod.config.js && cp _redirects dist",
+    "lint": "eslint --ext ts,tsx src && yarn check-types",
+    "check-types": "tsc",
     "test": "jest",
     "test:cover": "jest --coverage --coverageReporters html",
     "test:coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
