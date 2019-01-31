@@ -14,17 +14,19 @@ const INCREMENT_BUTTON_SELECTOR = selectorForTestHook('increment', 'button');
 const DECREMENT_BUTTON_SELECTOR = selectorForTestHook('decrement', 'button');
 const DELAYED_INCREMENT_BUTTON_SELECTOR = selectorForTestHook('delayed-increment', 'button');
 
-enum TestActionTypes {
+enum mockTestActionTypes {
   incrementBy,
   decrementBy,
   delayedIncrement,
 }
 
-jest.mock('../../store/actions/counter', () => ({
-  incrementBy: (...args: any[]) => ({ type: TestActionTypes.incrementBy, args }),
-  decrementBy: (...args: any[]) => ({ type: TestActionTypes.decrementBy, args }),
-  delayedIncrement: (...args: any[]) => ({ type: TestActionTypes.delayedIncrement, args }),
-}));
+jest.mock('../../store/actions/counter', () => {
+  return {
+    incrementBy: (...args: any[]) => ({ type: mockTestActionTypes.incrementBy, args }),
+    decrementBy: (...args: any[]) => ({ type: mockTestActionTypes.decrementBy, args }),
+    delayedIncrement: (...args: any[]) => ({ type: mockTestActionTypes.delayedIncrement, args }),
+  };
+});
 
 const defaultState: State = { counter: { count: 1, pending: false } };
 const defaultProps = { incrementAmount: 1 };
@@ -66,7 +68,7 @@ describe('Counter', () => {
 
     (handler as any)();
     expect(store.getActions()).toEqual([
-      { type: TestActionTypes.incrementBy, args: [{ amount: 1 }] },
+      { type: mockTestActionTypes.incrementBy, args: [{ amount: 1 }] },
     ]);
   });
 
@@ -81,7 +83,7 @@ describe('Counter', () => {
 
     (handler as any)();
     expect(store.getActions()).toEqual([
-      { type: TestActionTypes.decrementBy, args: [{ amount: 1 }] },
+      { type: mockTestActionTypes.decrementBy, args: [{ amount: 1 }] },
     ]);
   });
 
@@ -96,7 +98,7 @@ describe('Counter', () => {
 
     (handler as any)();
     expect(store.getActions()).toEqual([
-      { type: TestActionTypes.delayedIncrement, args: [{ amount: 1 }] },
+      { type: mockTestActionTypes.delayedIncrement, args: [{ amount: 1 }] },
     ]);
   });
 

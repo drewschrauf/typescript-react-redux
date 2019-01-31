@@ -1,6 +1,7 @@
 import { Dispatch } from '../index';
 import { createAction } from '../util';
 import ActionType from './ActionType';
+import { setTimeoutP } from './util';
 
 export interface CounterChange {
   /** Amount to modify counter by */
@@ -14,9 +15,8 @@ export const beginDelayedIncrement = createAction<{}>(ActionType.BEGIN_DELAYED_I
 export const completeDelayedIncrement = createAction<CounterChange>(
   ActionType.COMPLETE_DELAYED_INCREMENT,
 );
-export const delayedIncrement = (payload: CounterChange) => (dispatch: Dispatch) => {
+export const delayedIncrement = (payload: CounterChange) => async (dispatch: Dispatch) => {
   dispatch(beginDelayedIncrement({}));
-  setTimeout(() => {
-    dispatch(completeDelayedIncrement(payload));
-  }, 500);
+  await setTimeoutP(500);
+  dispatch(completeDelayedIncrement(payload));
 };

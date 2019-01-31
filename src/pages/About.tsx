@@ -1,7 +1,9 @@
 /* eslint-disable react/no-danger */
 import React from 'react';
 import styled from 'styled-components';
+
 import testHook from '../testHook';
+import errorBoundary from '../hoc/errorBoundary';
 
 const readme = require('../../README.md');
 
@@ -25,4 +27,4 @@ const AboutPage = () => (
     </p>
   </div>
 );
-export default AboutPage;
+export default errorBoundary(AboutPage);
