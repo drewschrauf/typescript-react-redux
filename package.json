@@ -64,7 +64,7 @@
     "jest": "24.0.0",
     "markdown-loader": "5.0.0",
     "mini-css-extract-plugin": "0.5.0",
-    "prettier": "1.16.3",
+    "prettier": "1.16.4",
     "react-addons-test-utils": "15.6.2",
     "redux-mock-store": "1.5.3",
     "typescript": "3.3.1",
