@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import testHook from '../testHook';
-import errorBoundary from '../hoc/errorBoundary';
+import withErrorBoundary from '../hoc/withErrorBoundary';
 
 const readme = require('../../README.md');
 
@@ -27,4 +27,4 @@ const AboutPage = () => (
     </p>
   </div>
 );
-export default errorBoundary(AboutPage);
+export default withErrorBoundary(AboutPage);
