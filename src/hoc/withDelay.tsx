@@ -15,9 +15,12 @@ const useDelay = (ms: number) => {
 
 const withDelay = ({ delay }: { delay: number }) => <T extends {}>(
   Comp: React.ComponentType<T>,
-) => (props: T) => {
-  const delayComplete = useDelay(delay);
-  return delayComplete ? <Comp {...props} /> : null;
+) => {
+  const Delay = (props: T) => {
+    const delayComplete = useDelay(delay);
+    return delayComplete ? <Comp {...props} /> : null;
+  };
+  return Delay;
 };
 
 export default withDelay;
