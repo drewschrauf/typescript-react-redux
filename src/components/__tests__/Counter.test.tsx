@@ -20,13 +20,11 @@ enum mockTestActionTypes {
   delayedIncrement,
 }
 
-jest.mock('../../store/actions/counter', () => {
-  return {
-    incrementBy: (...args: any[]) => ({ type: mockTestActionTypes.incrementBy, args }),
-    decrementBy: (...args: any[]) => ({ type: mockTestActionTypes.decrementBy, args }),
-    delayedIncrement: (...args: any[]) => ({ type: mockTestActionTypes.delayedIncrement, args }),
-  };
-});
+jest.mock('../../store/actions/counter', () => ({
+  incrementBy: (...args: any[]) => ({ type: mockTestActionTypes.incrementBy, args }),
+  decrementBy: (...args: any[]) => ({ type: mockTestActionTypes.decrementBy, args }),
+  delayedIncrement: (...args: any[]) => ({ type: mockTestActionTypes.delayedIncrement, args }),
+}));
 
 const defaultState: State = { counter: { count: 1, pending: false } };
 const defaultProps = { incrementAmount: 1 };
