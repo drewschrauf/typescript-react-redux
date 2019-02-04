@@ -20,8 +20,8 @@
   },
   "dependencies": {
     "lodash": "4.17.11",
-    "react": "16.7.0",
-    "react-dom": "16.7.0",
+    "react": "next",
+    "react-dom": "next",
     "react-redux": "6.0.0",
     "react-router-dom": "^4.3.1",
     "redux": "4.0.1",
@@ -39,6 +39,7 @@
     "@types/enzyme-adapter-react-16": "1.0.3",
     "@types/jest": "23.3.13",
     "@types/lodash": "4.14.120",
+    "@types/react": "16.8.1",
     "@types/react-dom": "16.0.11",
     "@types/react-redux": "7.0.1",
     "@types/react-router-dom": "4.3.1",
@@ -72,6 +73,9 @@
     "webpack-bundle-analyzer": "3.0.3",
     "webpack-cli": "3.2.1",
     "webpack-dev-server": "3.1.14"
+  },
+  "resolutions": {
+    "terser": "3.14.*"
   },
   "jest": {
     "testMatch": [

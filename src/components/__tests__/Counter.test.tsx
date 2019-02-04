@@ -44,7 +44,7 @@ describe('Counter', () => {
         <Counter {...defaultProps} />
       </Provider>,
     );
-    expect(root.html()).toMatchSnapshot('default render');
+    expect(root.html()).toMatchSnapshot();
   });
 
   it('should render the current count', () => {

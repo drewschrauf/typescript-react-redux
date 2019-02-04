@@ -1,3 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Navigation should render navigation: default render 1`] = `"<div class=\\"Navigation__Wrapper-j6h1ss-0 esetmv\\"><div class=\\"Navigation__LinkWrapper-j6h1ss-1 cpTkKj\\"><a href=\\"/\\">Home</a></div><div class=\\"Navigation__LinkWrapper-j6h1ss-1 cpTkKj\\"><a href=\\"/about/\\">About</a></div></div>"`;
+exports[`Navigation should render navigation 1`] = `"<div class=\\"Navigation__Wrapper-j6h1ss-0 esetmv\\"><div class=\\"Navigation__LinkWrapper-j6h1ss-1 cpTkKj\\"><a href=\\"/\\">Home</a></div><div class=\\"Navigation__LinkWrapper-j6h1ss-1 cpTkKj\\"><a href=\\"/about/\\">About</a></div></div>"`;

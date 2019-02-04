@@ -11,6 +11,7 @@ describe('Navigation', () => {
         <Navigation />
       </Router>,
     );
-    expect(root.html()).toMatchSnapshot('default render');
+    expect(root.html()).toMatchSnapshot();
   });
 });
+
