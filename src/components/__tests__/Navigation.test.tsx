@@ -14,4 +14,3 @@ describe('Navigation', () => {
     expect(root.html()).toMatchSnapshot();
   });
 });
-
