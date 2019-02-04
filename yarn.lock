@@ -821,10 +821,10 @@
   dependencies:
     redux "^4.0.0"
 
-"@types/styled-components@4.1.7":
-  version "4.1.7"
-  resolved "https://registry.yarnpkg.com/@types/styled-components/-/styled-components-4.1.7.tgz#fdb59c66616e847106395f4023e452ca78b13033"
-  integrity sha512-+CZ3z/i8D9Bi1yLkZHjSdU7ldhnWlGUrH8SHceF+lDmwHXpe1Nr0Wm9gnRNLeTjTWiIMwzPPOGEgX7J9goNe1w==
+"@types/styled-components@4.1.8":
+  version "4.1.8"
+  resolved "https://registry.yarnpkg.com/@types/styled-components/-/styled-components-4.1.8.tgz#15c8a53bb4b9066e528fafb7558963dee5690ae0"
+  integrity sha512-NrG0wmB9Rafy5i00GFxUM/uEge148bX2QPr+Q/MI2fXrew6WOp1hN2A3YEG0AeT45z47CMdJ3BEffPsdQCWayA==
   dependencies:
     "@types/node" "*"
     "@types/react" "*"
