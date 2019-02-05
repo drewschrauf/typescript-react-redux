@@ -2,9 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 
-import { State, Dispatch } from '../store';
-import { decrementBy, delayedIncrement, incrementBy } from '../store/actions/counter';
-import testHook from '../testHook';
+import { State, Dispatch } from '@/store';
+import { decrementBy, delayedIncrement, incrementBy } from '@/store/actions/counter';
+import testHook from '@/testHook';
 
 interface CounterProps {
   /** The amount to increment the counter by on each click */

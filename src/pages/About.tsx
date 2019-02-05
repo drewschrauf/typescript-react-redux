@@ -2,8 +2,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import testHook from '../testHook';
-import withErrorBoundary from '../hoc/withErrorBoundary';
+import testHook from '@/testHook';
+import withErrorBoundary from '@/hoc/withErrorBoundary';
 
 const readme = require('../../README.md');
 

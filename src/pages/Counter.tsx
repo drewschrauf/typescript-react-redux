@@ -2,8 +2,8 @@ import React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 import isNaN from 'lodash/isNaN';
 
-import Counter from '../components/Counter';
-import withErrorBoundary from '../hoc/withErrorBoundary';
+import Counter from '@/components/Counter';
+import withErrorBoundary from '@/hoc/withErrorBoundary';
 
 const getIncrementAmount = (by: any) => {
   const value = parseInt(by, 10);

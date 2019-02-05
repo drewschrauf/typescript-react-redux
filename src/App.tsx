@@ -3,9 +3,9 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import styled from 'styled-components';
 
-import Navigation from './components/Navigation';
-import Spinner from './components/Spinner';
-import store from './store';
+import Navigation from '@/components/Navigation';
+import Spinner from '@/components/Spinner';
+import store from '@/store';
 
 const PageWrapper = styled.div`
   width: 100%;

@@ -4,10 +4,11 @@ import { Provider } from 'react-redux';
 import configureStore, { MockStoreCreator } from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import set from 'lodash/fp/set';
-import { selectorForTestHook } from '../../testHook';
+
+import { selectorForTestHook } from '@/testHook';
+import { State } from '@/store';
 
 import Counter from '../Counter';
-import { State } from '../../store';
 
 const COUNT_SELECTOR = selectorForTestHook('count');
 const INCREMENT_BUTTON_SELECTOR = selectorForTestHook('increment', 'button');

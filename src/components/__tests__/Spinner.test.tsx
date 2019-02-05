@@ -3,6 +3,8 @@ import { mount } from 'enzyme';
 
 import Spinner from '../Spinner';
 
+jest.useFakeTimers();
+
 describe('Spinner', () => {
   it('should not render anything on initial render', () => {
     const root = mount(<Spinner />);
@@ -10,7 +12,6 @@ describe('Spinner', () => {
   });
 
   it('should render spinner after a timeout', () => {
-    jest.useFakeTimers();
     const root = mount(<Spinner />);
     jest.runAllTimers();
     root.update();

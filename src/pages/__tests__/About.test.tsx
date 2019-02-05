@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { selectorForTestHook } from '../../testHook';
+import { selectorForTestHook } from '@/testHook';
 
 import About from '../About';
 

@@ -1,5 +1,9 @@
 {
   "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"]
+    },
     "noEmit": true,
     "module": "esnext",
     "moduleResolution": "node",

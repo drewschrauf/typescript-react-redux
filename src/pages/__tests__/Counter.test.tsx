@@ -1,8 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
+import CounterComponent from '@/components/Counter';
+
 import Counter from '../Counter';
-import CounterComponent from '../../components/Counter';
 
 describe('Counter', () => {
   it('should render counter with increment of 1 by default', () => {

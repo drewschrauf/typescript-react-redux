@@ -90,7 +90,8 @@
       "node"
     ],
     "moduleNameMapper": {
-      "\\.css$": "identity-obj-proxy"
+      "\\.css$": "identity-obj-proxy",
+      "^@/(.*)$": "<rootDir>/src/$1"
     },
     "setupFiles": [
       "<rootDir>/setup-test.ts"

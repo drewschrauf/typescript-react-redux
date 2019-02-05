@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles.css';
-import withDelay from '../../hoc/withDelay';
+import withDelay from '@/hoc/withDelay';
 
 const Spinner = () => <div className="spinner" />;
 
