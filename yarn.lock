@@ -737,10 +737,10 @@
   resolved "https://registry.yarnpkg.com/@types/history/-/history-4.7.2.tgz#0e670ea254d559241b6eeb3894f8754991e73220"
   integrity sha512-ui3WwXmjTaY73fOQ3/m3nnajU/Orhi6cEu5rzX+BrAAJxa3eITXZ5ch9suPqtM03OWhAHhPSyBGCN4UKoxO20Q==
 
-"@types/jest@23.3.13":
-  version "23.3.13"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-23.3.13.tgz#c81484b6f4ca007bb09887ed15ecb3286d58f928"
-  integrity sha512-ePl4l+7dLLmCucIwgQHAgjiepY++qcI6nb8eAwGNkB6OxmTe3Z9rQU3rSpomqu42PCCnlThZbOoxsf+qylJsLA==
+"@types/jest@24.0.0":
+  version "24.0.0"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-24.0.0.tgz#848492026c327b3548d92be0352a545c36a21e8a"
+  integrity sha512-kOafJnUTnMd7/OfEO/x3I47EHswNjn+dbz9qk3mtonr1RvKT+1FGVxnxAx08I9K8Tl7j9hpoJRE7OCf+t10fng==
 
 "@types/lodash@4.14.120":
   version "4.14.120"
@@ -2574,10 +2574,10 @@ entities@^1.1.1, entities@~1.1.1:
   resolved "https://registry.yarnpkg.com/entities/-/entities-1.1.2.tgz#bdfa735299664dfafd34529ed4f8522a275fea56"
   integrity sha512-f2LZMYl1Fzu7YSBKg+RoROelpOaNrcGmE9AZubeDfrCEia483oW4MI4VyFd5VNHIgQ/7qm1I0wUHK1eJnn2y2w==
 
-enzyme-adapter-react-16@1.8.0:
-  version "1.8.0"
-  resolved "https://registry.yarnpkg.com/enzyme-adapter-react-16/-/enzyme-adapter-react-16-1.8.0.tgz#7055d8e908d8d27b807cf4292244db3c815ca11d"
-  integrity sha512-7cVHIKutqnesGeM3CjNFHSvktpypSWBokrBO8wIW+BVx+HGxWCF87W9TpkIIYJqgCtdw9FQGFrAbLg8kSwPRuQ==
+enzyme-adapter-react-16@1.9.0:
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/enzyme-adapter-react-16/-/enzyme-adapter-react-16-1.9.0.tgz#b3bc951cb90d619ead85b49760300be1bbaced80"
+  integrity sha512-tUqmeLi0Y3PxuiPSykjn8ZMqzCnaRIVywNx0i50+nhd4y/b3JtXRbsvIc8HKxn3heE4t969EI2461Kc9FYxjdw==
   dependencies:
     enzyme-adapter-utils "^1.10.0"
     function.prototype.name "^1.1.0"
@@ -3408,11 +3408,6 @@ glob@^7.0.3, glob@^7.1.1, glob@^7.1.2, glob@^7.1.3:
     minimatch "^3.0.4"
     once "^1.3.0"
     path-is-absolute "^1.0.0"
-
-global-modules-path@^2.3.0:
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/global-modules-path/-/global-modules-path-2.3.1.tgz#e541f4c800a1a8514a990477b267ac67525b9931"
-  integrity sha512-y+shkf4InI7mPRHSo2b/k6ix6+NLDtyccYv86whhxrSGX9wjPX1VMITmrDbE1eh7zkzhiWtW2sHklJYoQ62Cxg==
 
 global-modules@^1.0.0:
   version "1.0.0"
@@ -4815,11 +4810,6 @@ levn@^0.3.0, levn@~0.3.0:
   dependencies:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
-
-lightercollective@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/lightercollective/-/lightercollective-0.1.0.tgz#70df102c530dcb8d0ccabfe6175a8d00d5f61300"
-  integrity sha512-J9tg5uraYoQKaWbmrzDDexbG6hHnMcWS1qLYgJSWE+mpA3U5OCSeMUhb+K55otgZJ34oFdR0ECvdIb3xuO5JOQ==
 
 load-json-file@^2.0.0:
   version "2.0.0"
@@ -7816,20 +7806,18 @@ webpack-bundle-analyzer@3.0.3:
     opener "^1.5.1"
     ws "^6.0.0"
 
-webpack-cli@3.2.1:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/webpack-cli/-/webpack-cli-3.2.1.tgz#779c696c82482491f0803907508db2e276ed3b61"
-  integrity sha512-jeJveHwz/vwpJ3B8bxEL5a/rVKIpRNJDsKggfKnxuYeohNDW4Y/wB9N/XHJA093qZyS0r6mYL+/crLsIol4WKA==
+webpack-cli@3.2.3:
+  version "3.2.3"
+  resolved "https://registry.yarnpkg.com/webpack-cli/-/webpack-cli-3.2.3.tgz#13653549adfd8ccd920ad7be1ef868bacc22e346"
+  integrity sha512-Ik3SjV6uJtWIAN5jp5ZuBMWEAaP5E4V78XJ2nI+paFPh8v4HPSwo/myN0r29Xc/6ZKnd2IdrAlpSgNOu2CDQ6Q==
   dependencies:
     chalk "^2.4.1"
     cross-spawn "^6.0.5"
     enhanced-resolve "^4.1.0"
     findup-sync "^2.0.0"
     global-modules "^1.0.0"
-    global-modules-path "^2.3.0"
     import-local "^2.0.0"
     interpret "^1.1.0"
-    lightercollective "^0.1.0"
     loader-utils "^1.1.0"
     supports-color "^5.5.0"
     v8-compile-cache "^2.0.2"
