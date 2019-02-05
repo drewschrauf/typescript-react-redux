@@ -74,9 +74,6 @@
     "webpack-cli": "3.2.3",
     "webpack-dev-server": "3.1.14"
   },
-  "resolutions": {
-    "terser": "3.14.*"
-  },
   "jest": {
     "testMatch": [
       "<rootDir>/src/**/*.test.(ts|tsx)"
