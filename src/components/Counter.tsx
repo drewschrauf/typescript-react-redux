@@ -4,7 +4,6 @@ import styled from 'styled-components';
 
 import { State, Dispatch } from '@/store';
 import { decrementBy, delayedIncrement, incrementBy } from '@/store/actions/counter';
-import testHook from '@/testHook';
 
 interface CounterProps {
   /** The amount to increment the counter by on each click */
@@ -53,14 +52,10 @@ const CounterComponent = ({
   delayedIncrement: incrementWithDelay,
 }: CounterProps & ConnectedState & ConnectedDispatch) => (
   <Wrapper>
-    <h1 {...testHook('count')}>Count {count}</h1>
-    <Button {...testHook('increment')} onClick={increment}>
-      Increment by {incrementAmount}
-    </Button>
-    <Button {...testHook('decrement')} onClick={decrement}>
-      Decrement by {incrementAmount}
-    </Button>
-    <Button {...testHook('delayed-increment')} disabled={pending} onClick={incrementWithDelay}>
+    <h1>Count {count}</h1>
+    <Button onClick={increment}>Increment by {incrementAmount}</Button>
+    <Button onClick={decrement}>Decrement by {incrementAmount}</Button>
+    <Button disabled={pending} onClick={incrementWithDelay}>
       Delayed increment by {incrementAmount}
     </Button>
   </Wrapper>
