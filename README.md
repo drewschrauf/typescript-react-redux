@@ -11,6 +11,6 @@ This is a basic example project using the following technologies to build a web 
 And for testing:
 
 - Jest
-- Enzyme
+- react-testing-library
 
 [See the result](https://awesome-bose-57ba94.netlify.com)

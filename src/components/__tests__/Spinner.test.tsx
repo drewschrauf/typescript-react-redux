@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, act } from 'react-testing-library';
 
 import Spinner from '../Spinner';
 
@@ -7,14 +7,15 @@ jest.useFakeTimers();
 
 describe('Spinner', () => {
   it('should not render anything on initial render', () => {
-    const root = mount(<Spinner />);
-    expect(root.html()).toBe(null);
+    const root = render(<Spinner />);
+    expect(root.container.innerHTML).toBe('');
   });
 
   it('should render spinner after a timeout', () => {
-    const root = mount(<Spinner />);
-    jest.runAllTimers();
-    root.update();
-    expect(root.html()).toMatchSnapshot();
+    const root = render(<Spinner />);
+    act(() => {
+      jest.runAllTimers();
+    });
+    expect(root.container.innerHTML).toMatchSnapshot();
   });
 });

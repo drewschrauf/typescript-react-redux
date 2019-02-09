@@ -15,9 +15,8 @@ const errorBoundary = <T extends {}>(Component: React.ComponentType<T>) => {
       };
     }
 
-    static getDerivedStateFromError(error: Error) {
+    static getDerivedStateFromError() {
       /* eslint-disable-next-line no-console */
-      console.error('Caught error', error);
       return {
         hasError: true,
       };
