@@ -1,13 +1,11 @@
 import React from 'react';
-import { render, act, cleanup } from 'react-testing-library';
+import { render, act } from 'react-testing-library';
 
 import Spinner from '../Spinner';
 
 jest.useFakeTimers();
 
 describe('Spinner', () => {
-  afterEach(cleanup);
-
   it('should not render anything on initial render', () => {
     const root = render(<Spinner />);
     expect(root.container.innerHTML).toBe('');

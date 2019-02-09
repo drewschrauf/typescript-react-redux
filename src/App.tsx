@@ -20,7 +20,7 @@ const MissingPage = lazy(() => import('./pages/Missing'));
 
 const App = () => (
   <Router>
-    <Provider store={store}>
+    <Provider store={store()}>
       <PageWrapper>
         <Navigation />
         <Suspense fallback={<Spinner />}>

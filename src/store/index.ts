@@ -15,6 +15,6 @@ export type Dispatch = ThunkDispatch<State, any, Action<any>>;
 
 // eslint-disable-next-line no-underscore-dangle
 const composeEnhancers = (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)));
 
-export default store;
+export default (initialState?: State) =>
+  createStore(reducer, initialState, composeEnhancers(applyMiddleware(thunk)));
