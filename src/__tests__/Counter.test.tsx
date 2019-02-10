@@ -6,7 +6,7 @@ import set from 'lodash/fp/set';
 import Counter from '@/pages/Counter';
 import store from '@/store';
 
-const DEFAULT_PROPS = { match: { params: {} } } as any;
+const DEFAULT_PROPS = { match: { params: {} } };
 
 jest.useFakeTimers();
 
