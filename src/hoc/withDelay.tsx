@@ -13,9 +13,13 @@ const useDelay = (ms: number) => {
   return delayComplete;
 };
 
-const withDelay = ({ delay }: { delay: number }) => <T extends {}>(
-  Comp: React.ComponentType<T>,
-) => {
+interface WithDelayProps {
+  /** Time to delay render in ms */
+  delay: number;
+}
+
+/** Delays rendering of a component by a given time */
+const withDelay = ({ delay }: WithDelayProps) => <T extends {}>(Comp: React.ComponentType<T>) => {
   const Delay = (props: T) => {
     const delayComplete = useDelay(delay);
     return delayComplete ? <Comp {...props} /> : null;

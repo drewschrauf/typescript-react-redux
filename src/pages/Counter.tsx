@@ -13,4 +13,4 @@ const getIncrementAmount = (by: any) => {
 const CounterPage = ({ match }: RouteComponentProps) => (
   <Counter incrementAmount={getIncrementAmount((match.params as any).by)} />
 );
-export default withErrorBoundary(CounterPage);
+export default withErrorBoundary()(CounterPage);

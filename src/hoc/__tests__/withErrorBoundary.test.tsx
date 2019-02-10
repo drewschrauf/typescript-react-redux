@@ -15,13 +15,13 @@ describe('withErrorBoundary', () => {
   });
 
   it('should show provided component if no error', () => {
-    const Element = withErrorBoundary(() => <h1>Element</h1>);
+    const Element = withErrorBoundary()(() => <h1>Element</h1>);
     const root = render(<Element />);
     expect(root.getByText('Element')).toBeInTheDocument();
   });
 
   it('should show error message if error', () => {
-    const Element = withErrorBoundary(() => (
+    const Element = withErrorBoundary()(() => (
       <h1>
         {(() => {
           throw new Error();

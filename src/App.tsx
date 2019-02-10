@@ -14,9 +14,9 @@ const PageWrapper = styled.div`
   }
 `;
 
-const CounterPage = lazy(() => import('./pages/Counter'));
-const AboutPage = lazy(() => import('./pages/About'));
-const MissingPage = lazy(() => import('./pages/Missing'));
+const CounterPage = lazy(() => import('@/pages/Counter'));
+const AboutPage = lazy(() => import('@/pages/About'));
+const MissingPage = lazy(() => import('@/pages/Missing'));
 
 const App = () => (
   <Router>

@@ -6,7 +6,7 @@ const ErrorMessage = styled.div`
   padding: 10px;
 `;
 
-const errorBoundary = <T extends {}>(Component: React.ComponentType<T>) => {
+const errorBoundary = () => <T extends {}>(Component: React.ComponentType<T>) => {
   return class ErrorBoundary extends React.Component<T, { hasError: boolean }> {
     constructor(props: T) {
       super(props);

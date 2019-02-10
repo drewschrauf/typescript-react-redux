@@ -73,4 +73,33 @@ describe('counter', () => {
 
     expect(root.getByText('Count 7')).toBeInTheDocument();
   });
+
+  it('should decrement by given amount when route provides decrement amount', () => {
+    const root = render(
+      <Provider store={store()}>
+        <Counter {...set(['match', 'params', 'by'], '7', DEFAULT_PROPS)} />
+      </Provider>,
+    );
+
+    fireEvent.click(root.getByText('Decrement by 7'));
+
+    expect(root.getByText('Count -7')).toBeInTheDocument();
+  });
+
+  it('should delay increment by given amount when route provides increment amount', async () => {
+    const root = render(
+      <Provider store={store()}>
+        <Counter {...set(['match', 'params', 'by'], '7', DEFAULT_PROPS)} />
+      </Provider>,
+    );
+
+    fireEvent.click(root.getByText('Delayed increment by 7'));
+    expect(root.getByText('Count 0')).toBeInTheDocument();
+    expect(root.getByText('Delayed increment by 7')).toBeDisabled();
+
+    await Promise.resolve().then(() => jest.runAllTimers());
+
+    expect(root.getByText('Count 7')).toBeInTheDocument();
+    expect(root.getByText('Delayed increment by 7')).not.toBeDisabled();
+  });
 });

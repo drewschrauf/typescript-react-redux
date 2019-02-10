@@ -26,4 +26,4 @@ const AboutPage = () => (
     </p>
   </div>
 );
-export default withErrorBoundary(AboutPage);
+export default withErrorBoundary()(AboutPage);

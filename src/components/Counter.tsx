@@ -32,11 +32,12 @@ const Wrapper = styled.div`
 `;
 
 const Button = styled.button`
+  width: 100%;
+  height: 32px;
   margin-right: 10px;
+  margin-bottom: 5px;
   font-family: inherit;
 
-  width: 100%;
-  margin-bottom: 5px;
   @media screen and (min-width: 450px) {
     width: initial;
     margin-bottom: 0;

@@ -6,8 +6,8 @@
   "author": "Drew Schrauf",
   "license": "MIT",
   "scripts": {
-    "start": "NODE_ENV=development webpack-dev-server --host 0.0.0.0",
-    "build": "rm -rf dist && NODE_ENV=production webpack --config webpack-prod.config.js && cp _redirects dist",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --host 0.0.0.0",
+    "build": "rm -rf dist && cross-env NODE_ENV=production webpack --config webpack-prod.config.js && cp _redirects dist",
     "lint": "eslint --ext ts,tsx src && yarn check-types",
     "check-types": "tsc",
     "test": "jest",
@@ -47,6 +47,7 @@
     "babel-loader": "8.0.5",
     "babel-plugin-styled-components": "1.10.0",
     "coveralls": "3.0.2",
+    "cross-env": "^5.2.0",
     "css-loader": "2.1.0",
     "eslint": "5.13.0",
     "eslint-config-airbnb": "17.1.0",
