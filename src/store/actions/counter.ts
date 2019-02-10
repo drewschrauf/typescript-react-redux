@@ -15,7 +15,7 @@ export const beginDelayedIncrement = createAction<{}>(ActionType.BEGIN_DELAYED_I
 export const completeDelayedIncrement = createAction<CounterChange>(
   ActionType.COMPLETE_DELAYED_INCREMENT,
 );
-export const delayedIncrement = (payload: CounterChange) => async (dispatch: Dispatch) => {
+export const delayedIncrementBy = (payload: CounterChange) => async (dispatch: Dispatch) => {
   dispatch(beginDelayedIncrement({}));
   await setTimeoutP(500);
   dispatch(completeDelayedIncrement(payload));

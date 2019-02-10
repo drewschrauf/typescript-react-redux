@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import styled from 'styled-components';
 
 import { State, Dispatch } from '@/store';
-import { decrementBy, delayedIncrement, incrementBy } from '@/store/actions/counter';
+import { decrementBy, delayedIncrementBy, incrementBy } from '@/store/actions/counter';
 
 interface CounterProps {
   /** The amount to increment the counter by on each click */
@@ -50,13 +50,13 @@ const CounterComponent = ({
   increment,
   decrement,
   pending,
-  delayedIncrement: incrementWithDelay,
+  delayedIncrement,
 }: CounterProps & ConnectedState & ConnectedDispatch) => (
   <Wrapper>
     <h1>Count {count}</h1>
     <Button onClick={increment}>Increment by {incrementAmount}</Button>
     <Button onClick={decrement}>Decrement by {incrementAmount}</Button>
-    <Button disabled={pending} onClick={incrementWithDelay}>
+    <Button disabled={pending} onClick={delayedIncrement}>
       Delayed increment by {incrementAmount}
     </Button>
   </Wrapper>
@@ -67,13 +67,13 @@ const CounterComponent = ({
  * for modifying it.
  */
 const Counter = connect(
-  (state: State, _ownProps: CounterProps) => ({
+  (state: State) => ({
     count: state.counter.count,
     pending: state.counter.pending,
   }),
   (dispatch: Dispatch, ownProps: CounterProps) => ({
     decrement: () => dispatch(decrementBy({ amount: ownProps.incrementAmount })),
-    delayedIncrement: () => dispatch(delayedIncrement({ amount: ownProps.incrementAmount })),
+    delayedIncrement: () => dispatch(delayedIncrementBy({ amount: ownProps.incrementAmount })),
     increment: () => dispatch(incrementBy({ amount: ownProps.incrementAmount })),
   }),
 )(CounterComponent) as React.ComponentClass<CounterProps>;
