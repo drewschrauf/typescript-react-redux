@@ -6007,10 +6007,10 @@ react-router@^4.3.1:
     prop-types "^15.6.1"
     warning "^4.0.1"
 
-react-testing-library@5.6.0:
-  version "5.6.0"
-  resolved "https://registry.yarnpkg.com/react-testing-library/-/react-testing-library-5.6.0.tgz#1a964e50750695426da69eaa9caafbdd414965ed"
-  integrity sha512-K9Ql3ytFhblRGs19MjwwdvOT0MZ4XhamVGrS7FtVxSzpmmG1gIPVWYwgt7Mz8LNUDW2BOsBGFDp0a2UskCJI4w==
+react-testing-library@5.6.1:
+  version "5.6.1"
+  resolved "https://registry.yarnpkg.com/react-testing-library/-/react-testing-library-5.6.1.tgz#fe352198e84275590b7654fc3deb7e20d46120a3"
+  integrity sha512-e3ssuBrHBh/3D6kBQkkoSfuS1gPpPAQPrwB9H0L8Ktwbv95rRn6VVRl+KlgkkqrkA+9OV+TL6u64IG1LpfrlJQ==
   dependencies:
     "@babel/runtime" "^7.3.1"
     dom-testing-library "^3.13.1"
