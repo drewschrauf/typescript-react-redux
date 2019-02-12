@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React from 'react';
 import { render, fireEvent } from 'react-testing-library';
 import { Provider } from 'react-redux';
@@ -15,6 +16,16 @@ const renderWithProvider = (element: React.ReactNode) => {
 };
 
 describe('counter', () => {
+  let err: any;
+  beforeEach(() => {
+    err = console.error;
+    console.error = jest.fn();
+  });
+
+  afterEach(() => {
+    console.error = err;
+  });
+
   it('should render current count', () => {
     const root = renderWithProvider(<Counter {...DEFAULT_PROPS} />);
 
@@ -83,5 +94,13 @@ describe('counter', () => {
 
     expect(root.getByText('Count 7')).toBeInTheDocument();
     expect(root.getByText('Delayed increment by 7')).not.toBeDisabled();
+  });
+
+  it('should show error message if invalid increment amount is given', async () => {
+    const root = renderWithProvider(
+      <Counter {...set(['match', 'params', 'by'], 'garbage', DEFAULT_PROPS)} />,
+    );
+
+    expect(root.getByText('You can\'t use "garbage" as an increment amount!')).toBeInTheDocument();
   });
 });
