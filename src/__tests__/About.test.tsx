@@ -15,4 +15,14 @@ describe('About', () => {
     const root = render(<About />);
     expect(root.getByText('Content')).toBeInTheDocument();
   });
+
+  it('should have a link back to github', () => {
+    const root = render(<About />);
+    const link = root.getByText('View on GitHub');
+    expect(link.tagName).toBe('A');
+    expect((link as HTMLAnchorElement).href).toBe(
+      'https://github.com/drewschrauf/typescript-react-redux',
+    );
+    expect((link as HTMLAnchorElement).target).toBe('_blank');
+  });
 });
