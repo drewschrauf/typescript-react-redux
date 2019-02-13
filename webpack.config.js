@@ -1,6 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -42,6 +44,13 @@ module.exports = {
       chunkFilename: '[id].[hash].css',
     }),
   ],
+  ...(isProduction
+    ? {
+        optimization: {
+          minimizer: [new TerserPlugin(), new OptimizeCSSAssetsPlugin()],
+        },
+      }
+    : {}),
   devServer: {
     disableHostCheck: true,
     historyApiFallback: true,

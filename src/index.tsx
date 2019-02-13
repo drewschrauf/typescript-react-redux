@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 import ReactDOM from 'react-dom';
 
+import 'normalize.css';
 import './index.css';
 import Spinner from '@/components/Spinner';
 
