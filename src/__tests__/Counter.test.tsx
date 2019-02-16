@@ -16,7 +16,7 @@ const renderWithProvider = (element: React.ReactNode) => {
 };
 
 describe('counter', () => {
-  let err: any;
+  let err: typeof console.error;
   beforeEach(() => {
     err = console.error;
     console.error = jest.fn();

@@ -8,7 +8,7 @@ import { BaseError } from '@/errors';
 class TestError extends BaseError {}
 
 describe('withErrorBoundary', () => {
-  let err: any;
+  let err: typeof console.error;
   beforeEach(() => {
     err = console.error;
     console.error = jest.fn();
