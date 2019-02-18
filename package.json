@@ -92,8 +92,7 @@
       "<rootDir>/setup-test.ts"
     ],
     "coveragePathIgnorePatterns": [
-      "setup-test.ts",
-      "testHook.ts"
+      "setup-test.ts"
     ]
   }
 }
