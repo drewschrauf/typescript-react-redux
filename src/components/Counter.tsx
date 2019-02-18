@@ -10,14 +10,11 @@ interface CounterProps {
   readonly incrementAmount: number;
 }
 
-interface ConnectedState {
+interface ConnectedProps {
   /** The current count */
   readonly count: number;
   /** Is a delayed increment currently being performed? */
   readonly pending: boolean;
-}
-
-interface ConnectedDispatch {
   /** Action to perform when clicking increment button */
   readonly increment: () => void;
   /** Action to perform when clicking decrement button */
@@ -51,7 +48,7 @@ const CounterComponent = ({
   decrement,
   pending,
   delayedIncrement,
-}: CounterProps & ConnectedState & ConnectedDispatch) => (
+}: CounterProps & ConnectedProps) => (
   <Wrapper>
     <h1>Count {count}</h1>
     <Button onClick={increment}>Increment by {incrementAmount}</Button>

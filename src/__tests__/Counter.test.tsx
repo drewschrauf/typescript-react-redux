@@ -32,75 +32,81 @@ describe('counter', () => {
     expect(root.getByText('Count 0')).toBeInTheDocument();
   });
 
-  it('should increment amount when increment button clicked', () => {
-    const root = renderWithProvider(<Counter {...DEFAULT_PROPS} />);
+  describe('default increment', () => {
+    it('should increment amount when increment button clicked', () => {
+      const root = renderWithProvider(<Counter {...DEFAULT_PROPS} />);
 
-    fireEvent.click(root.getByText('Increment by 1'));
+      fireEvent.click(root.getByText('Increment by 1'));
 
-    expect(root.getByText('Count 1')).toBeInTheDocument();
+      expect(root.getByText('Count 1')).toBeInTheDocument();
+    });
+
+    it('should decrement amount when decrement button clicked', () => {
+      const root = renderWithProvider(<Counter {...DEFAULT_PROPS} />);
+
+      fireEvent.click(root.getByText('Decrement by 1'));
+
+      expect(root.getByText('Count -1')).toBeInTheDocument();
+    });
+
+    it('should delay increment amount when increment button clicked', async () => {
+      const root = renderWithProvider(<Counter {...DEFAULT_PROPS} />);
+
+      fireEvent.click(root.getByText('Delayed increment by 1'));
+      expect(root.getByText('Count 0')).toBeInTheDocument();
+      expect(root.getByText('Delayed increment by 1')).toBeDisabled();
+
+      await Promise.resolve().then(() => jest.runAllTimers());
+
+      expect(root.getByText('Count 1')).toBeInTheDocument();
+      expect(root.getByText('Delayed increment by 1')).not.toBeDisabled();
+    });
   });
 
-  it('should decrement amount when decrement button clicked', () => {
-    const root = renderWithProvider(<Counter {...DEFAULT_PROPS} />);
+  describe('provided increment', () => {
+    it('should increment by given amount when route provides increment amount', () => {
+      const root = renderWithProvider(
+        <Counter {...set(['match', 'params', 'by'], '7', DEFAULT_PROPS)} />,
+      );
 
-    fireEvent.click(root.getByText('Decrement by 1'));
+      fireEvent.click(root.getByText('Increment by 7'));
 
-    expect(root.getByText('Count -1')).toBeInTheDocument();
-  });
+      expect(root.getByText('Count 7')).toBeInTheDocument();
+    });
 
-  it('should delay increment amount when increment button clicked', async () => {
-    const root = renderWithProvider(<Counter {...DEFAULT_PROPS} />);
+    it('should decrement by given amount when route provides decrement amount', () => {
+      const root = renderWithProvider(
+        <Counter {...set(['match', 'params', 'by'], '7', DEFAULT_PROPS)} />,
+      );
 
-    fireEvent.click(root.getByText('Delayed increment by 1'));
-    expect(root.getByText('Count 0')).toBeInTheDocument();
-    expect(root.getByText('Delayed increment by 1')).toBeDisabled();
+      fireEvent.click(root.getByText('Decrement by 7'));
 
-    await Promise.resolve().then(() => jest.runAllTimers());
+      expect(root.getByText('Count -7')).toBeInTheDocument();
+    });
 
-    expect(root.getByText('Count 1')).toBeInTheDocument();
-    expect(root.getByText('Delayed increment by 1')).not.toBeDisabled();
-  });
+    it('should delay increment by given amount when route provides increment amount', async () => {
+      const root = renderWithProvider(
+        <Counter {...set(['match', 'params', 'by'], '7', DEFAULT_PROPS)} />,
+      );
 
-  it('should increment by given amount when route provides increment amount', () => {
-    const root = renderWithProvider(
-      <Counter {...set(['match', 'params', 'by'], '7', DEFAULT_PROPS)} />,
-    );
+      fireEvent.click(root.getByText('Delayed increment by 7'));
+      expect(root.getByText('Count 0')).toBeInTheDocument();
+      expect(root.getByText('Delayed increment by 7')).toBeDisabled();
 
-    fireEvent.click(root.getByText('Increment by 7'));
+      await Promise.resolve().then(() => jest.runAllTimers());
 
-    expect(root.getByText('Count 7')).toBeInTheDocument();
-  });
+      expect(root.getByText('Count 7')).toBeInTheDocument();
+      expect(root.getByText('Delayed increment by 7')).not.toBeDisabled();
+    });
 
-  it('should decrement by given amount when route provides decrement amount', () => {
-    const root = renderWithProvider(
-      <Counter {...set(['match', 'params', 'by'], '7', DEFAULT_PROPS)} />,
-    );
+    it('should show error message if invalid increment amount is given', async () => {
+      const root = renderWithProvider(
+        <Counter {...set(['match', 'params', 'by'], 'garbage', DEFAULT_PROPS)} />,
+      );
 
-    fireEvent.click(root.getByText('Decrement by 7'));
-
-    expect(root.getByText('Count -7')).toBeInTheDocument();
-  });
-
-  it('should delay increment by given amount when route provides increment amount', async () => {
-    const root = renderWithProvider(
-      <Counter {...set(['match', 'params', 'by'], '7', DEFAULT_PROPS)} />,
-    );
-
-    fireEvent.click(root.getByText('Delayed increment by 7'));
-    expect(root.getByText('Count 0')).toBeInTheDocument();
-    expect(root.getByText('Delayed increment by 7')).toBeDisabled();
-
-    await Promise.resolve().then(() => jest.runAllTimers());
-
-    expect(root.getByText('Count 7')).toBeInTheDocument();
-    expect(root.getByText('Delayed increment by 7')).not.toBeDisabled();
-  });
-
-  it('should show error message if invalid increment amount is given', async () => {
-    const root = renderWithProvider(
-      <Counter {...set(['match', 'params', 'by'], 'garbage', DEFAULT_PROPS)} />,
-    );
-
-    expect(root.getByText('You can\'t use "garbage" as an increment amount!')).toBeInTheDocument();
+      expect(
+        root.getByText('You can\'t use "garbage" as an increment amount!'),
+      ).toBeInTheDocument();
+    });
   });
 });
