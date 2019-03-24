@@ -5,6 +5,7 @@ module.exports = {
       {
         targets: process.env.NODE_ENV !== 'test' ? 'last 2 versions' : { node: 'current' },
         useBuiltIns: 'usage',
+        corejs: 3,
       },
     ],
     '@babel/preset-react',
