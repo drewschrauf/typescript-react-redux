@@ -43,7 +43,7 @@
     "@types/react-router-dom": "4.3.3",
     "@types/styled-components": "4.1.8",
     "@typescript-eslint/parser": "1.8.0",
-    "babel-loader": "8.0.5",
+    "babel-loader": "8.0.6",
     "babel-plugin-styled-components": "1.10.0",
     "coveralls": "3.0.3",
     "cross-env": "5.2.0",
