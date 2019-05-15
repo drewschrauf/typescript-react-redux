@@ -65,7 +65,7 @@
     "optimize-css-assets-webpack-plugin": "5.0.1",
     "prettier": "1.17.1",
     "react-testing-library": "7.0.0",
-    "terser-webpack-plugin": "1.2.3",
+    "terser-webpack-plugin": "1.2.4",
     "typescript": "3.4.5",
     "webpack": "4.31.0",
     "webpack-bundle-analyzer": "3.3.2",
