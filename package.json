@@ -61,7 +61,7 @@
     "jest": "24.8.0",
     "jest-dom": "3.4.0",
     "markdown-loader": "5.0.0",
-    "mini-css-extract-plugin": "0.6.0",
+    "mini-css-extract-plugin": "0.7.0",
     "optimize-css-assets-webpack-plugin": "5.0.1",
     "prettier": "1.17.1",
     "react-testing-library": "7.0.1",
