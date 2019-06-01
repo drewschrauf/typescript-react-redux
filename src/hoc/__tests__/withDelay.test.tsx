@@ -1,6 +1,6 @@
 import React from 'react';
 import { act } from 'react-dom/test-utils';
-import { render } from 'react-testing-library';
+import { render } from '@testing-library/react';
 
 import withDelay from '../withDelay';
 

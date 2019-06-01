@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import React from 'react';
-import { render } from 'react-testing-library';
+import { render } from '@testing-library/react';
 import withErrorBoundary from '../withErrorBoundary';
 
 import { BaseError } from '@/errors';
