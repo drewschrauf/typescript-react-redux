@@ -6,8 +6,8 @@ import { State, Dispatch } from '@/store';
 import { decrementBy, delayedIncrementBy, incrementBy } from '@/store/actions/counter';
 
 interface CounterProps {
-  /** The amount to increment the counter by on each click */
-  readonly incrementAmount: number;
+  /** The amount to increment or decrement the counter by on each click */
+  readonly amount: number;
 }
 
 const Wrapper = styled.div`
@@ -32,7 +32,7 @@ const Button = styled.button`
  * React component that renders the main UI. It displays the current count and provides buttons
  * for modifying it.
  */
-const Counter = ({ incrementAmount: amount }: CounterProps) => {
+const Counter = ({ amount }: CounterProps) => {
   const count = useSelector((state: State) => state.counter.count);
   const pending = useSelector((state: State) => state.counter.pending);
   const dispatch = useDispatch<Dispatch>();
