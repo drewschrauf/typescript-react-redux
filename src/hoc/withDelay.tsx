@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
 const useDelay = (ms: number) => {
-  const [delayComplete, updateDelayComplete] = useState(false);
+  const [delayComplete, setDelayComplete] = useState(false);
   useEffect(() => {
     const timer = setTimeout(() => {
-      updateDelayComplete(true);
+      setDelayComplete(true);
     }, ms);
     return () => {
       clearTimeout(timer);
