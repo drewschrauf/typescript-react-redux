@@ -2,7 +2,7 @@ import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import styled from 'styled-components';
 
-import { CounterProvider } from '@/state/counter';
+import { CounterProvider } from '@/state/useCounter';
 import Navigation from '@/components/Navigation';
 import Spinner from '@/components/Spinner';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { useCounter } from '@/state/counter';
+import useCounter from '@/state/useCounter';
 
 interface CounterProps {
   /** The amount to increment or decrement the counter by on each click */

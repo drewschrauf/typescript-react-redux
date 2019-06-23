@@ -4,7 +4,7 @@ import { render, fireEvent } from '@testing-library/react';
 import set from 'lodash/fp/set';
 
 import Counter from '@/pages/Counter';
-import { CounterProvider } from '@/state/counter';
+import { CounterProvider } from '@/state/useCounter';
 
 const DEFAULT_PROPS = { match: { params: {} } };
 
