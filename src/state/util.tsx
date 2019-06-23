@@ -25,15 +25,15 @@ export const isType = <T extends {}>(
 ): action is Action<T> => action.type === actionCreator.type;
 
 export const createHook = <State, Actions>(
-  reducer: (state: State, action: Action<any>) => State,
   initialState: State,
+  reducer: (state: State, action: Action<any>) => State,
   bindActions: (dispatch: React.Dispatch<Action<any>>) => Actions,
 ) => {
   type ContextValue = [State, Actions];
 
   const Context = React.createContext<ContextValue>(undefined as any);
 
-  const Provider = <T extends {}>(props: T) => {
+  const Provider: React.FC = <T extends {}>(props: T) => {
     const [currentState, dispatch] = React.useReducer(reducer, initialState);
     const value = React.useMemo<ContextValue>(() => [currentState, bindActions(dispatch)], [
       currentState,

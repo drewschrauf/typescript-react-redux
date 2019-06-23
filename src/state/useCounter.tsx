@@ -6,6 +6,7 @@ const beginDelayedIncrement = createAction<{}>('BEGIN_DELAYED_INCREMENT');
 const completeDelayedIncrement = createAction<{ amount: number }>('COMPLETE_DELAYED_INCREMENT');
 
 const { Provider, hook } = createHook(
+  { count: 0, pending: false },
   (state, action) => {
     if (isType(action, incrementBy)) {
       return { ...state, count: state.count + action.payload.amount };
@@ -21,7 +22,6 @@ const { Provider, hook } = createHook(
     }
     return state;
   },
-  { count: 0, pending: false },
   dispatch => ({
     incrementBy: (amount: number) => dispatch(incrementBy({ amount })),
     decrementBy: (amount: number) => dispatch(decrementBy({ amount })),
@@ -32,5 +32,6 @@ const { Provider, hook } = createHook(
     },
   }),
 );
+Provider.displayName = 'CounterProvider';
 export const CounterProvider = Provider;
 export default hook;
