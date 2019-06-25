@@ -17,9 +17,11 @@ const { Provider, hook } = createHook(
     if (isType(action, beginDelayedIncrement)) {
       return { ...state, pending: true };
     }
+    /* istanbul ignore else */
     if (isType(action, completeDelayedIncrement)) {
       return { ...state, pending: false, count: state.count + action.payload.amount };
     }
+    /* istanbul ignore next */
     return state;
   },
   dispatch => ({
