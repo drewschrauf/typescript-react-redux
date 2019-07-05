@@ -1,9 +1,7 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 
-import { State, Dispatch } from '@/store';
-import { decrementBy, delayedIncrementBy, incrementBy } from '@/store/actions/counter';
+import useCounter from '@/state/useCounter';
 
 interface CounterProps {
   /** The amount to increment or decrement the counter by on each click */
@@ -33,15 +31,13 @@ const Button = styled.button`
  * for modifying it.
  */
 const Counter = ({ amount }: CounterProps) => {
-  const count = useSelector((state: State) => state.counter.count);
-  const pending = useSelector((state: State) => state.counter.pending);
-  const dispatch = useDispatch<Dispatch>();
+  const [state, actions] = useCounter();
   return (
     <Wrapper>
-      <h1>Count {count}</h1>
-      <Button onClick={() => dispatch(incrementBy({ amount }))}>Increment by {amount}</Button>
-      <Button onClick={() => dispatch(decrementBy({ amount }))}>Decrement by {amount}</Button>
-      <Button disabled={pending} onClick={() => dispatch(delayedIncrementBy({ amount }))}>
+      <h1>Count {state.count}</h1>
+      <Button onClick={() => actions.incrementBy(amount)}>Increment by {amount}</Button>
+      <Button onClick={() => actions.decrementBy(amount)}>Decrement by {amount}</Button>
+      <Button disabled={state.pending} onClick={() => actions.delayedIncrementBy(amount)}>
         Delayed increment by {amount}
       </Button>
     </Wrapper>

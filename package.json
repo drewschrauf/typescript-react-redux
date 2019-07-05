@@ -23,10 +23,7 @@
     "normalize.css": "8.0.1",
     "react": "16.8.6",
     "react-dom": "16.8.6",
-    "react-redux": "7.1.0",
     "react-router-dom": "5.0.1",
-    "redux": "4.0.1",
-    "redux-thunk": "2.3.0",
     "styled-components": "4.3.2"
   },
   "devDependencies": {
@@ -38,9 +35,8 @@
     "@testing-library/react": "8.0.4",
     "@types/jest": "24.0.15",
     "@types/lodash": "4.14.135",
-    "@types/react": "16.8.19",
+    "@types/react": "16.8.23",
     "@types/react-dom": "16.8.4",
-    "@types/react-redux": "7.1.1",
     "@types/react-router-dom": "4.3.4",
     "@types/styled-components": "4.1.16",
     "@typescript-eslint/parser": "1.11.0",

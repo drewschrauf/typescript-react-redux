@@ -1,18 +1,17 @@
 /* eslint-disable no-console */
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import { Provider } from 'react-redux';
 import set from 'lodash/fp/set';
 
 import Counter from '@/pages/Counter';
-import store from '@/store';
+import { CounterProvider } from '@/state/useCounter';
 
 const DEFAULT_PROPS = { match: { params: {} } };
 
 jest.useFakeTimers();
 
 const renderWithProvider = (element: React.ReactNode) => {
-  return render(<Provider store={store()}>{element}</Provider>);
+  return render(<CounterProvider>{element}</CounterProvider>);
 };
 
 describe('counter', () => {

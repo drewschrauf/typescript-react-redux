@@ -1,11 +1,10 @@
 import React, { Suspense, lazy } from 'react';
-import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import styled from 'styled-components';
 
+import { CounterProvider } from '@/state/useCounter';
 import Navigation from '@/components/Navigation';
 import Spinner from '@/components/Spinner';
-import store from '@/store';
 
 const PageWrapper = styled.div`
   width: 100%;
@@ -19,8 +18,8 @@ const AboutPage = lazy(() => import('@/pages/About'));
 const MissingPage = lazy(() => import('@/pages/Missing'));
 
 const App = () => (
-  <Router>
-    <Provider store={store()}>
+  <CounterProvider>
+    <Router>
       <PageWrapper>
         <Navigation />
         <Suspense fallback={<Spinner />}>
@@ -32,7 +31,7 @@ const App = () => (
           </Switch>
         </Suspense>
       </PageWrapper>
-    </Provider>
-  </Router>
+    </Router>
+  </CounterProvider>
 );
 export default App;
