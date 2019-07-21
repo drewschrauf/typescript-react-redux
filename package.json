@@ -40,7 +40,7 @@
     "@types/react-dom": "16.8.4",
     "@types/react-router-dom": "4.3.4",
     "@types/styled-components": "4.1.18",
-    "@typescript-eslint/parser": "1.11.0",
+    "@typescript-eslint/parser": "1.13.0",
     "babel-loader": "8.0.6",
     "babel-plugin-styled-components": "1.10.6",
     "coveralls": "3.0.5",
