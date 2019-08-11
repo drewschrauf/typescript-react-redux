@@ -15,12 +15,7 @@ interface ErrorBoundaryState {
 
 const errorBoundary = () => <T extends {}>(Component: React.ComponentType<T>) => {
   return class ErrorBoundary extends React.Component<T, ErrorBoundaryState> {
-    constructor(props: T) {
-      super(props);
-      this.state = {
-        hasError: false,
-      };
-    }
+    public state: ErrorBoundaryState = { hasError: false };
 
     static getDerivedStateFromError(error: Error) {
       let state: ErrorBoundaryState = { hasError: true };
@@ -33,7 +28,7 @@ const errorBoundary = () => <T extends {}>(Component: React.ComponentType<T>) =>
     render() {
       const { hasError, message } = this.state;
       return !hasError ? (
-        <Component {...this.props} />
+        <Component {...this.props} /> // eslint-disable-line react/jsx-props-no-spreading
       ) : (
         <ErrorMessage>{message || 'Something went wrong'}</ErrorMessage>
       );
