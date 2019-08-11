@@ -39,6 +39,7 @@ export const createHook = <State, Actions>(
       currentState,
       dispatch,
     ]);
+    // eslint-disable-next-line react/jsx-props-no-spreading
     return <Context.Provider value={value} {...props} />;
   };
 

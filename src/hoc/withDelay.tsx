@@ -22,6 +22,7 @@ interface WithDelayOptions {
 const withDelay = ({ delay }: WithDelayOptions) => <T extends {}>(Comp: React.ComponentType<T>) => {
   const Delay = (props: T) => {
     const delayComplete = useDelay(delay);
+    // eslint-disable-next-line react/jsx-props-no-spreading
     return delayComplete ? <Comp {...props} /> : null;
   };
   return Delay;

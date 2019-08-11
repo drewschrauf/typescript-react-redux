@@ -12,6 +12,7 @@ module.exports = {
     '@babel/preset-typescript',
   ],
   plugins: [
+    '@babel/plugin-proposal-class-properties',
     '@babel/plugin-syntax-dynamic-import',
     ...(process.env.NODE_ENV !== 'production' ? ['babel-plugin-styled-components'] : []),
   ],

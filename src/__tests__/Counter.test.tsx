@@ -1,4 +1,4 @@
-/* eslint-disable no-console */
+/* eslint-disable no-console, react/jsx-props-no-spreading */
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import set from 'lodash/fp/set';
