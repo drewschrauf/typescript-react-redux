@@ -15,7 +15,10 @@ interface ErrorBoundaryState {
 
 const errorBoundary = () => <T extends {}>(Component: React.ComponentType<T>) => {
   return class ErrorBoundary extends React.Component<T, ErrorBoundaryState> {
-    public state: ErrorBoundaryState = { hasError: false };
+    constructor(props: T) {
+      super(props);
+      this.state = { hasError: false };
+    }
 
     static getDerivedStateFromError(error: Error) {
       let state: ErrorBoundaryState = { hasError: true };
