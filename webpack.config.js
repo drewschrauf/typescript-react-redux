@@ -9,7 +9,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 module.exports = {
   mode: isProduction ? 'production' : 'development',
   devtool: isProduction ? 'none' : 'eval-source-map',
-  entry: './src/index.tsx',
+  entry: [...(isProduction ? [] : ['react-hot-loader/patch']), './src/index.tsx'],
   output: {
     path: path.join(__dirname, 'dist'),
     filename: '[name].[hash].js',
@@ -20,6 +20,11 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js'],
     alias: {
       '@': path.resolve(__dirname, 'src'),
+      ...(isProduction
+        ? {}
+        : {
+            'react-dom': '@hot-loader/react-dom',
+          }),
     },
   },
   module: {
@@ -28,7 +33,13 @@ module.exports = {
         test: /\.tsx?/,
         loader: 'babel-loader',
       },
-      { test: /\.css/, loaders: [MiniCssExtractPlugin.loader, 'css-loader'] },
+      {
+        test: /\.css/,
+        loaders: [
+          ...(isProduction ? [MiniCssExtractPlugin.loader] : ['style-loader']),
+          'css-loader',
+        ],
+      },
       { test: /\.md/, loaders: ['html-loader', 'markdown-loader'] },
     ],
   },
@@ -39,10 +50,14 @@ module.exports = {
         viewport: 'width=device-width, initial-scale=1.0',
       },
     }),
-    new MiniCssExtractPlugin({
-      filename: '[name].[hash].css',
-      chunkFilename: '[id].[hash].css',
-    }),
+    ...(isProduction
+      ? [
+          new MiniCssExtractPlugin({
+            filename: '[name].[hash].css',
+            chunkFilename: '[id].[hash].css',
+          }),
+        ]
+      : []),
   ],
   ...(isProduction
     ? {
