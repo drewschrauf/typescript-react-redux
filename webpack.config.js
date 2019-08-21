@@ -3,12 +3,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const ErrorOverlayPlugin = require('error-overlay-webpack-plugin');
 
 const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = {
   mode: isProduction ? 'production' : 'development',
-  devtool: isProduction ? 'none' : 'eval-source-map',
+  devtool: isProduction ? 'none' : 'inline-cheap-module-source-map',
   entry: [...(isProduction ? [] : ['react-hot-loader/patch']), './src/index.tsx'],
   output: {
     path: path.join(__dirname, 'dist'),
@@ -57,7 +58,7 @@ module.exports = {
             chunkFilename: '[id].[hash].css',
           }),
         ]
-      : []),
+      : [new ErrorOverlayPlugin()]),
   ],
   ...(isProduction
     ? {

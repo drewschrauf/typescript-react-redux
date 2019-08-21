@@ -1,11 +1,12 @@
-import { createAction, isType, createHook } from './util';
+import createContextualReducer from './createContextualReducer';
+import { createAction, isType } from './action';
 
 const incrementBy = createAction<{ amount: number }>('INCREMENT');
 const decrementBy = createAction<{ amount: number }>('DECREMENT');
 const beginDelayedIncrement = createAction<{}>('BEGIN_DELAYED_INCREMENT');
 const completeDelayedIncrement = createAction<{ amount: number }>('COMPLETE_DELAYED_INCREMENT');
 
-const { Provider, hook } = createHook(
+const { Provider, hook } = createContextualReducer(
   { count: 0, pending: false },
   (state, action) => {
     if (isType(action, incrementBy)) {
