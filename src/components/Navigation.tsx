@@ -17,7 +17,7 @@ const LinkList = styled.ul`
 
   visibility: hidden;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: all 0.3s ease;
 `;
 
 const LinkListItem = styled.li`
