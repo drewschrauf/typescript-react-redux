@@ -38,7 +38,7 @@ const LinkWrapper = styled.div`
 const Navigation = () => (
   <Wrapper>
     <LinkWrapper>
-      <Link to="/">Home▼</Link>
+      <Link to="/">Count▼</Link>
       <LinkList>
         <LinkListItem>
           <Link to="/by/1">By 1</Link>
