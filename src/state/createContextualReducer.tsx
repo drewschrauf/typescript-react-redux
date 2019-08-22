@@ -20,7 +20,7 @@ const createContextualReducer = <State, Actions>(
     return <Context.Provider value={value} {...props} />;
   };
 
-  const hook = () => {
+  const useContextualReducer = () => {
     const context = React.useContext(Context);
     /* istanbul ignore if */
     if (!context) {
@@ -29,6 +29,6 @@ const createContextualReducer = <State, Actions>(
     return context;
   };
 
-  return { Provider, hook };
+  return { Provider, useContextualReducer };
 };
 export default createContextualReducer;

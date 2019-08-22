@@ -6,7 +6,7 @@ const decrementBy = createAction<{ amount: number }>('DECREMENT');
 const beginDelayedIncrement = createAction<{}>('BEGIN_DELAYED_INCREMENT');
 const completeDelayedIncrement = createAction<{ amount: number }>('COMPLETE_DELAYED_INCREMENT');
 
-const { Provider, hook } = createContextualReducer(
+const { Provider, useContextualReducer } = createContextualReducer(
   { count: 0, pending: false },
   (state, action) => {
     if (isType(action, incrementBy)) {
@@ -37,4 +37,4 @@ const { Provider, hook } = createContextualReducer(
 );
 Provider.displayName = 'CounterProvider';
 export const CounterProvider = Provider;
-export default hook;
+export default useContextualReducer;

@@ -9,7 +9,7 @@ const useDelay = (ms: number) => {
     return () => {
       clearTimeout(timer);
     };
-  }, []);
+  }, [ms]);
   return delayComplete;
 };
 
