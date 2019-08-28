@@ -7,14 +7,14 @@
   "license": "MIT",
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server --host 0.0.0.0 --hot",
-    "build": "rimraf dist && cross-env NODE_ENV=production webpack && cp _redirects dist",
+    "build": "rimraf build && cross-env NODE_ENV=production webpack && cp _redirects build",
     "lint": "eslint --ext ts,tsx src && yarn check-types",
     "check-types": "tsc",
     "test": "jest",
     "test:coveralls": "jest --verbose --coverage --coverageReporters=text-lcov | coveralls",
     "stats": "yarn stats:analyze && yarn stats:start",
-    "stats:analyze": "cross-env NODE_ENV=production webpack --profile --json > dist/stats.json",
-    "stats:start": "webpack-bundle-analyzer dist/stats.json --host 0.0.0.0",
+    "stats:analyze": "cross-env NODE_ENV=production webpack --profile --json > build/stats.json",
+    "stats:start": "webpack-bundle-analyzer build/stats.json --host 0.0.0.0",
     "ci": "yarn lint && yarn test:coveralls && yarn build"
   },
   "dependencies": {

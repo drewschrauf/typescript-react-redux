@@ -12,7 +12,7 @@ module.exports = {
   devtool: isProduction ? 'none' : 'inline-cheap-module-source-map',
   entry: [...(isProduction ? [] : ['react-hot-loader/patch']), './src/index.tsx'],
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, 'build'),
     filename: '[name].[hash].js',
     chunkFilename: '[name].[hash].js',
     publicPath: '/',
