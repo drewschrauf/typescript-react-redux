@@ -31,6 +31,33 @@ describe('counter', () => {
     expect(root.getByText('Count 0')).toBeInTheDocument();
   });
 
+  describe('title', () => {
+    it('should render current count in title', () => {
+      document.title = 'Test';
+      renderWithProvider(<Counter {...DEFAULT_PROPS} />);
+
+      expect(document.title).toEqual('Count 0 | Test');
+    });
+
+    it('should render updated count in title', () => {
+      document.title = 'Test';
+      const root = renderWithProvider(<Counter {...DEFAULT_PROPS} />);
+
+      fireEvent.click(root.getByText('Increment by 1'));
+
+      expect(document.title).toEqual('Count 1 | Test');
+    });
+
+    it('should revert title when unmounted', () => {
+      document.title = 'Test';
+      const root = renderWithProvider(<Counter {...DEFAULT_PROPS} />);
+
+      root.unmount();
+
+      expect(document.title).toEqual('Test');
+    });
+  });
+
   describe('default increment', () => {
     it('should increment amount when increment button clicked', () => {
       const root = renderWithProvider(<Counter {...DEFAULT_PROPS} />);
