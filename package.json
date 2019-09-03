@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server --host 0.0.0.0 --hot",
-    "build": "rimraf build && cross-env NODE_ENV=production webpack && cp _redirects build",
+    "build": "rimraf build && cross-env NODE_ENV=production webpack && cpy _redirects build",
     "lint": "eslint --ext ts,tsx src && yarn check-types",
     "check-types": "tsc",
     "test": "jest",
@@ -47,6 +47,7 @@
     "babel-loader": "8.0.6",
     "babel-plugin-styled-components": "1.10.6",
     "coveralls": "3.0.6",
+    "cpy-cli": "2.0.0",
     "cross-env": "5.2.1",
     "css-loader": "3.2.0",
     "error-overlay-webpack-plugin": "0.4.1",
