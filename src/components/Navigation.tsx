@@ -40,21 +40,11 @@ const Navigation = () => (
     <LinkWrapper>
       <Link to="/">Count▼</Link>
       <LinkList>
-        <LinkListItem>
-          <Link to="/by/1">By 1</Link>
-        </LinkListItem>
-        <LinkListItem>
-          <Link to="/by/2">By 2</Link>
-        </LinkListItem>
-        <LinkListItem>
-          <Link to="/by/3">By 3</Link>
-        </LinkListItem>
-        <LinkListItem>
-          <Link to="/by/5">By 5</Link>
-        </LinkListItem>
-        <LinkListItem>
-          <Link to="/by/8">By 8</Link>
-        </LinkListItem>
+        {[1, 2, 3, 5, 8].map(increment => (
+          <LinkListItem key={increment}>
+            <Link to={`/by/${increment}`}>By {increment}</Link>
+          </LinkListItem>
+        ))}
       </LinkList>
     </LinkWrapper>
     <LinkWrapper>

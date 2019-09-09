@@ -8,17 +8,29 @@ const DelayedElement = withDelay({ delay: 500 })(() => <h1>Element</h1>);
 
 jest.useFakeTimers();
 
-describe('withDelay', () => {
-  it('should not render anything by default', () => {
-    const root = render(<DelayedElement />);
-    expect(root.container.innerHTML).toBe('');
-  });
+afterEach(() => {
+  jest.restoreAllMocks();
+});
 
-  it('should render element after timeout', () => {
-    const root = render(<DelayedElement />);
-    act(() => {
-      jest.runAllTimers();
-    });
-    expect(root.getByText('Element')).toBeInTheDocument();
+it('should not render anything by default', () => {
+  const root = render(<DelayedElement />);
+  expect(root.container.innerHTML).toBe('');
+});
+
+it('should render element after timeout', () => {
+  const root = render(<DelayedElement />);
+  act(() => {
+    jest.runAllTimers();
   });
+  expect(root.getByText('Element')).toBeInTheDocument();
+});
+
+it('should cancel timer if unmounted before timer expires', () => {
+  jest.spyOn(global, 'clearTimeout');
+  const root = render(<DelayedElement />);
+  root.unmount();
+  act(() => {
+    jest.runAllTimers();
+  });
+  expect(clearTimeout).toHaveBeenCalled();
 });
