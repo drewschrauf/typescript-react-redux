@@ -3,6 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import withErrorBoundary from '@/hoc/withErrorBoundary';
+import useUpdateTitle from '@/hooks/useUpdateTitle';
 
 const readme = require('../../README.md');
 
@@ -12,18 +13,22 @@ const ReadmeContent = styled.div`
   }
 `;
 
-const AboutPage = () => (
-  <div>
-    <ReadmeContent dangerouslySetInnerHTML={{ __html: readme }} />
-    <p>
-      <a
-        href="https://github.com/drewschrauf/typescript-react-redux"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        View on GitHub
-      </a>
-    </p>
-  </div>
-);
+const AboutPage = () => {
+  useUpdateTitle('About');
+
+  return (
+    <div>
+      <ReadmeContent dangerouslySetInnerHTML={{ __html: readme }} />
+      <p>
+        <a
+          href="https://github.com/drewschrauf/typescript-react-redux"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View on GitHub
+        </a>
+      </p>
+    </div>
+  );
+};
 export default withErrorBoundary()(AboutPage);

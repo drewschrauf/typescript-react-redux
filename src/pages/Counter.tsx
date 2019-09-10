@@ -1,20 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import isNaN from 'lodash/isNaN';
 
 import Counter from '@/components/Counter';
 import withErrorBoundary from '@/hoc/withErrorBoundary';
 import { ParseError } from '@/errors';
 import useCounter from '@/state/useCounter';
-
-const useUpdateTitle = (title: string) => {
-  useEffect(() => {
-    const originalTitle = document.title;
-    document.title = `${title} | ${originalTitle}`;
-    return () => {
-      document.title = originalTitle;
-    };
-  }, [title]);
-};
+import useUpdateTitle from '@/hooks/useUpdateTitle';
 
 const getAmount = (by: string = '1') => {
   const value = parseInt(by, 10);
