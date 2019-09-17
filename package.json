@@ -48,7 +48,7 @@
     "babel-plugin-styled-components": "1.10.6",
     "coveralls": "3.0.6",
     "cpy-cli": "2.0.0",
-    "cross-env": "5.2.1",
+    "cross-env": "6.0.0",
     "css-loader": "3.2.0",
     "error-overlay-webpack-plugin": "0.4.1",
     "eslint": "6.4.0",
