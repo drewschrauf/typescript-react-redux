@@ -1,3 +1,5 @@
+const { addIfDev } = require('./env');
+
 module.exports = {
   presets: [
     [
@@ -12,9 +14,7 @@ module.exports = {
     '@babel/preset-typescript',
   ],
   plugins: [
-    ...(process.env.NODE_ENV !== 'production'
-      ? ['react-hot-loader/babel', 'babel-plugin-styled-components']
-      : []),
+    ...addIfDev(['react-hot-loader/babel', 'babel-plugin-styled-components']),
     '@babel/plugin-proposal-class-properties',
     '@babel/plugin-syntax-dynamic-import',
   ],

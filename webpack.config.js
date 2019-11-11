@@ -5,12 +5,12 @@ const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const ErrorOverlayPlugin = require('error-overlay-webpack-plugin');
 
-const isProduction = process.env.NODE_ENV === 'production';
+const { addIfProd, addIfDev } = require('./env');
 
 module.exports = {
-  mode: isProduction ? 'production' : 'development',
-  devtool: isProduction ? 'none' : 'inline-cheap-module-source-map',
-  entry: [...(isProduction ? [] : ['react-hot-loader/patch']), './src/index.tsx'],
+  ...addIfDev({ mode: 'development', devtool: 'inline-cheap-module-source-map' }),
+  ...addIfProd({ mode: 'production', devtool: 'none' }),
+  entry: [...addIfDev(['react-hot-loader/patch']), './src/index.tsx'],
   output: {
     path: path.join(__dirname, 'build'),
     filename: '[name].[hash].js',
@@ -21,11 +21,9 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js'],
     alias: {
       '@': path.resolve(__dirname, 'src'),
-      ...(isProduction
-        ? {}
-        : {
-            'react-dom': '@hot-loader/react-dom',
-          }),
+      ...addIfDev({
+        'react-dom': '@hot-loader/react-dom',
+      }),
     },
   },
   module: {
@@ -37,7 +35,8 @@ module.exports = {
       {
         test: /\.css/,
         loaders: [
-          ...(isProduction ? [MiniCssExtractPlugin.loader] : ['style-loader']),
+          ...addIfDev(['style-loader']),
+          ...addIfProd([MiniCssExtractPlugin.loader]),
           'css-loader',
         ],
       },
@@ -51,22 +50,19 @@ module.exports = {
         viewport: 'width=device-width, initial-scale=1.0',
       },
     }),
-    ...(isProduction
-      ? [
-          new MiniCssExtractPlugin({
-            filename: '[name].[hash].css',
-            chunkFilename: '[id].[hash].css',
-          }),
-        ]
-      : [new ErrorOverlayPlugin()]),
+    ...addIfDev([new ErrorOverlayPlugin()]),
+    ...addIfProd([
+      new MiniCssExtractPlugin({
+        filename: '[name].[hash].css',
+        chunkFilename: '[id].[hash].css',
+      }),
+    ]),
   ],
-  ...(isProduction
-    ? {
-        optimization: {
-          minimizer: [new TerserPlugin(), new OptimizeCSSAssetsPlugin()],
-        },
-      }
-    : {}),
+  ...addIfProd({
+    optimization: {
+      minimizer: [new TerserPlugin(), new OptimizeCSSAssetsPlugin()],
+    },
+  }),
   devServer: {
     disableHostCheck: true,
     historyApiFallback: true,
