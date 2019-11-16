@@ -1,18 +1,9 @@
-/* eslint-disable no-console, react/jsx-props-no-spreading */
+/* eslint-disable no-console */
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
-import set from 'lodash/fp/set';
+import { fireEvent } from '@testing-library/react';
+import { renderWithRouter } from './helpers';
 
-import Counter from '@/pages/Counter';
-import { CounterProvider } from '@/state/useCounter';
-
-const DEFAULT_PROPS = { match: { params: {} } };
-
-jest.useFakeTimers();
-
-const renderWithProvider = (element: React.ReactNode) => {
-  return render(<CounterProvider>{element}</CounterProvider>);
-};
+import App from '@/App';
 
 let err: typeof console.error;
 beforeEach(() => {
@@ -24,47 +15,47 @@ afterEach(() => {
   console.error = err;
 });
 
-it('should render current count', () => {
-  const root = renderWithProvider(<Counter {...DEFAULT_PROPS} />);
+it('should render current count', async () => {
+  const root = await renderWithRouter(<App />, { waitForId: 'counter-page' });
 
   expect(root.getByText('Count 0')).toBeInTheDocument();
 });
 
-it('should render current count in title', () => {
+it('should render current count in title', async () => {
   document.title = 'Test';
-  renderWithProvider(<Counter {...DEFAULT_PROPS} />);
+  await renderWithRouter(<App />, { waitForId: 'counter-page' });
 
   expect(document.title).toEqual('Count 0 | Test');
 });
 
-it('should render updated count in title', () => {
+it('should render updated count in title', async () => {
   document.title = 'Test';
-  const root = renderWithProvider(<Counter {...DEFAULT_PROPS} />);
+  const root = await renderWithRouter(<App />, { waitForId: 'counter-page' });
 
   fireEvent.click(root.getByText('Increment by 1'));
 
   expect(document.title).toEqual('Count 1 | Test');
 });
 
-it('should revert title when unmounted', () => {
+it('should revert title when unmounted', async () => {
   document.title = 'Test';
-  const root = renderWithProvider(<Counter {...DEFAULT_PROPS} />);
+  const root = await renderWithRouter(<App />, { waitForId: 'counter-page' });
 
   root.unmount();
 
   expect(document.title).toEqual('Test');
 });
 
-it('should increment by default amount when increment button clicked', () => {
-  const root = renderWithProvider(<Counter {...DEFAULT_PROPS} />);
+it('should increment by default amount when increment button clicked', async () => {
+  const root = await renderWithRouter(<App />, { waitForId: 'counter-page' });
 
   fireEvent.click(root.getByText('Increment by 1'));
 
   expect(root.getByText('Count 1')).toBeInTheDocument();
 });
 
-it('should decrement by default amount when decrement button clicked', () => {
-  const root = renderWithProvider(<Counter {...DEFAULT_PROPS} />);
+it('should decrement by default amount when decrement button clicked', async () => {
+  const root = await renderWithRouter(<App />, { waitForId: 'counter-page' });
 
   fireEvent.click(root.getByText('Decrement by 1'));
 
@@ -72,7 +63,8 @@ it('should decrement by default amount when decrement button clicked', () => {
 });
 
 it('should delay increment by default amount when increment button clicked', async () => {
-  const root = renderWithProvider(<Counter {...DEFAULT_PROPS} />);
+  const root = await renderWithRouter(<App />, { waitForId: 'counter-page' });
+  jest.useFakeTimers();
 
   fireEvent.click(root.getByText('Delayed increment by 1'));
   expect(root.getByText('Count 0')).toBeInTheDocument();
@@ -84,20 +76,16 @@ it('should delay increment by default amount when increment button clicked', asy
   expect(root.getByText('Delayed increment by 1')).not.toBeDisabled();
 });
 
-it('should increment by given amount when route provides increment amount', () => {
-  const root = renderWithProvider(
-    <Counter {...set(['match', 'params', 'by'], '7', DEFAULT_PROPS)} />,
-  );
+it('should increment by given amount when route provides increment amount', async () => {
+  const root = await renderWithRouter(<App />, { route: '/by/7', waitForId: 'counter-page' });
 
   fireEvent.click(root.getByText('Increment by 7'));
 
   expect(root.getByText('Count 7')).toBeInTheDocument();
 });
 
-it('should decrement by given amount when route provides decrement amount', () => {
-  const root = renderWithProvider(
-    <Counter {...set(['match', 'params', 'by'], '7', DEFAULT_PROPS)} />,
-  );
+it('should decrement by given amount when route provides decrement amount', async () => {
+  const root = await renderWithRouter(<App />, { route: '/by/7', waitForId: 'counter-page' });
 
   fireEvent.click(root.getByText('Decrement by 7'));
 
@@ -105,9 +93,8 @@ it('should decrement by given amount when route provides decrement amount', () =
 });
 
 it('should delay increment by given amount when route provides increment amount', async () => {
-  const root = renderWithProvider(
-    <Counter {...set(['match', 'params', 'by'], '7', DEFAULT_PROPS)} />,
-  );
+  const root = await renderWithRouter(<App />, { route: '/by/7', waitForId: 'counter-page' });
+  jest.useFakeTimers();
 
   fireEvent.click(root.getByText('Delayed increment by 7'));
   expect(root.getByText('Count 0')).toBeInTheDocument();
@@ -120,9 +107,7 @@ it('should delay increment by given amount when route provides increment amount'
 });
 
 it('should show error message if invalid increment amount is given', async () => {
-  const root = renderWithProvider(
-    <Counter {...set(['match', 'params', 'by'], 'garbage', DEFAULT_PROPS)} />,
-  );
+  const root = await renderWithRouter(<App />, { route: '/by/garbage', waitForId: 'error-page' });
 
   expect(root.getByText('You can\'t use "garbage" as an increment amount!')).toBeInTheDocument();
 });

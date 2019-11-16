@@ -33,7 +33,7 @@ const errorBoundary = () => <T extends {}>(Component: React.ComponentType<T>) =>
       return !hasError ? (
         <Component {...this.props} /> // eslint-disable-line react/jsx-props-no-spreading
       ) : (
-        <ErrorMessage>{message || 'Something went wrong'}</ErrorMessage>
+        <ErrorMessage data-testid="error-page">{message || 'Something went wrong'}</ErrorMessage>
       );
     }
   };

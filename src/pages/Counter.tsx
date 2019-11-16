@@ -22,6 +22,10 @@ interface CounterPageProps {
 const CounterPage = ({ match }: CounterPageProps) => {
   const [{ count }] = useCounter();
   useUpdateTitle(`Count ${count}`);
-  return <Counter amount={getAmount(match.params.by)} />;
+  return (
+    <div data-testid="counter-page">
+      <Counter amount={getAmount(match.params.by)} />
+    </div>
+  );
 };
 export default withErrorBoundary()(CounterPage);

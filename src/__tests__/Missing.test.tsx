@@ -1,9 +1,9 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { renderWithRouter } from './helpers';
 
-import Missing from '@/pages/Missing';
+import App from '@/App';
 
-it('should match snapshot', () => {
-  const root = render(<Missing />);
+it('should show error message', async () => {
+  const root = await renderWithRouter(<App />, { route: '/missing', waitForId: 'missing-page' });
   expect(root.getByText("There's nothing here")).toBeInTheDocument();
 });

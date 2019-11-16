@@ -1,22 +1,17 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { renderWithRouter } from './helpers';
 
-import About from '@/pages/About';
+import App from '@/App';
 
 jest.mock('../../README.md', () => '<h1>Content</h1>');
 
-it('should match snapshot', () => {
-  const root = render(<About />);
-  expect(root.container.innerHTML).toMatchSnapshot();
-});
-
-it('should render README content as markup', () => {
-  const root = render(<About />);
+it('should render README content as markup', async () => {
+  const root = await renderWithRouter(<App />, { route: '/about', waitForId: 'about-page' });
   expect(root.getByText('Content')).toBeInTheDocument();
 });
 
-it('should have a link back to github', () => {
-  const root = render(<About />);
+it('should have a link back to github', async () => {
+  const root = await renderWithRouter(<App />, { route: '/about', waitForId: 'about-page' });
   const link = root.getByText('View on GitHub');
   expect(link.tagName).toBe('A');
   expect((link as HTMLAnchorElement).href).toBe(

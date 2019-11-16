@@ -17,7 +17,7 @@ const AboutPage = () => {
   useUpdateTitle('About');
 
   return (
-    <div>
+    <div data-testid="about-page">
       <ReadmeContent dangerouslySetInnerHTML={{ __html: readme }} />
       <p>
         <a
