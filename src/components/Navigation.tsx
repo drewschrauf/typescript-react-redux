@@ -6,6 +6,12 @@ const Wrapper = styled.div`
   margin-bottom: 10px;
 `;
 
+const DropdownLink = styled(Link)`
+  &:after {
+    content: '▼';
+  }
+`;
+
 const LinkList = styled.ul`
   position: absolute;
   border: 1px solid black;
@@ -38,7 +44,7 @@ const LinkWrapper = styled.div`
 const Navigation = () => (
   <Wrapper>
     <LinkWrapper>
-      <Link to="/">Count▼</Link>
+      <DropdownLink to="/">Count</DropdownLink>
       <LinkList>
         {[1, 2, 3, 5, 8].map(increment => (
           <LinkListItem key={increment}>

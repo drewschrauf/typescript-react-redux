@@ -18,7 +18,7 @@ it('should navigate from home to about', async () => {
 it('should navigate from about to home', async () => {
   const root = await renderWithRouter(<App />, { route: '/about', waitForId: 'about-page' });
 
-  fireEvent.click(root.getByText('Count▼'));
+  fireEvent.click(root.getByText('Count'));
 
   const counterPage = await waitForElement(() => root.getByTestId('counter-page'));
   expect(counterPage).toBeInTheDocument();
