@@ -9,6 +9,7 @@ let err: typeof console.error;
 beforeEach(() => {
   err = console.error;
   console.error = jest.fn();
+  jest.useRealTimers();
 });
 
 afterEach(() => {
