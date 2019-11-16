@@ -19,3 +19,9 @@ it('should have a link back to github', async () => {
   );
   expect((link as HTMLAnchorElement).target).toBe('_blank');
 });
+
+it('should update the title', async () => {
+  document.title = 'Test';
+  await renderWithRouter(<App />, { route: '/about', waitForId: 'about-page' });
+  expect(document.title).toBe('About | Test');
+});
