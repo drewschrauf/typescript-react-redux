@@ -97,7 +97,8 @@
       "<rootDir>/setup-test.ts"
     ],
     "coveragePathIgnorePatterns": [
-      "setup-test.ts"
+      "setup-test.ts",
+      ".*/__tests__/.*"
     ]
   }
 }
