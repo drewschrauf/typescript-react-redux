@@ -3,5 +3,6 @@
 /.cache
 /coverage
 /reports
+/.stryker-tmp
 /.vscode
 /yarn-error.log

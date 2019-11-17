@@ -1,4 +1,4 @@
-module.exports = function(config) {
+module.exports = config => {
   config.set({
     mutator: 'typescript',
     packageManager: 'yarn',
@@ -7,6 +7,6 @@ module.exports = function(config) {
     transpilers: [],
     coverageAnalysis: 'off',
     tsconfigFile: 'tsconfig.json',
-    mutate: ['src/**/*.ts?(x)', '!src/**/__tests__/**/*.ts?(x)'],
+    mutate: ['src/**/*.ts?(x)', '!src/**/__tests__/**/*.ts?(x)', '!src/index.tsx'],
   });
 };

@@ -24,10 +24,19 @@ it('should navigate from about to home', async () => {
   expect(counterPage).toBeInTheDocument();
 });
 
-it('should navigate from home to by', async () => {
+it('should navigate from home to count by', async () => {
   const root = await renderWithRouter(<App />, { waitForId: 'counter-page' });
 
   fireEvent.click(root.getByText('By 3'));
 
+  expect(root.getByText('Increment by 3')).toBeInTheDocument();
+});
+
+it('should navigate from about to count by', async () => {
+  const root = await renderWithRouter(<App />, { route: '/about', waitForId: 'about-page' });
+
+  fireEvent.click(root.getByText('By 3'));
+
+  await waitForElement(() => root.getByTestId('counter-page'));
   expect(root.getByText('Increment by 3')).toBeInTheDocument();
 });

@@ -22,7 +22,6 @@ const createContextualReducer = <State, Actions>(
 
   const useContextualReducer = () => {
     const context = React.useContext(Context);
-    /* istanbul ignore if */
     if (!context) {
       throw new Error('hook must be used within the corresponding provider');
     }

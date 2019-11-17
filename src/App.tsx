@@ -7,8 +7,6 @@ import { CounterProvider } from '@/state/useCounter';
 import Navigation from '@/components/Navigation';
 import Spinner from '@/components/Spinner';
 
-// import CounterPage from '@/pages/Counter';
-
 const PageWrapper = styled.div`
   width: 100%;
   @media screen and (min-width: 800px) {
