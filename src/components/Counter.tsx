@@ -24,7 +24,7 @@ const Buttons = styled.div`
 
 const Button = styled.button`
   flex: 1;
-  height: 32px;
+  flex-basis: 32px;
   font-family: inherit;
 
   &:not(:last-child) {
@@ -32,6 +32,8 @@ const Button = styled.button`
   }
 
   @media screen and (min-width: 450px) {
+    flex-basis: initial;
+    height: 32px;
     &:not(:last-child) {
       margin: 0 10px 0 0;
     }
