@@ -13,16 +13,28 @@ const Wrapper = styled.div`
   border: 1px dashed black;
 `;
 
-const Button = styled.button`
-  width: 100%;
-  height: 32px;
-  margin-right: 10px;
-  margin-bottom: 5px;
-  font-family: inherit;
+const Buttons = styled.div`
+  display: flex;
+  flex-direction: column;
 
   @media screen and (min-width: 450px) {
-    width: initial;
-    margin-bottom: 0;
+    flex-direction: row;
+  }
+`;
+
+const Button = styled.button`
+  flex: 1;
+  height: 32px;
+  font-family: inherit;
+
+  &:not(:last-child) {
+    margin: 0 0 5px;
+  }
+
+  @media screen and (min-width: 450px) {
+    &:not(:last-child) {
+      margin: 0 10px 0 0;
+    }
   }
 `;
 
@@ -35,11 +47,13 @@ const Counter = ({ amount }: CounterProps) => {
   return (
     <Wrapper>
       <h1>Count {state.count}</h1>
-      <Button onClick={() => actions.incrementBy(amount)}>Increment by {amount}</Button>
-      <Button onClick={() => actions.decrementBy(amount)}>Decrement by {amount}</Button>
-      <Button disabled={state.pending} onClick={() => actions.delayedIncrementBy(amount)}>
-        Delayed increment by {amount}
-      </Button>
+      <Buttons>
+        <Button onClick={() => actions.incrementBy(amount)}>Increment by {amount}</Button>
+        <Button onClick={() => actions.decrementBy(amount)}>Decrement by {amount}</Button>
+        <Button disabled={state.pending} onClick={() => actions.delayedIncrementBy(amount)}>
+          Delayed increment by {amount}
+        </Button>
+      </Buttons>
     </Wrapper>
   );
 };
