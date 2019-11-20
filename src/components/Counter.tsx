@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import useCounter from '@/state/useCounter';
+import { Sizes } from '@/styles';
 
 interface CounterProps {
   /** The amount to increment or decrement the counter by on each click */
@@ -17,7 +18,7 @@ const Buttons = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media screen and (min-width: 450px) {
+  @media screen and (min-width: ${Sizes.sm}px) {
     flex-direction: row;
   }
 `;
@@ -31,7 +32,7 @@ const Button = styled.button`
     margin: 0 0 5px;
   }
 
-  @media screen and (min-width: 450px) {
+  @media screen and (min-width: ${Sizes.sm}px) {
     flex-basis: initial;
     height: 32px;
     &:not(:last-child) {

@@ -6,12 +6,11 @@ import styled from 'styled-components';
 import { CounterProvider } from '@/state/useCounter';
 import Navigation from '@/components/Navigation';
 import Spinner from '@/components/Spinner';
+import { Sizes } from '@/styles';
 
 const PageWrapper = styled.div`
   width: 100%;
-  @media screen and (min-width: 800px) {
-    width: 800px;
-  }
+  max-width: ${Sizes.md}px;
 `;
 
 const CounterPage = lazy(() => import('@/pages/Counter'));
