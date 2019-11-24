@@ -960,21 +960,21 @@
   resolved "https://registry.yarnpkg.com/@sheerun/mutationobserver-shim/-/mutationobserver-shim-0.3.2.tgz#8013f2af54a2b7d735f71560ff360d3a8176a87b"
   integrity sha512-vTCdPp/T/Q3oSqwHmZ5Kpa9oI7iLtGl3RQaA/NyLHikvcrPxACkkKVr/XzkSPJWXHRhKGzVvb0urJsbMlRxi1Q==
 
-"@stryker-mutator/api@^2.3.0":
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/@stryker-mutator/api/-/api-2.3.0.tgz#8f4010471f8cd22ceec8efe78429d39e7af12ccc"
-  integrity sha512-N+XlEZAxMq4GKWt8OOn7R+124ieCiicLG3heiX2JQXNjn7uTVDfI5rSGn0oPvpwYtgeV9x6F//vzniRGhsOWIQ==
+"@stryker-mutator/api@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@stryker-mutator/api/-/api-2.4.0.tgz#9e710b6dde7f889d5c6d573f349bb622c57b9a57"
+  integrity sha512-VV12SWtoHKM8G2CSUHD7b8O6zJSygHjAju+e9qOjmrTaEgy8KUVO7OWuUNcRLpcRDVAlB2osuo3qndMstpPExg==
   dependencies:
-    mutation-testing-report-schema "^1.0.0"
+    mutation-testing-report-schema "^1.1.0"
     tslib "~1.10.0"
 
-"@stryker-mutator/core@2.3.0":
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/@stryker-mutator/core/-/core-2.3.0.tgz#7304a941fbd1dca46d00ee9211a2a4a0b4cf9450"
-  integrity sha512-ycbCxCqbhiVWOB6shUvcka8fwjFiEm4orixy3/8ns7CBoEjdq2pWUEXpy6kVtlN9FvBDYnyGFgIEmhLo/CEMCA==
+"@stryker-mutator/core@2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@stryker-mutator/core/-/core-2.4.0.tgz#533a2e42a2a6c9ada820a6ceb91b08285e7ccfaa"
+  integrity sha512-Z/PsUC/X2BOMJsbno9zWeNqx5sYeBYExtUQW2JL0niYNbs0xkhcU7S7UC2npjwGFOCrjjWzek5TQVGQtrlDhbw==
   dependencies:
-    "@stryker-mutator/api" "^2.3.0"
-    "@stryker-mutator/util" "^2.3.0"
+    "@stryker-mutator/api" "^2.4.0"
+    "@stryker-mutator/util" "^2.4.0"
     chalk "~3.0.0"
     commander "~4.0.0"
     get-port "~5.0.0"
@@ -983,7 +983,7 @@
     istanbul-lib-instrument "~3.3.0"
     lodash.flatmap "^4.5.0"
     lodash.groupby "^4.6.0"
-    log4js "~6.0.0"
+    log4js "~6.1.0"
     mkdirp "~0.5.1"
     mutation-testing-metrics "^1.1.1"
     progress "~2.0.0"
@@ -996,41 +996,41 @@
     typed-inject "~2.1.1"
     typed-rest-client "~1.5.0"
 
-"@stryker-mutator/html-reporter@2.3.0":
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/@stryker-mutator/html-reporter/-/html-reporter-2.3.0.tgz#2f7251b9b83849aa3f4e5f54a612f273004c2f23"
-  integrity sha512-MTkz47R55caThuPY1c3gl1NZl2eslv6j2MqBAtNwiaZ8nHnyofrAXkBhqDEy82Ipbcz7rQBpD4E/N6PTaAgEtQ==
+"@stryker-mutator/html-reporter@2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@stryker-mutator/html-reporter/-/html-reporter-2.4.0.tgz#2d7d4370841604afbf6d6f3f7e2faaf174c16393"
+  integrity sha512-k8KD0GqensSxxWabdMPr3y56sWedTCU9khYm/GoGGC/zq43Sptm7NhqENQVBA9TXaHOhQgTQRF+YIPWopSKaPQ==
   dependencies:
-    "@stryker-mutator/api" "^2.3.0"
-    "@stryker-mutator/util" "^2.3.0"
+    "@stryker-mutator/api" "^2.4.0"
+    "@stryker-mutator/util" "^2.4.0"
     file-url "~3.0.0"
     mkdirp "~0.5.1"
     mutation-testing-elements "^1.0.2"
     rimraf "~3.0.0"
 
-"@stryker-mutator/jest-runner@2.3.0":
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/@stryker-mutator/jest-runner/-/jest-runner-2.3.0.tgz#4b7724745fa31ffb9f800bc8b1f2a50f49814414"
-  integrity sha512-d3b5aEsGBm7UNSXbapmibHzvIDFzmq8CUxHHTJn9sK89XbG6F+h8SYnMf//9ln/QFtbGPmjxvS5oP9ufHnHzJg==
+"@stryker-mutator/jest-runner@2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@stryker-mutator/jest-runner/-/jest-runner-2.4.0.tgz#e8c16d3fb7a50db23d2395853b2e3b5b20a22ce8"
+  integrity sha512-mJNgIrUfY7lfnl+LedrTvGV82tMFrLlm+hJLjtaG6sZMCn/+b63rMF+zAPzZlANRtemx5gUOzZPSvdGeA0XsHQ==
   dependencies:
-    "@stryker-mutator/api" "^2.3.0"
+    "@stryker-mutator/api" "^2.4.0"
     semver "~6.3.0"
 
-"@stryker-mutator/typescript@2.3.0":
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/@stryker-mutator/typescript/-/typescript-2.3.0.tgz#1f13fb63f5dc68a29ca0d1815dc8dafc36dca4b1"
-  integrity sha512-rDF005coMvCaCWHt3pxgXf5iySPvvR7NRpY5WtqVYWEoOpbX0nhxBm4+hHbbotbdd7sUsYySa9qAkhKeDtGW/A==
+"@stryker-mutator/typescript@2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@stryker-mutator/typescript/-/typescript-2.4.0.tgz#91a07a3682b43c37e4b9cd67e6c2fbd25086ea1b"
+  integrity sha512-LUIqBP93VKf+PD2Z3Md4qJoFRfqGvwsQTsI/gI5cM6p8plhOT7mNqoTCmHPvqDOwKMaHRR4ltGEA8eSkQ92AOQ==
   dependencies:
-    "@stryker-mutator/api" "^2.3.0"
-    "@stryker-mutator/util" "^2.3.0"
+    "@stryker-mutator/api" "^2.4.0"
+    "@stryker-mutator/util" "^2.4.0"
     lodash.flatmap "~4.5.0"
     semver "~6.3.0"
     tslib "~1.10.0"
 
-"@stryker-mutator/util@^2.3.0":
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/@stryker-mutator/util/-/util-2.3.0.tgz#854bba4444bdb49471ae5dd33ad6aa271bb46b6b"
-  integrity sha512-mQLkbHy6HmN+/qb1aR02TUProbhcYASDLrthHILZriwZshCnxgfwrEOOssXlOQR/QAPXjZCnSA+fKjJwpngQQA==
+"@stryker-mutator/util@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@stryker-mutator/util/-/util-2.4.0.tgz#20e1e2f2388ae4e91f67f442224d479a539edf27"
+  integrity sha512-+pKsudzHy7r51S39bpo/2N4lmdnFb9qhF34My3Y5BtXWZEcKm+FELWkCAC4H8CmO/j0RgTLyfnQDoaw4MjdLgg==
 
 "@testing-library/dom@^6.3.0":
   version "6.10.1"
@@ -6074,10 +6074,10 @@ log-driver@^1.2.7:
   resolved "https://registry.yarnpkg.com/log-driver/-/log-driver-1.2.7.tgz#63b95021f0702fedfa2c9bb0a24e7797d71871d8"
   integrity sha512-U7KCmLdqsGHBLeWqYlFA0V0Sl6P08EE1ZrmA9cxjUE0WVqT9qnyVDPz1kzpFEP0jdJuFnasWIfSd7fsaNXkpbg==
 
-log4js@~6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/log4js/-/log4js-6.0.0.tgz#9fa6576d4507ac8bf816e15bbbc38e384a6bb022"
-  integrity sha512-Iwc/OWOE6bjQOTRoV3JOnXLiG9naU0gWUYhvFfXQ4FQRGnwZbc+67kFGeYwmrO1GO+n1UmX0QCDRiTzRkeYgeQ==
+log4js@~6.1.0:
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/log4js/-/log4js-6.1.0.tgz#51268154adb2eb5d8a594b2c77f024a77f047265"
+  integrity sha512-fSCHMYsMJbHwfNTuMlopVVcfkKwIRLh5mpNZGB2oBbnSmr3yUTo4tL4xGBA0/q29xowlu96eTXGghJFNhPXMnA==
   dependencies:
     date-format "^3.0.0"
     debug "^4.1.1"
@@ -6555,7 +6555,7 @@ mutation-testing-metrics@^1.1.1:
     lodash.groupby "^4.6.0"
     mutation-testing-report-schema "^1.2.0"
 
-mutation-testing-report-schema@^1.0.0, mutation-testing-report-schema@^1.2.0:
+mutation-testing-report-schema@^1.1.0, mutation-testing-report-schema@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/mutation-testing-report-schema/-/mutation-testing-report-schema-1.2.0.tgz#ed89cde7302833108b75703d4ef62085b1bb490e"
   integrity sha512-4LdCuO33sH8R2YJ1idP+GUTjPR/VeSEml1tboQX0+5dSwH2YccUrw73rzAEOzkbeD+IyzBDHLzQKmanScV4smA==
