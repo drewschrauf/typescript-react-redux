@@ -19,7 +19,7 @@
     "ci": "yarn lint && yarn test:coveralls && yarn build"
   },
   "dependencies": {
-    "core-js": "3.4.5",
+    "core-js": "3.4.7",
     "lodash": "4.17.15",
     "normalize.css": "8.0.1",
     "react": "16.12.0",
