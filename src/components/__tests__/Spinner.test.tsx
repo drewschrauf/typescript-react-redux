@@ -15,5 +15,5 @@ it('should render spinner after a timeout', () => {
   act(() => {
     jest.runAllTimers();
   });
-  expect(root.container.innerHTML).toMatchSnapshot();
+  expect(root.getByTestId('spinner')).toBeInTheDocument();
 });
