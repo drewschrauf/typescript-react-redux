@@ -7,7 +7,7 @@ import { ParseError } from '@/errors';
 import useCounter from '@/state/useCounter';
 import useUpdateTitle from '@/hooks/useUpdateTitle';
 
-const getAmount = (by: string = '1') => {
+const getAmount = (by = '1'): number => {
   const value = parseInt(by, 10);
   if (isNaN(value)) {
     throw new ParseError(`You can't use "${by}" as an increment amount!`);
@@ -19,7 +19,7 @@ interface CounterPageProps {
   match: { params: { by?: string } };
 }
 
-const CounterPage = ({ match }: CounterPageProps) => {
+const CounterPage: React.FC<CounterPageProps> = ({ match }) => {
   const [{ count }] = useCounter();
   useUpdateTitle(`Count ${count}`);
   return (

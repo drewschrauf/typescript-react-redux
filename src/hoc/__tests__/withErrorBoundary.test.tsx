@@ -26,7 +26,7 @@ it('should show provided component if no error', () => {
 it('should show error message if error', () => {
   const Element = withErrorBoundary()(() => (
     <h1>
-      {(() => {
+      {((): JSX.Element => {
         throw new Error('Basic error');
       })()}
     </h1>
@@ -39,7 +39,7 @@ it('should show error message if error', () => {
 it('should show customised error if error extends BaseError', () => {
   const Element = withErrorBoundary()(() => (
     <h1>
-      {(() => {
+      {((): JSX.Element => {
         throw new TestError('Customised error');
       })()}
     </h1>

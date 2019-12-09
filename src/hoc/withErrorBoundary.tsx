@@ -13,14 +13,16 @@ interface ErrorBoundaryState {
   message?: string;
 }
 
-const errorBoundary = () => <T extends {}>(Component: React.ComponentType<T>) => {
+const errorBoundary = () => <T extends {}>(
+  Component: React.ComponentType<T>,
+): React.ComponentClass<T> => {
   return class ErrorBoundary extends React.Component<T, ErrorBoundaryState> {
     constructor(props: T) {
       super(props);
       this.state = { hasError: false };
     }
 
-    static getDerivedStateFromError(error: Error) {
+    static getDerivedStateFromError(error: Error): ErrorBoundaryState {
       let state: ErrorBoundaryState = { hasError: true };
       if (error instanceof BaseError) {
         state = { ...state, message: error.message };
@@ -28,7 +30,7 @@ const errorBoundary = () => <T extends {}>(Component: React.ComponentType<T>) =>
       return state;
     }
 
-    render() {
+    render(): JSX.Element {
       const { hasError, message } = this.state;
       return !hasError ? (
         <Component {...this.props} /> // eslint-disable-line react/jsx-props-no-spreading

@@ -17,7 +17,7 @@ const CounterPage = lazy(() => import('@/pages/Counter'));
 const AboutPage = lazy(() => import('@/pages/About'));
 const MissingPage = lazy(() => import('@/pages/Missing'));
 
-const App = () => (
+const App: React.FC = () => (
   <CounterProvider>
     <PageWrapper>
       <Navigation />

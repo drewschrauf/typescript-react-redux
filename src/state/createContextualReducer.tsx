@@ -1,14 +1,42 @@
 import React from 'react';
-import { Action } from './action';
+
+export interface Action<T> {
+  /** Action type */
+  readonly type: symbol;
+  /** Action payload */
+  readonly payload: T;
+}
+
+interface ActionCreator<T> {
+  /** Type of created action */
+  readonly type: symbol;
+  /** Given a payload, create an action */
+  (payload: T): Action<T>;
+}
+
+export const createAction = <T extends {}>(constant?: string): ActionCreator<T> => {
+  const type = Symbol(constant);
+  return Object.assign((payload: T) => ({ type, payload }), {
+    type,
+  });
+};
+
+export const isType = <T extends {}>(
+  action: Action<unknown>,
+  actionCreator: ActionCreator<T>,
+): action is Action<T> => action.type === actionCreator.type;
 
 const createContextualReducer = <State, Actions>(
   initialState: State,
-  reducer: (state: State, action: Action<any>) => State,
-  bindActions: (dispatch: React.Dispatch<Action<any>>) => Actions,
-) => {
+  reducer: (state: State, action: Action<unknown>) => State,
+  bindActions: (dispatch: React.Dispatch<Action<unknown>>) => Actions,
+): {
+  Provider: React.ComponentType;
+  useContextualReducer: () => [State, Actions];
+} => {
   type ContextValue = [State, Actions];
 
-  const Context = React.createContext<ContextValue>(undefined as any);
+  const Context = React.createContext<ContextValue>((undefined as unknown) as ContextValue);
 
   const Provider: React.FC = <T extends {}>(props: T) => {
     const [currentState, dispatch] = React.useReducer(reducer, initialState);
@@ -20,7 +48,7 @@ const createContextualReducer = <State, Actions>(
     return <Context.Provider value={value} {...props} />;
   };
 
-  const useContextualReducer = () => {
+  const useContextualReducer = (): ContextValue => {
     const context = React.useContext(Context);
     if (!context) {
       throw new Error('hook must be used within the corresponding provider');

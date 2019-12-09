@@ -41,7 +41,7 @@ const LinkWrapper = styled.div`
   }
 `;
 
-const Navigation = () => (
+const Navigation: React.FC = () => (
   <Wrapper>
     <LinkWrapper>
       <DropdownLink to="/">Count</DropdownLink>

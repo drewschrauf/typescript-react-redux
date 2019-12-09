@@ -17,10 +17,10 @@ it('should throw if using hook without provider', () => {
   const { useContextualReducer } = createContextualReducer(
     {},
     () => ({}),
-    () => {},
+    () => ({}),
   );
 
-  const Comp = () => {
+  const Comp: React.FC = () => {
     useContextualReducer();
     return null;
   };

@@ -1,16 +1,17 @@
-{
-  "extends": ["airbnb", "airbnb/hooks", "prettier"],
-  "plugins": ["prettier"],
-  "parser": "@typescript-eslint/parser",
-  "rules": {
-    "prettier/prettier": "error",
-    "no-undef": "off",
-    "no-unused-vars": "off",
-    "consistent-return": "off",
-    "import/no-unresolved": "off",
-    "import/extensions": "off",
-    "react/jsx-no-undef": "off",
-    "react/jsx-filename-extension": "off",
-    "react/jsx-one-expression-per-line": "off"
-  }
-}
+extends:
+  - airbnb
+  - airbnb/hooks
+  - prettier
+  - prettier/react
+  - plugin:@typescript-eslint/recommended
+plugins:
+  - prettier
+parser: '@typescript-eslint/parser'
+rules:
+  prettier/prettier: error
+  # enforced by typescript
+  no-undef: off
+  no-unused-vars: off
+  import/no-unresolved: off
+  react/jsx-filename-extension: off
+  react/prop-types: off

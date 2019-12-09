@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import withErrorBoundary from '@/hoc/withErrorBoundary';
 import useUpdateTitle from '@/hooks/useUpdateTitle';
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const readme = require('../../README.md');
 
 const ReadmeContent = styled.div`
@@ -13,7 +14,7 @@ const ReadmeContent = styled.div`
   }
 `;
 
-const AboutPage = () => {
+const AboutPage: React.FC = () => {
   useUpdateTitle('About');
 
   return (

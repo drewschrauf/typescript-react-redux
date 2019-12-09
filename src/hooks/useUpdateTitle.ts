@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 
-const useUpdateTitle = (title: string) => {
+const useUpdateTitle = (title: string): void => {
   useEffect(() => {
     const originalTitle = document.title;
     document.title = `${title} | ${originalTitle}`;
-    return () => {
+    return (): void => {
       document.title = originalTitle;
     };
   }, [title]);

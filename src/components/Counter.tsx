@@ -45,15 +45,18 @@ const Button = styled.button`
  * React component that renders the main UI. It displays the current count and provides buttons
  * for modifying it.
  */
-const Counter = ({ amount }: CounterProps) => {
+const Counter: React.FC<CounterProps> = ({ amount }) => {
   const [state, actions] = useCounter();
   return (
     <Wrapper>
       <h1>Count {state.count}</h1>
       <Buttons>
-        <Button onClick={() => actions.incrementBy(amount)}>Increment by {amount}</Button>
-        <Button onClick={() => actions.decrementBy(amount)}>Decrement by {amount}</Button>
-        <Button disabled={state.pending} onClick={() => actions.delayedIncrementBy(amount)}>
+        <Button onClick={(): void => actions.incrementBy(amount)}>Increment by {amount}</Button>
+        <Button onClick={(): void => actions.decrementBy(amount)}>Decrement by {amount}</Button>
+        <Button
+          disabled={state.pending}
+          onClick={(): Promise<void> => actions.delayedIncrementBy(amount)}
+        >
           Delayed increment by {amount}
         </Button>
       </Buttons>
