@@ -15,3 +15,4 @@ rules:
   import/no-unresolved: off
   react/jsx-filename-extension: off
   react/prop-types: off
+  import/extensions: off
