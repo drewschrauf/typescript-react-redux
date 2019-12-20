@@ -58,7 +58,7 @@
     "cross-env": "6.0.3",
     "css-loader": "3.4.0",
     "error-overlay-webpack-plugin": "0.4.1",
-    "eslint": "6.7.2",
+    "eslint": "6.8.0",
     "eslint-config-airbnb": "18.0.1",
     "eslint-config-prettier": "6.7.0",
     "eslint-plugin-import": "2.19.1",
