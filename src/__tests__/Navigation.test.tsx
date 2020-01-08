@@ -11,7 +11,7 @@ it('should navigate from home to about', async () => {
 
   fireEvent.click(root.getByText('About'));
 
-  const aboutPage = await waitForElement(() => root.getByTestId('about-page'));
+  const aboutPage = await root.findByTestId('about-page');
   expect(aboutPage).toBeInTheDocument();
 });
 
@@ -20,7 +20,7 @@ it('should navigate from about to home', async () => {
 
   fireEvent.click(root.getByText('Count'));
 
-  const counterPage = await waitForElement(() => root.getByTestId('counter-page'));
+  const counterPage = await root.findByTestId('counter-page');
   expect(counterPage).toBeInTheDocument();
 });
 
