@@ -30,12 +30,12 @@
     "styled-components": "5.0.0"
   },
   "devDependencies": {
-    "@babel/core": "7.8.0",
-    "@babel/plugin-proposal-class-properties": "7.8.0",
-    "@babel/plugin-syntax-dynamic-import": "7.8.0",
-    "@babel/preset-env": "7.8.2",
-    "@babel/preset-react": "7.8.0",
-    "@babel/preset-typescript": "7.8.0",
+    "@babel/core": "7.8.3",
+    "@babel/plugin-proposal-class-properties": "7.8.3",
+    "@babel/plugin-syntax-dynamic-import": "7.8.3",
+    "@babel/preset-env": "7.8.3",
+    "@babel/preset-react": "7.8.3",
+    "@babel/preset-typescript": "7.8.3",
     "@hot-loader/react-dom": "16.11.0",
     "@stryker-mutator/core": "2.5.0",
     "@stryker-mutator/html-reporter": "2.5.0",
