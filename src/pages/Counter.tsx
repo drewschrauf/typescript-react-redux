@@ -1,5 +1,4 @@
 import React from 'react';
-import isNaN from 'lodash/isNaN';
 
 import Counter from '@/components/Counter';
 import withErrorBoundary from '@/hoc/withErrorBoundary';
@@ -9,7 +8,7 @@ import useUpdateTitle from '@/hooks/useUpdateTitle';
 
 const getAmount = (by = '1'): number => {
   const value = parseInt(by, 10);
-  if (isNaN(value)) {
+  if (Number.isNaN(value)) {
     throw new ParseError(`You can't use "${by}" as an increment amount!`);
   }
   return value;
