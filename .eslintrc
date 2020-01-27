@@ -1,6 +1,5 @@
 extends:
-  - airbnb
-  - airbnb/hooks
+  - react-app
   - prettier
   - prettier/react
   - plugin:@typescript-eslint/recommended
@@ -9,10 +8,3 @@ plugins:
 parser: '@typescript-eslint/parser'
 rules:
   prettier/prettier: error
-  # enforced by typescript
-  no-undef: off
-  no-unused-vars: off
-  import/no-unresolved: off
-  react/jsx-filename-extension: off
-  react/prop-types: off
-  import/extensions: off
