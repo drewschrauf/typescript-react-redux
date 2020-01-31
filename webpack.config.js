@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -5,11 +6,11 @@ const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const ErrorOverlayPlugin = require('error-overlay-webpack-plugin');
 
-const { addIfProd, addIfDev } = require('./env');
+const { isProduction, addIfProd, addIfDev } = require('./env');
 
 module.exports = {
-  ...addIfDev({ mode: 'development', devtool: 'inline-cheap-module-source-map' }),
-  ...addIfProd({ mode: 'production', devtool: 'none' }),
+  mode: isProduction ? 'production' : 'development',
+  devtool: isProduction ? 'none' : 'inline-cheap-module-source-map',
   entry: [...addIfDev(['react-hot-loader/patch']), './src/index.tsx'],
   output: {
     path: path.join(__dirname, 'build'),
