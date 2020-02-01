@@ -4,9 +4,7 @@ import styled from 'styled-components';
 
 import withErrorBoundary from '@/hoc/withErrorBoundary';
 import useUpdateTitle from '@/hooks/useUpdateTitle';
-
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const readme = require('../../README.md');
+import readme from '../../README.md';
 
 const ReadmeContent = styled.div`
   a {
