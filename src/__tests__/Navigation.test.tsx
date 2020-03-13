@@ -1,5 +1,5 @@
 import React from 'react';
-import { fireEvent, waitForElement } from '@testing-library/react';
+import { fireEvent } from '@testing-library/react';
 import { renderWithRouter } from './helpers';
 
 import App from '@/App';
@@ -37,6 +37,6 @@ it('should navigate from about to count by', async () => {
 
   fireEvent.click(root.getByText('By 3'));
 
-  await waitForElement(() => root.getByTestId('counter-page'));
+  await root.findByTestId('counter-page');
   expect(root.getByText('Increment by 3')).toBeInTheDocument();
 });

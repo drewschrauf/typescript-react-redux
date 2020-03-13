@@ -1,6 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 import React from 'react';
-import { render, waitForElement, RenderResult } from '@testing-library/react';
+import { render, RenderResult } from '@testing-library/react';
 import { Router } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
 
@@ -11,7 +11,7 @@ export const renderWithRouter = async (
   const history = createMemoryHistory({ initialEntries: [route] });
   const root = render(<Router history={history}>{ui}</Router>);
   if (waitForId) {
-    await waitForElement(() => root.getByTestId(waitForId));
+    await root.findByTestId(waitForId);
   }
   return root;
 };
