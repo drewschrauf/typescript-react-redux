@@ -46,7 +46,7 @@ const Navigation: React.FC = () => (
     <LinkWrapper>
       <DropdownLink to="/">Count</DropdownLink>
       <LinkList>
-        {[1, 2, 3, 5, 8].map(increment => (
+        {[1, 2, 3, 5, 8].map((increment) => (
           <LinkListItem key={increment}>
             <Link to={`/by/${increment}`}>By {increment}</Link>
           </LinkListItem>

@@ -24,12 +24,12 @@ const { Provider, useContextualReducer } = createContextualReducer(
     /* istanbul ignore next */
     return state;
   },
-  dispatch => ({
+  (dispatch) => ({
     incrementBy: (amount: number): void => dispatch(incrementBy({ amount })),
     decrementBy: (amount: number): void => dispatch(decrementBy({ amount })),
     delayedIncrementBy: async (amount: number): Promise<void> => {
       dispatch(beginDelayedIncrement({}));
-      await new Promise(resolve => setTimeout(resolve, 500));
+      await new Promise((resolve) => setTimeout(resolve, 500));
       dispatch(completeDelayedIncrement({ amount }));
     },
   }),
