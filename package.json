@@ -27,7 +27,7 @@
     "react-hot-loader": "4.12.21",
     "react-is": "16.13.1",
     "react-router-dom": "5.2.0",
-    "styled-components": "5.1.0"
+    "styled-components": "5.1.1"
   },
   "devDependencies": {
     "@babel/core": "7.9.6",
