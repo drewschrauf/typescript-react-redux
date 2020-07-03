@@ -57,7 +57,7 @@
     "cross-env": "7.0.2",
     "css-loader": "3.6.0",
     "error-overlay-webpack-plugin": "0.4.1",
-    "eslint": "7.3.1",
+    "eslint": "7.4.0",
     "eslint-config-prettier": "6.11.0",
     "eslint-config-react-app": "5.2.1",
     "eslint-plugin-flowtype": "5.2.0",
