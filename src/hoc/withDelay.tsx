@@ -19,7 +19,7 @@ interface WithDelayOptions {
 }
 
 /** Delays rendering of a component by a given time */
-const withDelay = ({ delay }: WithDelayOptions) => <T extends {}>(
+const withDelay = ({ delay }: WithDelayOptions) => <T extends unknown>(
   Comp: React.ComponentType<T>,
 ): React.ComponentType<T> => {
   const Delay: React.FC<T> = (props) => {

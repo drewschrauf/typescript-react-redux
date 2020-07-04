@@ -13,7 +13,7 @@ interface ErrorBoundaryState {
   message?: string;
 }
 
-const errorBoundary = () => <T extends {}>(
+const errorBoundary = () => <T extends unknown>(
   Component: React.ComponentType<T>,
 ): React.ComponentClass<T> => {
   return class ErrorBoundary extends React.Component<T, ErrorBoundaryState> {

@@ -14,14 +14,14 @@ interface ActionCreator<T> {
   (payload: T): Action<T>;
 }
 
-export const createAction = <T extends {}>(constant?: string): ActionCreator<T> => {
+export const createAction = <T extends unknown>(constant?: string): ActionCreator<T> => {
   const type = Symbol(constant);
   return Object.assign((payload: T) => ({ type, payload }), {
     type,
   });
 };
 
-export const isType = <T extends {}>(
+export const isType = <T extends unknown>(
   action: Action<unknown>,
   actionCreator: ActionCreator<T>,
 ): action is Action<T> => action.type === actionCreator.type;
@@ -38,7 +38,7 @@ const createContextualReducer = <State, Actions>(
 
   const Context = React.createContext<ContextValue>((undefined as unknown) as ContextValue);
 
-  const Provider: React.FC = <T extends {}>(props: T) => {
+  const Provider: React.FC = <T extends unknown>(props: T) => {
     const [currentState, dispatch] = React.useReducer(reducer, initialState);
     const value = React.useMemo<ContextValue>(() => [currentState, bindActions(dispatch)], [
       currentState,

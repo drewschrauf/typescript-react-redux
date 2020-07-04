@@ -2,7 +2,7 @@ import createContextualReducer, { createAction, isType } from './createContextua
 
 const incrementBy = createAction<{ amount: number }>('INCREMENT');
 const decrementBy = createAction<{ amount: number }>('DECREMENT');
-const beginDelayedIncrement = createAction<{}>('BEGIN_DELAYED_INCREMENT');
+const beginDelayedIncrement = createAction<undefined>('BEGIN_DELAYED_INCREMENT');
 const completeDelayedIncrement = createAction<{ amount: number }>('COMPLETE_DELAYED_INCREMENT');
 
 const { Provider, useContextualReducer } = createContextualReducer(
@@ -28,7 +28,7 @@ const { Provider, useContextualReducer } = createContextualReducer(
     incrementBy: (amount: number): void => dispatch(incrementBy({ amount })),
     decrementBy: (amount: number): void => dispatch(decrementBy({ amount })),
     delayedIncrementBy: async (amount: number): Promise<void> => {
-      dispatch(beginDelayedIncrement({}));
+      dispatch(beginDelayedIncrement(undefined));
       await new Promise((resolve) => setTimeout(resolve, 500));
       dispatch(completeDelayedIncrement({ amount }));
     },
