@@ -73,7 +73,7 @@
     "markdown-loader": "5.1.0",
     "mini-css-extract-plugin": "0.10.0",
     "optimize-css-assets-webpack-plugin": "5.0.3",
-    "prettier": "2.0.5",
+    "prettier": "2.1.0",
     "rimraf": "3.0.2",
     "style-loader": "1.2.1",
     "terser-webpack-plugin": "4.1.0",
