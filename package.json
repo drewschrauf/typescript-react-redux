@@ -24,7 +24,7 @@
     "normalize.css": "8.0.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-hot-loader": "4.12.21",
+    "react-hot-loader": "4.13.0",
     "react-is": "16.13.1",
     "react-router-dom": "5.2.0",
     "styled-components": "5.2.0"
