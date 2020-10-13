@@ -55,7 +55,7 @@
     "coveralls": "3.1.0",
     "cpy-cli": "3.1.1",
     "cross-env": "7.0.2",
-    "css-loader": "4.3.0",
+    "css-loader": "5.0.0",
     "error-overlay-webpack-plugin": "0.4.1",
     "eslint": "7.11.0",
     "eslint-config-prettier": "6.12.0",
