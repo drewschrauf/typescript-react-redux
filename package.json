@@ -22,8 +22,8 @@
   "dependencies": {
     "core-js": "3.6.5",
     "normalize.css": "8.0.1",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
+    "react": "16.14.0",
+    "react-dom": "16.14.0",
     "react-hot-loader": "4.13.0",
     "react-is": "16.13.1",
     "react-router-dom": "5.2.0",
