@@ -36,7 +36,7 @@
     "@babel/preset-env": "7.12.1",
     "@babel/preset-react": "7.12.1",
     "@babel/preset-typescript": "7.12.1",
-    "@hot-loader/react-dom": "16.13.0",
+    "@hot-loader/react-dom": "17.0.0",
     "@stryker-mutator/core": "4.0.0",
     "@stryker-mutator/jest-runner": "4.0.0",
     "@stryker-mutator/typescript": "4.0.0",
