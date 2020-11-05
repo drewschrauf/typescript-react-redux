@@ -1488,26 +1488,26 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@stryker-mutator/api@4.1.0":
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/@stryker-mutator/api/-/api-4.1.0.tgz#e091191016406d5672ae8388d8bad6d51c329e29"
-  integrity sha512-xGRjkW/4q3PrjSCC5VZB2RpCifAJnHqbSkCm0ztsYczUELQhbhW+a4WF+2sMJ2J49AupqKjfJ6AB1E21SwmBZg==
+"@stryker-mutator/api@4.1.1":
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/@stryker-mutator/api/-/api-4.1.1.tgz#b7bb276f0570ec91fee3ebcfef79470052220d52"
+  integrity sha512-Y4t8a0dxLDEZV3RXecyjgjiqmzK3wSnF7o7uMGOg4HywU5q0gS8ZrL9/Jn44mvOr6AsTp7RHYIiI/YlsMo9ksg==
   dependencies:
-    mutation-testing-report-schema "~1.4.0"
+    mutation-testing-report-schema "~1.4.3"
     surrial "~2.0.2"
     tslib "~2.0.0"
 
-"@stryker-mutator/core@4.1.0":
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/@stryker-mutator/core/-/core-4.1.0.tgz#ed83d7b085da33878ec4003de56398d664fd2efb"
-  integrity sha512-CL1pB3lED2S4HeXgDuI4CBPwhnJJK6B/hvxSJnupKAoDJWFBqGUK+rAHPyPBow1RssfGvZXw+Fx8EUzbuI+8uA==
+"@stryker-mutator/core@4.1.1":
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/@stryker-mutator/core/-/core-4.1.1.tgz#32173a612c0320e0b69644244f5d86d38400aa16"
+  integrity sha512-J8dP7cL31puWdfoVDfUtKgXcrn6k0J7zOHDFOz/jk8yX+824X2IT8YDkqXVmSuGMsYwoSt6bJ6hbNPxPvXvgYA==
   dependencies:
-    "@stryker-mutator/api" "4.1.0"
-    "@stryker-mutator/instrumenter" "4.1.0"
-    "@stryker-mutator/util" "4.1.0"
+    "@stryker-mutator/api" "4.1.1"
+    "@stryker-mutator/instrumenter" "4.1.1"
+    "@stryker-mutator/util" "4.1.1"
     ajv "~6.12.0"
     chalk "~4.1.0"
-    commander "~6.1.0"
+    commander "~6.2.0"
     execa "~4.0.2"
     file-url "~3.0.0"
     get-port "~5.0.0"
@@ -1518,8 +1518,8 @@
     log4js "~6.2.1"
     minimatch "~3.0.4"
     mkdirp "~1.0.3"
-    mutation-testing-elements "~1.4.1"
-    mutation-testing-metrics "~1.4.0"
+    mutation-testing-elements "~1.4.3"
+    mutation-testing-metrics "~1.4.3"
     npm-run-path "~4.0.1"
     progress "~2.0.0"
     rimraf "~3.0.0"
@@ -1531,27 +1531,29 @@
     typed-inject "~3.0.0"
     typed-rest-client "~1.7.1"
 
-"@stryker-mutator/instrumenter@4.1.0":
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/@stryker-mutator/instrumenter/-/instrumenter-4.1.0.tgz#e1b0c5c15b5aec980a9daa86ae6fb458d1c9b344"
-  integrity sha512-RrdVk8B/4hpg0VtPOMX3nRQnxj+Gc6uG+uI92MP0xxPhJcfq0hU2zlGJInKuyObFndPQ+05gnxZiyfzv9WCXgw==
+"@stryker-mutator/instrumenter@4.1.1":
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/@stryker-mutator/instrumenter/-/instrumenter-4.1.1.tgz#127ce2a6875c98f3d43200a2696a3c8aacfefb30"
+  integrity sha512-LyJRzAt5iu4u56IzsQa4BsXrq0d1t803WxycO5UXSmbuXyTIckaEXKsxpFD7yuf3D05W+UNrRG9VZKyjcvI9Ww==
   dependencies:
     "@babel/core" "~7.12.3"
     "@babel/generator" "~7.12.1"
     "@babel/parser" "~7.12.3"
+    "@babel/plugin-proposal-class-properties" "^7.12.1"
     "@babel/plugin-proposal-decorators" "~7.12.1 "
+    "@babel/plugin-proposal-private-methods" "^7.12.1"
     "@babel/preset-typescript" "~7.12.1 "
-    "@stryker-mutator/api" "4.1.0"
-    "@stryker-mutator/util" "4.1.0"
+    "@stryker-mutator/api" "4.1.1"
+    "@stryker-mutator/util" "4.1.1"
     angular-html-parser "~1.7.0"
 
-"@stryker-mutator/jest-runner@4.1.0":
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/@stryker-mutator/jest-runner/-/jest-runner-4.1.0.tgz#b23c5ba6d8345c0cca72b4033493d52ed78d134b"
-  integrity sha512-hAeF7/o4DlvF5SsGEKTbQA77nu1Y041GCE7YkiXkN6uQEmvK9Gy+YoLXpZqIfl5U0WX/xk8P+gwXjt+s+zVKZQ==
+"@stryker-mutator/jest-runner@4.1.1":
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/@stryker-mutator/jest-runner/-/jest-runner-4.1.1.tgz#fc3a0de1788cc445b13ba1ce9c4c72e510a54e6c"
+  integrity sha512-BCJWxckeJzgj8vNL+6piSa/XDJsc/rVUgMo+vTatpopH+sGDlL3x1GQHvpHsmmiBxzCPhuyDPc1E8IqXQBaLlQ==
   dependencies:
-    "@stryker-mutator/api" "4.1.0"
-    "@stryker-mutator/util" "4.1.0"
+    "@stryker-mutator/api" "4.1.1"
+    "@stryker-mutator/util" "4.1.1"
     semver "~6.3.0"
 
 "@stryker-mutator/typescript@4.0.0":
@@ -1559,10 +1561,10 @@
   resolved "https://registry.yarnpkg.com/@stryker-mutator/typescript/-/typescript-4.0.0.tgz#55fdb91850a05916daa35361993194046c774631"
   integrity sha512-dTm8lyDP5HPSOd14ErXXAn6wY6QZMS6UbXPmexesZJeevNZUxRCHZqoTIJIY1a6WBbI2tKJzKuVjXih83jAXBQ==
 
-"@stryker-mutator/util@4.1.0":
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/@stryker-mutator/util/-/util-4.1.0.tgz#0a64f555572a8ae7929c21db3ac7100e83692a66"
-  integrity sha512-hn4HIcOosxM/7LJpg9h38kJDbUpZyHhfBxUtXxF6djgIkEoS8OteOyg5hgdnm1PVWdGS35p8+o0vFS/H7qRmOA==
+"@stryker-mutator/util@4.1.1":
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/@stryker-mutator/util/-/util-4.1.1.tgz#6aa6e39e42e451ffb85783b9d375cf828fc11d49"
+  integrity sha512-rB9Fk+zlHOxYUJPG6b1cHUtjuLIvw1s0zUF9V1QtfZsBUjDtjG5VMKWfB/r5uycbkcISxBd4ifclwDg6i9B15g==
   dependencies:
     lodash.flatmap "~4.5.0"
 
@@ -3351,10 +3353,15 @@ commander@^4.1.1:
   resolved "https://registry.yarnpkg.com/commander/-/commander-4.1.1.tgz#9fd602bd936294e9e9ef46a3f4d6964044b18068"
   integrity sha512-NOKm8xhkzAjzFx8B2v5OAHT+u5pRQc2UCa2Vq9jYL/31o2wi9mxBA7LIFs3sV5VSC49z6pEhfbMULvShKj26WA==
 
-commander@^6.0.0, commander@~6.1.0:
+commander@^6.0.0:
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-6.1.0.tgz#f8d722b78103141006b66f4c7ba1e97315ba75bc"
   integrity sha512-wl7PNrYWd2y5mp1OK/LhTlv8Ff4kQJQRXXAvF+uU/TPNiVJUxZLRYGj/B0y/lPGAVcSbJqH2Za/cvHmrPMC8mA==
+
+commander@~6.2.0:
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-6.2.0.tgz#b990bfb8ac030aedc6d11bc04d1488ffef56db75"
+  integrity sha512-zP4jEKbe8SHzKJYQmq8Y9gYjtO/POJLgIdKgV7B9qNmABVFVc+ctqSX6iXh4mCpJfRBOabiZ2YKPg8ciDw6C+Q==
 
 commondir@^1.0.1:
   version "1.0.1"
@@ -7461,22 +7468,22 @@ multicast-dns@^6.0.1:
     dns-packet "^1.3.1"
     thunky "^1.0.2"
 
-mutation-testing-elements@~1.4.1:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/mutation-testing-elements/-/mutation-testing-elements-1.4.1.tgz#445e77e03730d727db80b4c4479c9bb1f721e33d"
-  integrity sha512-BT+6Z3cFt7Bdaee54d/oAGNGmo4En9f7sPBwAN2UbhHffISYZToSZTlI45yGq67B4fJ4Id1YzDj5QolCeoorcw==
+mutation-testing-elements@~1.4.3:
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/mutation-testing-elements/-/mutation-testing-elements-1.4.3.tgz#ea7bf46437a35f2a123f82325d8333d9a8c3067c"
+  integrity sha512-TxggiswcnNDYh7MI3yZtoAUZocbLDaz95SKHm2YjddUcgglwvc0xv/1GDQ/6UwweRhAISxXi7HpEUFBkSUJQhg==
 
-mutation-testing-metrics@~1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/mutation-testing-metrics/-/mutation-testing-metrics-1.4.0.tgz#b6742bba4d52b2b507623b6f2e6e3b9428a04b27"
-  integrity sha512-+S1c/6T6CcTlT0hjc7Vo/uvdksglsZk9Ug0wLNYB3DF7tmn1DBUjw+52QwiY3vfGZ1jqsyPcJstgZyoYlWnvrA==
+mutation-testing-metrics@~1.4.3:
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/mutation-testing-metrics/-/mutation-testing-metrics-1.4.3.tgz#f9b43c2043a630f1f27bf37d522ce8d41af5a88a"
+  integrity sha512-b+5upZuuEDyY5oWb/3Jvo8kMxo9VHVP8t7ryZproBbp9bclDbS3c6kFScR6qJPFQ90NK2S7ab/cGxRHMXnNbJQ==
   dependencies:
-    mutation-testing-report-schema "^1.4.0"
+    mutation-testing-report-schema "^1.4.3"
 
-mutation-testing-report-schema@^1.4.0, mutation-testing-report-schema@~1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/mutation-testing-report-schema/-/mutation-testing-report-schema-1.4.0.tgz#c5ea6bd62f9aec9412e64c08cc197b733fd8f50a"
-  integrity sha512-0jEZCv3aIckkKTn8IZ1fRdrmgYHkOc5ieA61qnsuxMezXUNfZmZA2etL4vwku8K3H8v5IgT7+yYoCQSysSvBfw==
+mutation-testing-report-schema@^1.4.3, mutation-testing-report-schema@~1.4.3:
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/mutation-testing-report-schema/-/mutation-testing-report-schema-1.4.3.tgz#d9b57096dfe1efde10198247405c4679c67f390c"
+  integrity sha512-+TLMYFGFL8MtcbIF0g9VG+OS5qkPPaZtvyT0v/XWrKgrbAhpnJYNsZV9/xMWuO/V8WC02mLksn/HrDnKnIVqXw==
 
 mute-stream@0.0.7:
   version "0.0.7"
