@@ -20,7 +20,7 @@
     "ci": "yarn lint && yarn test:coveralls && yarn build"
   },
   "dependencies": {
-    "core-js": "3.8.2",
+    "core-js": "3.8.3",
     "normalize.css": "8.0.1",
     "react": "17.0.1",
     "react-dom": "17.0.1",
