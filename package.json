@@ -30,12 +30,12 @@
     "styled-components": "5.2.1"
   },
   "devDependencies": {
-    "@babel/core": "7.12.10",
-    "@babel/plugin-proposal-class-properties": "7.12.1",
+    "@babel/core": "7.12.13",
+    "@babel/plugin-proposal-class-properties": "7.12.13",
     "@babel/plugin-syntax-dynamic-import": "7.8.3",
-    "@babel/preset-env": "7.12.11",
-    "@babel/preset-react": "7.12.10",
-    "@babel/preset-typescript": "7.12.7",
+    "@babel/preset-env": "7.12.13",
+    "@babel/preset-react": "7.12.13",
+    "@babel/preset-typescript": "7.12.13",
     "@hot-loader/react-dom": "17.0.1",
     "@stryker-mutator/core": "4.4.1",
     "@stryker-mutator/jest-runner": "4.4.1",
