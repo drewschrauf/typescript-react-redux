@@ -40,7 +40,7 @@
     "@stryker-mutator/core": "4.5.0",
     "@stryker-mutator/jest-runner": "4.5.0",
     "@stryker-mutator/typescript": "4.0.0",
-    "@testing-library/jest-dom": "5.11.9",
+    "@testing-library/jest-dom": "5.14.1",
     "@testing-library/react": "11.2.5",
     "@types/jest": "26.0.20",
     "@types/react": "17.0.3",
