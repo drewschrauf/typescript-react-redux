@@ -4,18 +4,17 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const ErrorOverlayPlugin = require('error-overlay-webpack-plugin');
 
 const { isProduction, addIfProd, addIfDev } = require('./env');
 
 module.exports = {
   mode: isProduction ? 'production' : 'development',
-  devtool: isProduction ? 'none' : 'inline-cheap-module-source-map',
+  ...addIfDev({ devtool: 'eval-source-map' }),
   entry: [...addIfDev(['react-hot-loader/patch']), './src/index.tsx'],
   output: {
     path: path.join(__dirname, 'build'),
-    filename: '[name].[hash].js',
-    chunkFilename: '[name].[hash].js',
+    filename: '[name].[chunkhash].js',
+    chunkFilename: '[name].[chunkhash].js',
     publicPath: '/',
   },
   resolve: {
@@ -31,17 +30,17 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?/,
-        loader: 'babel-loader',
+        use: 'babel-loader',
       },
       {
         test: /\.css/,
-        loaders: [
+        use: [
           ...addIfDev(['style-loader']),
           ...addIfProd([MiniCssExtractPlugin.loader]),
           'css-loader',
         ],
       },
-      { test: /\.md/, loaders: ['html-loader', 'markdown-loader'] },
+      { test: /\.md/, use: ['html-loader', 'markdown-loader'] },
     ],
   },
   plugins: [
@@ -51,11 +50,10 @@ module.exports = {
         viewport: 'width=device-width, initial-scale=1.0',
       },
     }),
-    ...addIfDev([new ErrorOverlayPlugin()]),
     ...addIfProd([
       new MiniCssExtractPlugin({
-        filename: '[name].[hash].css',
-        chunkFilename: '[id].[hash].css',
+        filename: '[name].[chunkhash].css',
+        chunkFilename: '[id].[chunkhash].css',
       }),
     ]),
   ],
@@ -65,7 +63,7 @@ module.exports = {
     },
   }),
   devServer: {
-    disableHostCheck: true,
+    allowedHosts: 'all',
     historyApiFallback: true,
   },
 };

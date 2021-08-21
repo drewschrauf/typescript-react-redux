@@ -19,15 +19,15 @@ interface WithDelayOptions {
 }
 
 /** Delays rendering of a component by a given time */
-const withDelay = ({ delay }: WithDelayOptions) => <T extends unknown>(
-  Comp: React.ComponentType<T>,
-): React.ComponentType<T> => {
-  const Delay: React.FC<T> = (props) => {
-    const delayComplete = useDelay(delay);
-    // eslint-disable-next-line react/jsx-props-no-spreading
-    return delayComplete ? <Comp {...props} /> : null;
+const withDelay =
+  ({ delay }: WithDelayOptions) =>
+  <T extends unknown>(Comp: React.ComponentType<T>): React.ComponentType<T> => {
+    const Delay: React.FC<T> = (props) => {
+      const delayComplete = useDelay(delay);
+      // eslint-disable-next-line react/jsx-props-no-spreading
+      return delayComplete ? <Comp {...props} /> : null;
+    };
+    return Delay;
   };
-  return Delay;
-};
 
 export default withDelay;

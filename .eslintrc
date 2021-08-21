@@ -1,7 +1,6 @@
 extends:
   - react-app
   - prettier
-  - prettier/react
   - plugin:@typescript-eslint/recommended
 plugins:
   - prettier

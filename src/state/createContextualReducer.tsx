@@ -36,14 +36,14 @@ const createContextualReducer = <State, Actions>(
 } => {
   type ContextValue = [State, Actions];
 
-  const Context = React.createContext<ContextValue>((undefined as unknown) as ContextValue);
+  const Context = React.createContext<ContextValue>(undefined as unknown as ContextValue);
 
   const Provider: React.FC = <T extends unknown>(props: T) => {
     const [currentState, dispatch] = React.useReducer(reducer, initialState);
-    const value = React.useMemo<ContextValue>(() => [currentState, bindActions(dispatch)], [
-      currentState,
-      dispatch,
-    ]);
+    const value = React.useMemo<ContextValue>(
+      () => [currentState, bindActions(dispatch)],
+      [currentState, dispatch],
+    );
     // eslint-disable-next-line react/jsx-props-no-spreading
     return <Context.Provider value={value} {...props} />;
   };
