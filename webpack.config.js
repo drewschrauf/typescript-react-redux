@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const { VanillaExtractPlugin } = require('@vanilla-extract/webpack-plugin');
 
 const { isProduction, addIfProd, addIfDev } = require('./env');
 
@@ -33,7 +34,7 @@ module.exports = {
         use: 'babel-loader',
       },
       {
-        test: /\.css/,
+        test: /\.css$/,
         use: [
           ...addIfDev(['style-loader']),
           ...addIfProd([MiniCssExtractPlugin.loader]),
@@ -50,6 +51,7 @@ module.exports = {
         viewport: 'width=device-width, initial-scale=1.0',
       },
     }),
+    new VanillaExtractPlugin(),
     ...addIfProd([
       new MiniCssExtractPlugin({
         filename: '[name].[chunkhash].css',
