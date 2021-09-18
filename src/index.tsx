@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 import 'normalize.css';
-import './index.css';
+import { rootStyle } from './index.css';
 import Spinner from '@/components/Spinner';
 
 const root = document.createElement('div');
-root.classList.add('root');
+root.classList.add(rootStyle);
 document.body.appendChild(root);
 
 const App = lazy(() => import('./App'));

@@ -1,12 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
 
 import { BaseError } from '@/errors';
-
-const ErrorMessage = styled.div`
-  border: 1px solid red;
-  padding: 10px;
-`;
+import { errorMessageStyle } from './withErrorBoundary.css';
 
 interface ErrorBoundaryState {
   hasError: boolean;
@@ -35,7 +30,9 @@ const errorBoundary =
         return !hasError ? (
           <Component {...this.props} /> // eslint-disable-line react/jsx-props-no-spreading
         ) : (
-          <ErrorMessage data-testid="error-page">{message || 'Something went wrong'}</ErrorMessage>
+          <div className={errorMessageStyle} data-testid="error-page">
+            {message || 'Something went wrong'}
+          </div>
         );
       }
     };

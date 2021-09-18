@@ -15,7 +15,8 @@ module.exports = {
     '@babel/preset-typescript',
   ],
   plugins: [
-    ...addIfDev(['react-hot-loader/babel', 'babel-plugin-styled-components']),
+    ...addIfDev(['react-hot-loader/babel']),
+    '@vanilla-extract/babel-plugin',
     '@babel/plugin-proposal-class-properties',
     '@babel/plugin-syntax-dynamic-import',
   ],
