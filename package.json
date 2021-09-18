@@ -72,7 +72,7 @@
     "jest": "27.1.0",
     "markdown-loader": "6.0.0",
     "mini-css-extract-plugin": "2.2.2",
-    "prettier": "2.3.2",
+    "prettier": "2.4.1",
     "rimraf": "3.0.2",
     "style-loader": "3.2.1",
     "terser-webpack-plugin": "5.2.3",
