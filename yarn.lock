@@ -1749,7 +1749,22 @@
     deep-object-diff "^1.1.0"
     deepmerge "^4.2.2"
 
-"@vanilla-extract/integration@^1.0.0", "@vanilla-extract/integration@^1.2.0":
+"@vanilla-extract/css@^1.5.0":
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/@vanilla-extract/css/-/css-1.6.0.tgz#9c89f49ff577a32cfd9f852ee1c54e3b49c06d3d"
+  integrity sha512-v95GmeMGtv0937s7XD8yZvl8qY5AVYbx7ZyKmYfe1lXDXgemItxGycCEPAd+3ys0iHJmw8Io7gahylwUkaNpvA==
+  dependencies:
+    "@emotion/hash" "^0.8.0"
+    "@vanilla-extract/private" "^1.0.1"
+    chalk "^4.1.1"
+    css-what "^5.0.1"
+    cssesc "^3.0.0"
+    csstype "^3.0.7"
+    dedent "^0.7.0"
+    deep-object-diff "^1.1.0"
+    deepmerge "^4.2.2"
+
+"@vanilla-extract/integration@^1.0.0":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@vanilla-extract/integration/-/integration-1.2.0.tgz#057a9a74bd6bf8ea2cfadb89d9b90fb8629efae9"
   integrity sha512-mawQst1Kk8LnsTXNcQ5VBTmg11DeYgctUG/G/l4ELlaINUAdvc7mguuf46nqXA1lfkrMbjquaBeiZQ9/Vz6x0g==
@@ -1763,17 +1778,31 @@
     javascript-stringify "^2.0.1"
     lodash "^4.17.21"
 
+"@vanilla-extract/integration@^1.3.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@vanilla-extract/integration/-/integration-1.4.0.tgz#a09becf502862e37036c4fe68215125ed52bbed5"
+  integrity sha512-TOBVr6rUasS3K6T9kiXMfrZzkruaEfY/cxpQaAjQnbWcAlsjVZP0AVB/6mdAAXw4QqlHbdENLtSp8PP69gf50A==
+  dependencies:
+    "@vanilla-extract/css" "^1.5.0"
+    chalk "^4.1.1"
+    dedent "^0.7.0"
+    esbuild "^0.11.16"
+    eval "^0.1.6"
+    find-up "^5.0.0"
+    javascript-stringify "^2.0.1"
+    lodash "^4.17.21"
+
 "@vanilla-extract/private@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@vanilla-extract/private/-/private-1.0.1.tgz#c9479cebea7e7fbb07a1fe5b5c988a8753ef04ed"
   integrity sha512-ABrFJGSmF7a1M+eDTsIeAErPhIeRyBY3ypyLQPc4bUVEK1mvF7F2gx4fTP81pm12bkS0GhjSJtM854lcPWhB+w==
 
-"@vanilla-extract/webpack-plugin@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@vanilla-extract/webpack-plugin/-/webpack-plugin-2.0.0.tgz#4f48f120adcc20bd9fd607f1dd8b24f814c4d4d2"
-  integrity sha512-g8iwbwhLPtqzOpuumq0kGqyYZxwinpbZJXswkfP2Bd7GT0Njj3CXAHsMsRrhj80a8VthHGkThqcVk/60w3q5AA==
+"@vanilla-extract/webpack-plugin@2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@vanilla-extract/webpack-plugin/-/webpack-plugin-2.1.0.tgz#0a385194289eccdab1a3b487de17a737153e46a2"
+  integrity sha512-DU6OtBrFlGkYds2fGzn9WvvoZOMzUBR/4WKmeMSlRn+ypUVtvu+z65MqlqE8QhbTzbOnmkifDkuyvOQOm+d3BA==
   dependencies:
-    "@vanilla-extract/integration" "^1.2.0"
+    "@vanilla-extract/integration" "^1.3.0"
     chalk "^4.1.1"
     debug "^4.3.1"
     loader-utils "^2.0.0"
