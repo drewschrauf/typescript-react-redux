@@ -6,9 +6,11 @@ import 'normalize.css';
 import { rootStyle } from './index.css';
 import Spinner from '@/components/Spinner';
 
-const root = document.createElement('div');
+const root = document.getElementById('root');
+if (!root) {
+  throw new Error('#root not found');
+}
 root.classList.add(rootStyle);
-document.body.appendChild(root);
 
 const App = lazy(() => import('./App'));
 ReactDOM.render(

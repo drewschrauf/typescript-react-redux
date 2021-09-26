@@ -3,7 +3,7 @@ import React from 'react';
 
 import withErrorBoundary from '@/hoc/withErrorBoundary';
 import useUpdateTitle from '@/hooks/useUpdateTitle';
-import readme from '../../README.md';
+import { html as readme } from '../../README.md';
 
 const AboutPage: React.FC = () => {
   useUpdateTitle('About');

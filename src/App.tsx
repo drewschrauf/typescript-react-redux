@@ -1,5 +1,4 @@
 import React, { Suspense, lazy } from 'react';
-import { hot } from 'react-hot-loader/root';
 import { Route, Switch } from 'react-router-dom';
 
 import { CounterProvider } from '@/state/useCounter';
@@ -26,4 +25,5 @@ const App: React.FC = () => (
     </div>
   </CounterProvider>
 );
-export default hot(App);
+
+export default App;

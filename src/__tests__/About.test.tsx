@@ -3,7 +3,9 @@ import { renderWithRouter } from './helpers';
 
 import App from '@/App';
 
-jest.mock('../../README.md', () => '<h1>Content</h1>');
+jest.mock('../../README.md', () => ({
+  html: '<h1>Content</h1>',
+}));
 
 it('should render README content as markup', async () => {
   const root = await renderWithRouter(<App />, { route: '/about', waitForId: 'about-page' });

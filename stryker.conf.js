@@ -7,6 +7,11 @@ module.exports = config => {
     transpilers: [],
     coverageAnalysis: 'off',
     tsconfigFile: 'tsconfig.json',
-    mutate: ['src/**/*.ts?(x)', '!src/**/__tests__/**/*.ts?(x)', '!src/index.tsx'],
+    mutate: [
+      'src/**/*.ts?(x)',
+      '!src/**/__tests__/**/*.ts?(x)',
+      '!src/index.tsx',
+      '!src/**/*.css.ts',
+    ],
   });
 };

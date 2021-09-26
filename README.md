@@ -16,8 +16,6 @@ And for testing:
 - Jest
 - react-testing-library
 
-[See the result](https://awesome-bose-57ba94.netlify.com)
-
 ## What happened to Redux?
 
 It turns out that with the power of hooks, you really don't need Redux anymore. If you can't live without it, you'll find that the types used for the reducer and actions here work just as well for Redux.
