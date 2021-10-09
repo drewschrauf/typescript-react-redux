@@ -1,7 +1,7 @@
 import { style } from '@vanilla-extract/css';
-import { Sizes } from './styles';
+import { Sizes } from './theme.css';
 
-export const pageWrapperStyle = style({
+export const pageWrapper = style({
   width: '100%',
   maxWidth: `${Sizes.md}px`,
 });

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import useCounter from '@/state/useCounter';
-import { buttonStyle, buttonWrapperStyle, wrapperStyle } from './Counter.css';
+import * as styles from './Counter.css';
 
 interface CounterProps {
   /** The amount to increment or decrement the counter by on each click */
@@ -15,17 +15,17 @@ interface CounterProps {
 const Counter: React.FC<CounterProps> = ({ amount }) => {
   const [state, actions] = useCounter();
   return (
-    <div className={wrapperStyle}>
+    <div className={styles.wrapper}>
       <h1>Count {state.count}</h1>
-      <div className={buttonWrapperStyle}>
-        <button className={buttonStyle} onClick={(): void => actions.incrementBy(amount)}>
+      <div className={styles.buttonWrapper}>
+        <button className={styles.button} onClick={(): void => actions.incrementBy(amount)}>
           Increment by {amount}
         </button>
-        <button className={buttonStyle} onClick={(): void => actions.decrementBy(amount)}>
+        <button className={styles.button} onClick={(): void => actions.decrementBy(amount)}>
           Decrement by {amount}
         </button>
         <button
-          className={buttonStyle}
+          className={styles.button}
           disabled={state.pending}
           onClick={(): Promise<void> => actions.delayedIncrementBy(amount)}
         >

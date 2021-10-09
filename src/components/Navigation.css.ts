@@ -1,10 +1,11 @@
+import { vars } from '@/theme.css';
 import { style } from '@vanilla-extract/css';
 
-export const wrapperStyle = style({
+export const wrapper = style({
   marginBottom: '10px',
 });
 
-export const dropdownLinkStyle = style({
+export const dropdownLink = style({
   selectors: {
     '&:after': {
       content: "'▼'",
@@ -12,16 +13,16 @@ export const dropdownLinkStyle = style({
   },
 });
 
-export const linkWrapperStyle = style({
+export const linkWrapper = style({
   position: 'relative',
   display: 'inline-block',
   marginRight: '5px',
 });
 
-export const linkListStyle = style({
+export const linkList = style({
   position: 'absolute',
   border: '1px solid black',
-  backgroundColor: 'papayawhip',
+  backgroundColor: vars.color.background,
 
   padding: '10px',
   width: '70px',
@@ -32,13 +33,13 @@ export const linkListStyle = style({
   transition: 'all 0.3s ease',
 
   selectors: {
-    [`${linkWrapperStyle}:hover &`]: {
+    [`${linkWrapper}:hover &`]: {
       visibility: 'visible',
       opacity: '1',
     },
   },
 });
 
-export const linkListItemStyle = style({
+export const linkListItem = style({
   listStyle: 'none',
 });

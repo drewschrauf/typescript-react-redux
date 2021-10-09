@@ -1,28 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {
-  dropdownLinkStyle,
-  linkListItemStyle,
-  linkListStyle,
-  linkWrapperStyle,
-  wrapperStyle,
-} from './Navigation.css';
+import * as styles from './Navigation.css';
 
 const Navigation: React.FC = () => (
-  <div className={wrapperStyle}>
-    <div className={linkWrapperStyle}>
-      <Link className={dropdownLinkStyle} to="/">
+  <div className={styles.wrapper}>
+    <div className={styles.linkWrapper}>
+      <Link className={styles.dropdownLink} to="/">
         Count
       </Link>
-      <ul className={linkListStyle}>
+      <ul className={styles.linkList}>
         {[1, 2, 3, 5, 8].map((increment) => (
-          <li className={linkListItemStyle} key={increment}>
+          <li className={styles.linkListItem} key={increment}>
             <Link to={`/by/${increment}`}>By {increment}</Link>
           </li>
         ))}
       </ul>
     </div>
-    <div className={linkWrapperStyle}>
+    <div className={styles.linkWrapper}>
       <Link to="/about/">About</Link>
     </div>
   </div>

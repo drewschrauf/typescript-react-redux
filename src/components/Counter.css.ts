@@ -1,12 +1,12 @@
-import { Sizes } from '@/styles';
+import { Sizes } from '@/theme.css';
 import { style } from '@vanilla-extract/css';
 
-export const wrapperStyle = style({
+export const wrapper = style({
   padding: '10px',
-  border: '1px dashed black',
+  border: '1px solid black',
 });
 
-export const buttonWrapperStyle = style({
+export const buttonWrapper = style({
   display: 'flex',
   flexDirection: 'column',
   '@media': {
@@ -16,7 +16,7 @@ export const buttonWrapperStyle = style({
   },
 });
 
-export const buttonStyle = style({
+export const button = style({
   flex: 1,
   flexBasis: '32px',
   fontFamily: 'inherit',
