@@ -9,7 +9,8 @@ This is a basic example project using the following technologies to build a web 
 - Typescript
 - React
 - React Router
-- Webpack
+- Vanilla Extract
+- Vite
 
 And for testing:
 
