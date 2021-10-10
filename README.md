@@ -1,4 +1,4 @@
-# Typescript/React Example Project [![Build Status](https://travis-ci.org/drewschrauf/typescript-react-redux.svg?branch=master)](https://travis-ci.org/drewschrauf/typescript-react-redux) [![Coverage Status](https://coveralls.io/repos/github/drewschrauf/typescript-react-redux/badge.svg?branch=master)](https://coveralls.io/github/drewschrauf/typescript-react-redux?branch=master)
+# Typescript/React Example Project [![Build Status](https://github.com/drewschrauf/typescript-react-redux/actions/workflows/main.yml/badge.svg)](https://github.com/drewschrauf/typescript-react-redux/actions/workflows/main.yml) [![Coverage Status](https://coveralls.io/repos/github/drewschrauf/typescript-react-redux/badge.svg?branch=master)](https://coveralls.io/github/drewschrauf/typescript-react-redux?branch=master)
 
 _**Now with 100% less Redux!**_
 
