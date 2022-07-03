@@ -71,9 +71,9 @@ it('should delay increment by default amount when increment button clicked', asy
   expect(root.getByText('Count 0')).toBeInTheDocument();
   expect(root.getByText('Delayed increment by 1')).toBeDisabled();
 
-  await Promise.resolve().then(() => jest.runAllTimers());
+  jest.runAllTimers();
 
-  expect(root.getByText('Count 1')).toBeInTheDocument();
+  expect(await root.findByText('Count 1')).toBeInTheDocument();
   expect(root.getByText('Delayed increment by 1')).not.toBeDisabled();
 });
 
@@ -101,9 +101,9 @@ it('should delay increment by given amount when route provides increment amount'
   expect(root.getByText('Count 0')).toBeInTheDocument();
   expect(root.getByText('Delayed increment by 7')).toBeDisabled();
 
-  await Promise.resolve().then(() => jest.runAllTimers());
+  jest.runAllTimers();
 
-  expect(root.getByText('Count 7')).toBeInTheDocument();
+  expect(await root.findByText('Count 7')).toBeInTheDocument();
   expect(root.getByText('Delayed increment by 7')).not.toBeDisabled();
 });
 

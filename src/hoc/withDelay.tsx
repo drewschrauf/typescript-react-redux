@@ -21,7 +21,7 @@ interface WithDelayOptions {
 /** Delays rendering of a component by a given time */
 const withDelay =
   ({ delay }: WithDelayOptions) =>
-  <T extends unknown>(Comp: React.ComponentType<T>): React.ComponentType<T> => {
+  <T extends Record<string, unknown>>(Comp: React.ComponentType<T>): React.ComponentType<T> => {
     const Delay: React.FC<T> = (props) => {
       const delayComplete = useDelay(delay);
       // eslint-disable-next-line react/jsx-props-no-spreading

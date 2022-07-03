@@ -10,7 +10,9 @@ interface ErrorBoundaryState {
 
 const errorBoundary =
   () =>
-  <T extends unknown>(Component: React.ComponentType<T>): React.ComponentClass<T> => {
+  <T extends Record<string, unknown>>(
+    Component: React.ComponentType<T>,
+  ): React.ComponentClass<T> => {
     return class ErrorBoundary extends React.Component<T, ErrorBoundaryState> {
       constructor(props: T) {
         super(props);

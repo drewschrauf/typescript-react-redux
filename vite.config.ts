@@ -5,11 +5,7 @@ import markdown, { Mode } from 'vite-plugin-markdown';
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
 
 export default defineConfig({
-  plugins: [
-    reactRefresh(),
-    markdown({ mode: [Mode.HTML] }),
-    vanillaExtractPlugin({ devStyleRuntime: 'vanilla-extract' }),
-  ],
+  plugins: [reactRefresh(), markdown({ mode: [Mode.HTML] }), vanillaExtractPlugin()],
   resolve: {
     alias: { '@': path.resolve(__dirname, 'src') },
   },

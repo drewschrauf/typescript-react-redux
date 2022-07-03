@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 import { CounterProvider } from '@/state/useCounter';
 import Navigation from '@/components/Navigation';
@@ -15,12 +15,12 @@ const App: React.FC = () => (
     <div className={styles.pageWrapper}>
       <Navigation />
       <Suspense fallback={<Spinner />}>
-        <Switch>
-          <Route path="/" exact component={CounterPage} />
-          <Route path="/by/:by/" component={CounterPage} />
-          <Route path="/about/" component={AboutPage} />
-          <Route component={MissingPage} />
-        </Switch>
+        <Routes>
+          <Route path="/" element={<CounterPage />} />
+          <Route path="/by/:by/" element={<CounterPage />} />
+          <Route path="/about/" element={<AboutPage />} />
+          <Route path="*" element={<MissingPage />} />
+        </Routes>
       </Suspense>
     </div>
   </CounterProvider>

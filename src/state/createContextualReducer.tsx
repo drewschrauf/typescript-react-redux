@@ -14,14 +14,16 @@ interface ActionCreator<T> {
   (payload: T): Action<T>;
 }
 
-export const createAction = <T extends unknown>(constant?: string): ActionCreator<T> => {
+export const createAction = <T extends Record<string, unknown>>(
+  constant?: string,
+): ActionCreator<T> => {
   const type = Symbol(constant);
   return Object.assign((payload: T) => ({ type, payload }), {
     type,
   });
 };
 
-export const isType = <T extends unknown>(
+export const isType = <T extends Record<string, unknown>>(
   action: Action<unknown>,
   actionCreator: ActionCreator<T>,
 ): action is Action<T> => action.type === actionCreator.type;
@@ -31,21 +33,20 @@ const createContextualReducer = <State, Actions>(
   reducer: (state: State, action: Action<unknown>) => State,
   bindActions: (dispatch: React.Dispatch<Action<unknown>>) => Actions,
 ): {
-  Provider: React.ComponentType;
+  Provider: React.ComponentType<React.PropsWithChildren>;
   useContextualReducer: () => [State, Actions];
 } => {
   type ContextValue = [State, Actions];
 
   const Context = React.createContext<ContextValue>(undefined as unknown as ContextValue);
 
-  const Provider: React.FC = <T extends unknown>(props: T) => {
+  const Provider: React.FC<React.PropsWithChildren> = ({ children }: React.PropsWithChildren) => {
     const [currentState, dispatch] = React.useReducer(reducer, initialState);
     const value = React.useMemo<ContextValue>(
       () => [currentState, bindActions(dispatch)],
       [currentState, dispatch],
     );
-    // eslint-disable-next-line react/jsx-props-no-spreading
-    return <Context.Provider value={value} {...props} />;
+    return <Context.Provider value={value}>{children}</Context.Provider>;
   };
 
   const useContextualReducer = (): ContextValue => {

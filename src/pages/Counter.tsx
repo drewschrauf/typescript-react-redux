@@ -5,6 +5,7 @@ import withErrorBoundary from '@/hoc/withErrorBoundary';
 import { ParseError } from '@/errors';
 import useCounter from '@/state/useCounter';
 import useUpdateTitle from '@/hooks/useUpdateTitle';
+import { useParams } from 'react-router-dom';
 
 const getAmount = (by = '1'): number => {
   const value = parseInt(by, 10);
@@ -14,16 +15,13 @@ const getAmount = (by = '1'): number => {
   return value;
 };
 
-interface CounterPageProps {
-  match: { params: { by?: string } };
-}
-
-const CounterPage: React.FC<CounterPageProps> = ({ match }) => {
+const CounterPage: React.FC = () => {
+  const { by } = useParams();
   const [{ count }] = useCounter();
   useUpdateTitle(`Count ${count}`);
   return (
     <div data-testid="counter-page">
-      <Counter amount={getAmount(match.params.by)} />
+      <Counter amount={getAmount(by)} />
     </div>
   );
 };
