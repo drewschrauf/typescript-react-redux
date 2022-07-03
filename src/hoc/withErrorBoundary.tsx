@@ -30,7 +30,7 @@ const errorBoundary =
       render(): JSX.Element {
         const { hasError, message } = this.state;
         return !hasError ? (
-          <Component {...this.props} /> // eslint-disable-line react/jsx-props-no-spreading
+          <Component {...this.props} />
         ) : (
           <div className={errorMessageStyle} data-testid="error-page">
             {message || 'Something went wrong'}

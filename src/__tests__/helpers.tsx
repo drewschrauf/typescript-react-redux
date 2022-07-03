@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import React from 'react';
 import { render, RenderResult } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';

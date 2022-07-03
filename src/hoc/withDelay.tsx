@@ -24,7 +24,6 @@ const withDelay =
   <T extends Record<string, unknown>>(Comp: React.ComponentType<T>): React.ComponentType<T> => {
     const Delay: React.FC<T> = (props) => {
       const delayComplete = useDelay(delay);
-      // eslint-disable-next-line react/jsx-props-no-spreading
       return delayComplete ? <Comp {...props} /> : null;
     };
     return Delay;
