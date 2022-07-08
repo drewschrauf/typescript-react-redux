@@ -18,7 +18,7 @@ afterEach(() => {
 it('should render current count', async () => {
   const root = await renderWithRouter(<App />, { waitForId: 'counter-page' });
 
-  expect(root.getByText('Count 0')).toBeInTheDocument();
+  expect(await root.findByRole('heading', { name: /count 0/i })).toBeInTheDocument();
 });
 
 it('should render current count in title', async () => {
@@ -49,61 +49,61 @@ it('should revert title when unmounted', async () => {
 it('should increment by default amount when increment button clicked', async () => {
   const root = await renderWithRouter(<App />, { waitForId: 'counter-page' });
 
-  fireEvent.click(root.getByText('Increment by 1'));
+  fireEvent.click(await root.findByRole('button', { name: /^increment by 1$/i }));
 
-  expect(root.getByText('Count 1')).toBeInTheDocument();
+  expect(await root.findByRole('heading', { name: /count 1/i })).toBeInTheDocument();
 });
 
 it('should decrement by default amount when decrement button clicked', async () => {
   const root = await renderWithRouter(<App />, { waitForId: 'counter-page' });
 
-  fireEvent.click(root.getByText('Decrement by 1'));
+  fireEvent.click(await root.findByRole('button', { name: /^decrement by 1$/i }));
 
-  expect(root.getByText('Count -1')).toBeInTheDocument();
+  expect(await root.findByRole('heading', { name: /count -1/i })).toBeInTheDocument();
 });
 
 it('should delay increment by default amount when increment button clicked', async () => {
   const root = await renderWithRouter(<App />, { waitForId: 'counter-page' });
   jest.useFakeTimers();
 
-  fireEvent.click(root.getByText('Delayed increment by 1'));
-  expect(root.getByText('Count 0')).toBeInTheDocument();
-  expect(root.getByText('Delayed increment by 1')).toBeDisabled();
+  fireEvent.click(await root.findByRole('button', { name: /^delayed increment by 1$/i }));
+  expect(await root.findByRole('heading', { name: /count 0/i })).toBeInTheDocument();
+  expect(await root.findByRole('button', { name: /^delayed increment by 1$/i })).toBeDisabled();
 
   jest.runAllTimers();
 
-  expect(await root.findByText('Count 1')).toBeInTheDocument();
-  expect(root.getByText('Delayed increment by 1')).not.toBeDisabled();
+  expect(await root.findByRole('heading', { name: /count 1/i })).toBeInTheDocument();
+  expect(await root.findByRole('button', { name: /^delayed increment by 1$/i })).not.toBeDisabled();
 });
 
 it('should increment by given amount when route provides increment amount', async () => {
   const root = await renderWithRouter(<App />, { route: '/by/7', waitForId: 'counter-page' });
 
-  fireEvent.click(root.getByText('Increment by 7'));
+  fireEvent.click(await root.findByRole('button', { name: /^increment by 7$/i }));
 
-  expect(root.getByText('Count 7')).toBeInTheDocument();
+  expect(await root.findByRole('heading', { name: /count 7/i })).toBeInTheDocument();
 });
 
 it('should decrement by given amount when route provides decrement amount', async () => {
   const root = await renderWithRouter(<App />, { route: '/by/7', waitForId: 'counter-page' });
 
-  fireEvent.click(root.getByText('Decrement by 7'));
+  fireEvent.click(await root.findByRole('button', { name: /^decrement by 7$/i }));
 
-  expect(root.getByText('Count -7')).toBeInTheDocument();
+  expect(await root.findByRole('heading', { name: /count -7/i })).toBeInTheDocument();
 });
 
 it('should delay increment by given amount when route provides increment amount', async () => {
   const root = await renderWithRouter(<App />, { route: '/by/7', waitForId: 'counter-page' });
   jest.useFakeTimers();
 
-  fireEvent.click(root.getByText('Delayed increment by 7'));
-  expect(root.getByText('Count 0')).toBeInTheDocument();
-  expect(root.getByText('Delayed increment by 7')).toBeDisabled();
+  fireEvent.click(await root.findByRole('button', { name: /^delayed increment by 7$/i }));
+  expect(await root.findByRole('heading', { name: /count 0/i })).toBeInTheDocument();
+  expect(await root.findByRole('button', { name: /^delayed increment by 7$/i })).toBeDisabled();
 
   jest.runAllTimers();
 
-  expect(await root.findByText('Count 7')).toBeInTheDocument();
-  expect(root.getByText('Delayed increment by 7')).not.toBeDisabled();
+  expect(await root.findByRole('heading', { name: /count 7/i })).toBeInTheDocument();
+  expect(await root.findByRole('button', { name: /^delayed increment by 7$/i })).not.toBeDisabled();
 });
 
 it('should show error message if invalid increment amount is given', async () => {
